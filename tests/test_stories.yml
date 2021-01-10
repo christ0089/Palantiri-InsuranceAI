@@ -1,0 +1,39 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+# stories:
+# - story: happy path 1
+#   steps:
+#   - action: utter_city_of_origin
+#   - user: |
+#       soy de Torreon
+#     intent: city_of_origin
+#   - action: utter_age_question
+#   - user: |
+#       soy del 99
+#     intent: inform
+#   - action: utter_sms
+#   - action: utter_appointment
+#   - user: |
+#       mañana estoy libre
+#     intent: inform
+#   - action: goodbye 
+
+# - story: cost Interjection
+#   steps:
+#   - action: utter_city_of_origin
+#   - user: |
+#       cuanto cuesta 
+#     intent: costs
+#   - action: utter_costs
+#   - action: utter_age_question
+#   - user: |
+#       soy del 99
+#     intent: age_of_person
+#   - action: utter_sms
+#   - action: utter_appointment
+#   - user: |
+#       mañana estoy libre
+#     intent: inform
+#   - action: goodbye 
+

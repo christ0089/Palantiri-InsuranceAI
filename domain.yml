@@ -1,0 +1,88 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- city_of_origin
+- inform
+- confirm
+- deny
+- cost
+- bot_challenge
+entities:
+- city
+- sex
+- name
+- time
+- bots
+slots:
+  city:
+    type: text
+    influence_conversation: true
+  dbo:
+    type: any
+    influence_conversation: false
+  appointment:
+    type: any
+    influence_conversation: false
+  sex:
+    type: text
+    influence_conversation: true
+  name:
+    type: text
+    influence_conversation: true
+  requested_slot:
+    type: unfeaturized
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hola profesor {{name}}, mi nombre es Sari Agente de OZCE Seguros, le llamo
+      porque el Profesor Juan Manuel Ríos Ortega me pidió que le llamara, para explicarle
+      los grandes beneficios de contar con un seguro de Gastos Médicos Mayores, que
+      cubra el covid y otros gastos médicos más,
+  utter_city_of_origin:
+  - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
+      vive usted?
+  utter_age_question:
+  - text: Ha muy bien gracias y ¿En qué año nació usted {{name}}?,
+  utter_sms:
+  - text: Para su comodidad, le enviaré por mensaje para que conozca a detalle los
+      beneficios de las opciones que tenemos para ud. así como las formas de pago.
+  utter_appointment:
+  - text: Por último, profesor, cuando le puedo llamar para dispar dudas de las opciones
+      que le acabo de enviar?
+  utter_happy:
+  - text: Muy bien, tambien.
+  utter_costs:
+  - text: El costo depende de muchos factores, para ello necesitamos que complete
+      las preguntas
+  utter_goodbye:
+  - text: Muchas gracias por su atención y el nos estaremos comunicando con Ud.
+  utter_iamabot:
+  - text: Me llamo Sari; y le marco a nombre del Profesor Juan Manuel Ríos Ortega,
+      soy un Agente de OZCE Seguros.
+  utter_submit:
+  - text: Pefecto gracias por los datos
+  utter_ask_dbo:
+  - text: Ha muy bien gracias y ¿En qué año nació usted {{name}}?,
+  utter_ask_city:
+  - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
+      vive usted?
+  utter_ask_appointment:
+  - text: Para su comodidad, le enviaré por mensaje para que conozca a detalle los
+      beneficios de las opciones que tenemos para ud. así como las formas de pago.
+      Por último, profesor, cuando le puedo llamar para dispar dudas de las opciones
+      que le acabo de enviar?
+forms:
+  policy_form:
+    appointment:
+    - entity: time
+      type: from_entity
+    city:
+    - entity: city
+      intent: city_of_origin
+      type: from_entity
+    dbo:
+    - entity: time
+      type: from_entity

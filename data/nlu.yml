@@ -1,0 +1,382 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hola
+    - bienvenido
+    - como estas
+    - hello
+    - hey hey
+    - que onda
+    - que pedo
+    - buenos dias
+    - buenas tardes
+    - buenas noches
+    - hey
+    - oa
+    - que esta pasando
+    - que rollo
+    - que tal
+    - como te ha hido
+    - que tal tu dia
+    - buen dia 
+    - que show
+    - buenas
+    - A
+    - que rollo
+    - arroyo
+    - como te sientes
+    - hola mundo
+    - que hay de nuevo
+    - que gusto escucharte
+    - que tal estas
+    - que cuentas
+    - listo
+    - Wuenas
+    - alo
+    - olo
+    - aloh
+    - llegue yo perro
+    - holis
+    - que pasa calabaza
+    - hola a todos
+    - hola a todos que pasa calabaza
+
+- intent: goodbye
+  examples: |
+    - hasta luego
+    - adios
+    - gracias adios
+    - bye
+    - me despido
+    - le voy a colgar 
+    - cuelgo 
+    - chao
+    - cuidese
+    - nos vemos
+    - que tenga buen dia
+    - que pases un buen dia
+    - hasta la proxima
+    - ya me voy
+    - luego nos vemos
+    - cuidate
+    - hasta pronto
+    - bye bye
+    - te veo despues
+    - ya no quiero hablar con usted
+    - dejeme en paz
+    - que te vaya bien 
+    - pasala bien
+    - que tengas un buen dias
+    - abur
+    - hasta siempre
+    - nos vemos
+    - cuidate
+    - ahora si ya me voy
+    - vayase al carajo
+    - cuelgo bye
+    - ya me voy nos vemos
+
+- lookup: city
+  examples: |
+    - Torreon
+    - Torres
+    - Monterrey
+    - Matamoros
+    - Gomez Palacio
+    - torres
+    - lagunero
+    - perla de la laguna
+    - la laguna
+
+- synonym: torreon
+  examples: |
+    - torres
+    - lagunero
+    - la laguna
+    - perla de la laguna
+    - capital de la plata
+
+
+- intent: city_of_origin
+  examples: |
+    - soy de [la laguna]{"entity": "city"}
+    - de [Gomez]{"entity": "city"} coahuila
+    - de [Gomez]{"entity": "city"} durango
+    - soy de aqui de [Gomez]{"entity": "city"}
+    - estoy en [Torres]{"entity": "city"}
+    - vivo en [Gomez]{"entity": "city"}
+    - yo vivo en [Gomez]{"entity": "city"}
+    - [Gomez]{"entity": "city"}
+    - en [Gomez]{"entity": "city"} vivo 
+    - soy de aqui 
+    - vivo aqui 
+    - naci en [Gomez]{"entity": "city"}
+    - naci aqui
+    - me criaron en [Gomez]{"entity": "city"}
+    - de aqui
+    - estoy aqui en [Gomez]{"entity": "city"}
+    - me ubico en [Gomez]{"entity": "city"}
+    - mi casa esta [Gomez]{"entity": "city"}
+    - actualmente vivo en [Gomez]{"entity": "city"}
+    - actualmente estoy en [Torreon]{"entity": "city"}
+    - mi dirrecion es de [La Laguna]{"entity": "city"}
+    - redico en [Gomez]{"entity": "city"}
+    - soy residente de [Gomez]{"entity": "city"}
+    - bien soy de [Gomez]{"entity": "city"}
+    - mi direccion es de [Matamoros]{"entity": "city"}
+    - la direccion de [Gomez]{"entity": "city"}
+    - resido en [Gomez]{"entity": "city"}
+    - mi ubiacion es en [Gomez]{"entity": "city"}
+    - aqui me ubico
+    - soy de [Gomez]{"entity": "city"}
+    - resido aqui
+
+- intent: cost
+  examples: |
+    - cual es el costo
+    - cual es el precio
+    - precio?
+    - y esto cuanto cuesta
+    - me van a cobrar
+    - me lo van a regalar
+    - costo
+    - como me van a cobrar
+    - cuesta
+    - como cuesta
+    - que costo
+    - valor
+    - cuanto valor
+    - porfavor valor
+    - y cual es el valor
+    - cuanto cuesta
+    - porfa precio
+    - porfavor precio
+    - y que como me van a cobrar porfavor
+    - y que me cuesta de favor
+    - como precio
+    - y que me me van a cobrar porfavor
+    - porfavor costo
+    - cuesta podria decir
+    - que me lo van a regalar podria
+    - y que me costo de favor
+    - cuanto cuesta podria decir
+    - que me lo van a regalar
+    - que me lo van a regalar de favor
+    - podria decir cuesto
+    - costo porfavor
+    - y que me precio tiene porfavor
+    - y que me me van a cobrar
+    - como cuesta podria decir
+    - cuanto costo porfa
+    - cuanto sale la poliza
+    - cuanto sale
+    - cual es el valor
+    - porfavor cuanto sale la poliza
+    - precio tiene porfavor
+    - que precio tiene porfavor
+    - y que me me van a cobrar podria decir
+    - me van a cobrar porfa
+    - que me lo van a regalar porfavor
+    - cuanto precio tiene podria decir
+    - y que me cuesta
+    - y que me precio tiene
+    - como precio tiene porfa
+    - cuanto precio tiene de favor
+    - que me van a cobrar porfa
+    - cuanto me lo van a regalar podria decir
+    - podria decir costo
+    - cual precio podria decir
+    - como me lo van a regalar
+    - y que me me van a cobrar de favor
+    - como me van a cobrar de favor
+    - me van a cobrar podria decir
+    - me van a cobrar podria
+    - costo porfavor diga
+    - que precio tiene porfavor
+    - me lo van a regalar podria decir
+    - podria decir si me van a cobrar
+    - cuanto cuesta podria
+    - precio tiene podria decir
+    - y que me cuesta porfavor
+    - como costo porfa
+    - como costo porfavor
+    - cuanto costo podria decir
+    - cuanto costo podria
+    - como me van a cobrar porfa
+    - cuanto precio tiene porfavor
+    - que precio
+
+- intent: confirm
+  examples: |
+    - si 
+    - perfecto
+    - va va
+    - me gustaria 
+    - me encantaria
+    - estoy de acuerdo
+    - okay
+    - va
+    - yes
+    - muy bien 
+    - comencemos
+    - me apetece
+    - me interesa
+    - me parece bien
+    - oh okay
+    - mmm esta bien
+    - de acuerdo 
+    - concuerdo
+    - afirmativo
+    - confirmo
+    - si andale
+    - andale
+    - exacto
+    - okay gracias
+    - si porfavor
+    - si andele
+    - desde luego que si
+    - asi mero
+    - asi mero porfavor
+    - obvio que si
+    - va porfavor
+    - va de acuerdo
+    - va andele profavor
+    - afirmativo andele
+    - afirmativo porfavor
+    - comprendo gracias
+    - comprendo porfavor
+    - definitivamente gracias
+    - porfavor definitivamente
+    - definitivamente
+    - si señor definitivamente estoy de acuerdo
+    - okay exacto muy bien
+    - va esta bien suena bien
+    - affirmativo esta correcto si señor
+    - comencemos va
+    - si señor me entiende
+    - si esta bien confirmo
+    - muy bien esta correcto affirmativo
+    - de acuerdo me parece bien si
+    - de acuerdo definitivamente si señor
+    - yep me entiende correcto
+    - correcto quiero eso confirmo
+    - va eso es affirmativo si señor
+    - de acuerdo okay
+    - muy bien correcto thanks
+    - yep exacto
+    - va me entiende muy bien
+    - suena bien esta correcto
+    - okay es esto correcto si
+    - si va
+    - muy bien andale confirmo
+    - okay me interesa
+    - suena bien exacto confirmo
+    - confirmo comencemos va
+    - me gusataria correcto
+    - si señor definitivamente estoy de acuerdo
+    - okay exacto muy bien
+    - estoy de acuerdo me gusataria si señor
+    - va esta bien suena bien
+    - me parece bien va
+    - confirmo andale
+    - estoy de acuerdo definitivamente va
+    - va comencemos si
+    - confirmo comencemos
+    - si señor me entiende muy bien
+    - comprendo
+    - confirmo gracias
+    - de acuerdo porfavor
+    - si señor es esto correcto
+    - si señor comprendo
+    - muy bien comprendo
+    - exacto me comprende
+    - comfirmo comprendo
+    - de acuerdo es esto correcto
+    - suena bien suena bien
+    - affirmativo bien si
+    - de acuerdo exacto suena bien
+    - si es esto correcto comprendo
+    - de acuerdo comprendo
+    - correcto concuerdo muy bien
+    - correcto comprendo muy bien
+    - si señor definitivamente confirmo
+    - affirmativo es esto correcto si señor
+
+- intent: deny
+  examples: |
+    - no
+    - no quiero
+    - claro que no 
+    - no me parace
+    - no estoy de acuerdo
+    - no me gusta
+    - no lo quiero
+    - yo no lo quiero
+    - creo que no
+    - creo que no me gusta
+    - nunca
+    - nunca lo compraria
+    - nada de eso
+    - ni por mucho
+    - de eso nada
+    - ni hablar
+    - yo no 
+    - jamas
+    - de ninguna manera
+    - no me da la gana
+    - en absoluto
+    - ni en sueño
+    - ni en mi sueños
+    - ni en en tus sueños
+    - ni pensarlo
+    - ni a tiros
+    - negativo
+    - nel
+    - ni madre
+    - nahh
+    - no hace falta
+    - no me interesa
+    - todo lo contrario
+    - espero que no
+    - ni lo sueñes
+    - ni hablar
+    - ni de broma
+
+- synonym: bots
+  examples: | 
+    - skynet
+    - siri
+    - alexa
+    - google home
+
+
+- intent: bot_challenge
+  examples: |
+    - eres un bot?
+    - eres un humano?
+    - quien eres?
+    - estoy hablando con un bot?
+    - que eres?
+    - eres un robot?
+    - estoy hablando con quien?
+    - con quien estoy hablando?
+    - quien eres?
+    - como te llamas?
+    - hola quien eres?
+    - bueno quien eres?
+    - te llamas como?
+    - eres [siri]{"entity": "bots"}?
+    - estoy hablando con [siri]{"entity": "bots"}?
+
+- intent: inform
+  examples: |
+    - naci el [2020]{"entity": "time"}
+    - soy del [93]{"entity": "time"}
+    - [2020]{"entity": "time"}
+    - el [1994]{"entity": "time"}
+    - podemos el [2020]{"entity": "time"}
+    - fue hace mucho el [2002]{"entity": "time"}
+
+    
