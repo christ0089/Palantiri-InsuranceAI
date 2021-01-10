@@ -40,6 +40,9 @@ nlu:
     - que pasa calabaza
     - hola a todos
     - hola a todos que pasa calabaza
+    - Hola
+    - Hola!
+    - Hola como estas
 - intent: goodbye
   examples: |
     - hasta luego
@@ -105,6 +108,10 @@ nlu:
     - aqui me ubico
     - soy de [Gomez](city)
     - resido aqui
+    - [Torreon](city)
+    - naci en [torreon](city)
+    - en la laguan
+    - soy de [torreon](city)
 - intent: cost
   examples: |
     - cual es el costo
@@ -178,6 +185,7 @@ nlu:
     - como me van a cobrar porfa
     - cuanto precio tiene porfavor
     - que precio
+    - cuánto cuesta
 - intent: confirm
   examples: |
     - si
@@ -271,6 +279,8 @@ nlu:
     - si señor definitivamente confirmo
     - affirmativo es esto correcto si señor
     - okay como estas
+    - Okay
+    - pefecto
 - intent: deny
   examples: |
     - no
@@ -333,6 +343,7 @@ nlu:
     - el [1994](time)
     - podemos el [2020](time)
     - fue hace mucho el [2002](time)
+    - en el [2020](time)
 - synonym: torreon
   examples: |
     - torres
