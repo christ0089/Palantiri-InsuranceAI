@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -20,11 +19,10 @@ nlu:
     - que tal
     - como te ha hido
     - que tal tu dia
-    - buen dia 
+    - buen dia
     - que show
     - buenas
     - A
-    - que rollo
     - arroyo
     - como te sientes
     - hola mundo
@@ -42,7 +40,6 @@ nlu:
     - que pasa calabaza
     - hola a todos
     - hola a todos que pasa calabaza
-
 - intent: goodbye
   examples: |
     - hasta luego
@@ -50,8 +47,8 @@ nlu:
     - gracias adios
     - bye
     - me despido
-    - le voy a colgar 
-    - cuelgo 
+    - le voy a colgar
+    - cuelgo
     - chao
     - cuidese
     - nos vemos
@@ -66,73 +63,48 @@ nlu:
     - te veo despues
     - ya no quiero hablar con usted
     - dejeme en paz
-    - que te vaya bien 
+    - que te vaya bien
     - pasala bien
     - que tengas un buen dias
     - abur
     - hasta siempre
-    - nos vemos
-    - cuidate
     - ahora si ya me voy
     - vayase al carajo
     - cuelgo bye
     - ya me voy nos vemos
-
-- lookup: city
-  examples: |
-    - Torreon
-    - Torres
-    - Monterrey
-    - Matamoros
-    - Gomez Palacio
-    - torres
-    - lagunero
-    - perla de la laguna
-    - la laguna
-
-- synonym: torreon
-  examples: |
-    - torres
-    - lagunero
-    - la laguna
-    - perla de la laguna
-    - capital de la plata
-
-
 - intent: city_of_origin
   examples: |
-    - soy de [la laguna]{"entity": "city"}
-    - de [Gomez]{"entity": "city"} coahuila
-    - de [Gomez]{"entity": "city"} durango
-    - soy de aqui de [Gomez]{"entity": "city"}
-    - estoy en [Torres]{"entity": "city"}
-    - vivo en [Gomez]{"entity": "city"}
-    - yo vivo en [Gomez]{"entity": "city"}
-    - [Gomez]{"entity": "city"}
-    - en [Gomez]{"entity": "city"} vivo 
-    - soy de aqui 
-    - vivo aqui 
-    - naci en [Gomez]{"entity": "city"}
+    - soy de [la laguna](city)
+    - de [Gomez](city) coahuila
+    - de [Gomez](city) durango
+    - soy de aqui de [Gomez](city)
+    - estoy en [Torres](city)
+    - vivo en [Gomez](city)
+    - yo vivo en [Gomez](city)
+    - [Gomez](city)
+    - en [Gomez](city) vivo
+    - soy de aqui
+    - vivo aqui
+    - naci en [Gomez](city)
     - naci aqui
-    - me criaron en [Gomez]{"entity": "city"}
+    - me criaron en [Gomez](city)
     - de aqui
-    - estoy aqui en [Gomez]{"entity": "city"}
-    - me ubico en [Gomez]{"entity": "city"}
-    - mi casa esta [Gomez]{"entity": "city"}
-    - actualmente vivo en [Gomez]{"entity": "city"}
-    - actualmente estoy en [Torreon]{"entity": "city"}
-    - mi dirrecion es de [La Laguna]{"entity": "city"}
-    - redico en [Gomez]{"entity": "city"}
-    - soy residente de [Gomez]{"entity": "city"}
-    - bien soy de [Gomez]{"entity": "city"}
-    - mi direccion es de [Matamoros]{"entity": "city"}
-    - la direccion de [Gomez]{"entity": "city"}
-    - resido en [Gomez]{"entity": "city"}
-    - mi ubiacion es en [Gomez]{"entity": "city"}
+    - estoy aqui en [Gomez](city)
+    - me ubico en [Gomez](city)
+    - mi casa esta [Gomez](city)
+    - actualmente vivo en [Gomez](city)
+    - actualmente estoy en [Torreon](city)
+    - mi dirrecion es de [La Laguna](city)
+    - redico en [Gomez](city)
+    - soy residente de [Gomez](city)
+    - bien soy de [Gomez](city)
+    - mi direccion es de [Matamoros](city)
+    - la direccion de [Gomez](city)
+    - resido en [Gomez](city)
+    - mi ubiacion es en [Gomez](city)
     - aqui me ubico
-    - soy de [Gomez]{"entity": "city"}
+    - soy de [Gomez](city)
     - resido aqui
-
 - intent: cost
   examples: |
     - cual es el costo
@@ -194,7 +166,6 @@ nlu:
     - me van a cobrar podria decir
     - me van a cobrar podria
     - costo porfavor diga
-    - que precio tiene porfavor
     - me lo van a regalar podria decir
     - podria decir si me van a cobrar
     - cuanto cuesta podria
@@ -207,26 +178,25 @@ nlu:
     - como me van a cobrar porfa
     - cuanto precio tiene porfavor
     - que precio
-
 - intent: confirm
   examples: |
-    - si 
+    - si
     - perfecto
     - va va
-    - me gustaria 
+    - me gustaria
     - me encantaria
     - estoy de acuerdo
     - okay
     - va
     - yes
-    - muy bien 
+    - muy bien
     - comencemos
     - me apetece
     - me interesa
     - me parece bien
     - oh okay
     - mmm esta bien
-    - de acuerdo 
+    - de acuerdo
     - concuerdo
     - afirmativo
     - confirmo
@@ -275,10 +245,7 @@ nlu:
     - suena bien exacto confirmo
     - confirmo comencemos va
     - me gusataria correcto
-    - si señor definitivamente estoy de acuerdo
-    - okay exacto muy bien
     - estoy de acuerdo me gusataria si señor
-    - va esta bien suena bien
     - me parece bien va
     - confirmo andale
     - estoy de acuerdo definitivamente va
@@ -303,12 +270,12 @@ nlu:
     - correcto comprendo muy bien
     - si señor definitivamente confirmo
     - affirmativo es esto correcto si señor
-
+    - okay como estas
 - intent: deny
   examples: |
     - no
     - no quiero
-    - claro que no 
+    - claro que no
     - no me parace
     - no estoy de acuerdo
     - no me gusta
@@ -322,7 +289,7 @@ nlu:
     - ni por mucho
     - de eso nada
     - ni hablar
-    - yo no 
+    - yo no
     - jamas
     - de ninguna manera
     - no me da la gana
@@ -341,17 +308,7 @@ nlu:
     - todo lo contrario
     - espero que no
     - ni lo sueñes
-    - ni hablar
     - ni de broma
-
-- synonym: bots
-  examples: | 
-    - skynet
-    - siri
-    - alexa
-    - google home
-
-
 - intent: bot_challenge
   examples: |
     - eres un bot?
@@ -362,21 +319,30 @@ nlu:
     - eres un robot?
     - estoy hablando con quien?
     - con quien estoy hablando?
-    - quien eres?
     - como te llamas?
     - hola quien eres?
     - bueno quien eres?
     - te llamas como?
-    - eres [siri]{"entity": "bots"}?
-    - estoy hablando con [siri]{"entity": "bots"}?
-
+    - eres [siri](bots)?
+    - estoy hablando con [siri](bots)?
 - intent: inform
   examples: |
-    - naci el [2020]{"entity": "time"}
-    - soy del [93]{"entity": "time"}
-    - [2020]{"entity": "time"}
-    - el [1994]{"entity": "time"}
-    - podemos el [2020]{"entity": "time"}
-    - fue hace mucho el [2002]{"entity": "time"}
-
-    
+    - naci el [2020](time)
+    - soy del [93](time)
+    - [2020](time)
+    - el [1994](time)
+    - podemos el [2020](time)
+    - fue hace mucho el [2002](time)
+- synonym: torreon
+  examples: |
+    - torres
+    - lagunero
+    - la laguna
+    - perla de la laguna
+    - capital de la plata
+- synonym: bots
+  examples: |
+    - skynet
+    - siri
+    - alexa
+    - google home

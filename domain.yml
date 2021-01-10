@@ -17,24 +17,24 @@ entities:
 - time
 - bots
 slots:
+  appointment:
+    type: any
+    influence_conversation: false
   city:
     type: text
     influence_conversation: true
   dbo:
     type: any
     influence_conversation: false
-  appointment:
-    type: any
-    influence_conversation: false
-  sex:
-    type: text
-    influence_conversation: true
   name:
     type: text
     influence_conversation: true
   requested_slot:
     type: unfeaturized
     influence_conversation: false
+  sex:
+    type: text
+    influence_conversation: true
 responses:
   utter_greet:
   - text: Hola profesor {{name}}, mi nombre es Sari Agente de OZCE Seguros, le llamo
