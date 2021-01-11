@@ -20,10 +20,10 @@ slots:
   Cappointment:
     type: any
     influence_conversation: false
-  Bcity:
+  Acity:
     type: text
     influence_conversation: true
-  Adbo:
+  Bdbo:
     type: any
     influence_conversation: false
   name:
