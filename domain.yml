@@ -17,13 +17,13 @@ entities:
 - time
 - bots
 slots:
-  appointment:
+  Cappointment:
     type: any
     influence_conversation: false
-  city:
+  Bcity:
     type: text
     influence_conversation: true
-  dbo:
+  Adbo:
     type: any
     influence_conversation: false
   name:
