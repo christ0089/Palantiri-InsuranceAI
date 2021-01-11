@@ -17,24 +17,24 @@ entities:
 - time
 - bots
 slots:
+  appointment:
+    type: any
+    influence_conversation: false
   city:
     type: text
     influence_conversation: true
   dbo:
     type: any
     influence_conversation: false
-  appointment:
-    type: any
-    influence_conversation: false
-  sex:
-    type: text
-    influence_conversation: true
   name:
     type: text
     influence_conversation: true
   requested_slot:
     type: unfeaturized
     influence_conversation: false
+  sex:
+    type: text
+    influence_conversation: true
 responses:
   utter_greet:
   - text: Hola profesor {{name}}, mi nombre es Sari Agente de OZCE Seguros, le llamo
@@ -64,25 +64,25 @@ responses:
       soy un Agente de OZCE Seguros.
   utter_submit:
   - text: Pefecto gracias por los datos
-  utter_ask_dbo:
+  utter_ask_Bdbo:
   - text: Ha muy bien gracias y ¿En qué año nació usted {{name}}?,
-  utter_ask_city:
+  utter_ask_Acity:
   - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
       vive usted?
-  utter_ask_appointment:
+  utter_ask_Cappointment:
   - text: Para su comodidad, le enviaré por mensaje para que conozca a detalle los
       beneficios de las opciones que tenemos para ud. así como las formas de pago.
       Por último, profesor, cuando le puedo llamar para dispar dudas de las opciones
       que le acabo de enviar?
 forms:
   policy_form:
-    appointment:
-    - entity: time
-      type: from_entity
-    city:
+    Acity:
     - entity: city
       intent: city_of_origin
       type: from_entity
-    dbo:
+    Bdbo:
+    - entity: time
+      type: from_entity
+    Cappointment:
     - entity: time
       type: from_entity
