@@ -43,6 +43,8 @@ nlu:
     - Hola
     - Hola!
     - Hola como estas
+    - hi
+    - Holaa
 - intent: goodbye
   examples: |
     - hasta luego
@@ -110,8 +112,11 @@ nlu:
     - resido aqui
     - [Torreon](city)
     - naci en [torreon](city)
-    - en la laguan
+    - en la [laguan](city)
     - soy de [torreon](city)
+    - de [la laguna]{"entity": "city", "value": "torreon"}
+    - de [torreon](city)
+    - naci en [Torreon](city)
 - intent: cost
   examples: |
     - cual es el costo
@@ -281,6 +286,7 @@ nlu:
     - okay como estas
     - Okay
     - pefecto
+    - ok
 - intent: deny
   examples: |
     - no
@@ -344,6 +350,8 @@ nlu:
     - podemos el [2020](time)
     - fue hace mucho el [2002](time)
     - en el [2020](time)
+    - en el [67](time)
+    - para mañana
 - synonym: torreon
   examples: |
     - torres
@@ -351,6 +359,7 @@ nlu:
     - la laguna
     - perla de la laguna
     - capital de la plata
+    - laguan
 - synonym: bots
   examples: |
     - skynet
