@@ -45,7 +45,6 @@ nlu:
     - Hola como estas
     - hi
     - Holaa
-    - sí
     - Hla
     - hoal
 - intent: goodbye
@@ -125,6 +124,7 @@ nlu:
     - soy david charekh además en [torreón](city)
     - en [la laguna]{"entity": "city", "value": "torreon"}
     - en [torreón](city)
+    - yo soy de [la laguna]{"entity": "city", "value": "torreon"}
 - intent: cost
   examples: |
     - cual es el costo
@@ -297,6 +297,7 @@ nlu:
     - pefecto
     - ok
     - ok cómo funciona
+    - sí
     - gracias
     - bien gracias
 - intent: deny
@@ -372,6 +373,10 @@ nlu:
     - en el mil novecientos [noventa y](time) seis
     - el [sesenta y tres](time)
     - mil novecientos sesenta y tres
+    - celine [noventa y seis](time)[noventa y](time) seis
+    - soy de[ noventa y seis](time)[noventa y](time) seis
+    - el martes por favor
+    - he oído [noventa y seis sesenta y dos](time)
 - synonym: torreon
   examples: |
     - la laguna
