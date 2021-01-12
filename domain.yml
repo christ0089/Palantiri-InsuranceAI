@@ -17,13 +17,13 @@ entities:
 - time
 - bots
 slots:
-  Cappointment:
-    type: any
-    influence_conversation: false
   Acity:
     type: text
     influence_conversation: true
   Bdbo:
+    type: any
+    influence_conversation: false
+  Cappointment:
     type: any
     influence_conversation: false
   name:
@@ -37,10 +37,11 @@ slots:
     influence_conversation: true
 responses:
   utter_greet:
-  - text: Hola profesor {{name}}, mi nombre es Sari Agente de OZCE Seguros, le llamo
-      porque el Profesor Juan Manuel Ríos Ortega me pidió que le llamara, para explicarle
-      los grandes beneficios de contar con un seguro de Gastos Médicos Mayores, que
-      cubra el covid y otros gastos médicos más,
+  - text: Muy bien profesor {{name}}, mi nombre es Sari Agente de OZCE Seguros, le
+      llamo porque el Profesor Juan Manuel Ríos Ortega me pidió que le llamara, para
+      explicarle los grandes beneficios de contar con un seguro de Gastos Médicos
+      Mayores, que cubra el covid y otros gastos médicos más, podría hacerle unas
+      preguntas?
   utter_city_of_origin:
   - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
       vive usted?

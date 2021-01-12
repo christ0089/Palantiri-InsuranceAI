@@ -45,6 +45,9 @@ nlu:
     - Hola como estas
     - hi
     - Holaa
+    - sí
+    - Hla
+    - hoal
 - intent: goodbye
   examples: |
     - hasta luego
@@ -112,11 +115,16 @@ nlu:
     - resido aqui
     - [Torreon](city)
     - naci en [torreon](city)
-    - en la [laguan](city)
+    - en[ la laguan](city)
     - soy de [torreon](city)
     - de [la laguna]{"entity": "city", "value": "torreon"}
     - de [torreon](city)
     - naci en [Torreon](city)
+    - vivo en [torreon](city)
+    - de [Torreon](city)
+    - soy david charekh además en [torreón](city)
+    - en [la laguna]{"entity": "city", "value": "torreon"}
+    - en [torreón](city)
 - intent: cost
   examples: |
     - cual es el costo
@@ -191,6 +199,7 @@ nlu:
     - cuanto precio tiene porfavor
     - que precio
     - cuánto cuesta
+    - cuánto sale
 - intent: confirm
   examples: |
     - si
@@ -287,6 +296,9 @@ nlu:
     - Okay
     - pefecto
     - ok
+    - ok cómo funciona
+    - gracias
+    - bien gracias
 - intent: deny
   examples: |
     - no
@@ -325,6 +337,7 @@ nlu:
     - espero que no
     - ni lo sueñes
     - ni de broma
+    - okay bye
 - intent: bot_challenge
   examples: |
     - eres un bot?
@@ -352,14 +365,23 @@ nlu:
     - en el [2020](time)
     - en el [67](time)
     - para mañana
+    - en el [noventa y nueve](time)
+    - el martes
+    - el once de julio
+    - hhm el mil novecientos [noventa y](time) seis
+    - en el mil novecientos [noventa y](time) seis
+    - el [sesenta y tres](time)
+    - mil novecientos sesenta y tres
 - synonym: torreon
   examples: |
+    - la laguna
     - torres
     - lagunero
-    - la laguna
     - perla de la laguna
     - capital de la plata
     - laguan
+    - la laguan
+    - la laguan
 - synonym: bots
   examples: |
     - skynet
