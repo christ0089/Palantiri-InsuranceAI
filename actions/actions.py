@@ -9,6 +9,8 @@
 
 from typing import Any, Text, Dict, List
 
+import requests
+
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet, EventType
 from rasa_sdk.executor import CollectingDispatcher
@@ -32,8 +34,17 @@ class ActionCreateSlots(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         required_slots = ["Name"]
-        return SlotSet("name", required_slots[0])
-        
+        return [SlotSet("name", required_slots[0])]
+
+class ActionCreateSlots(Action):
+    def name(self) -> Text:
+        return "action_slot_query"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        required_slots = ["Name"]
+        return [SlotSet("name", required_slots[0])]
 
 class ValidateRestaurantForm(Action):
     def name(self) -> Text:
