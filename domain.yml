@@ -1,6 +1,9 @@
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+actions:
+  - action_slot_reset
+  - action_slot_create
 intents:
 - greet
 - goodbye
