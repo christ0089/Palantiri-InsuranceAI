@@ -25,7 +25,7 @@ class ActionSlotReset(Action):
         return [AllSlotsReset()]
 
 class ActionCreateSlots(Action):
-        def name(self) -> Text:
+    def name(self) -> Text:
         return "action_slot_create"
 
     def run(self, dispatcher: CollectingDispatcher,
