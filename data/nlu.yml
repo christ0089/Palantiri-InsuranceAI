@@ -46,6 +46,8 @@ nlu:
     - hi
     - Holaa
     - Hla
+    - hola, muy bien y usted
+    - muy bien, usted
     - hoal
 - intent: goodbye
   examples: |
@@ -79,6 +81,14 @@ nlu:
     - vayase al carajo
     - cuelgo bye
     - ya me voy nos vemos
+- intent: how_it_works
+  examples: |
+    - como funciona
+    - y que es 
+    - oiga que es eso
+    - pues como jala
+    - y como me van a atender
+    - que es
 - intent: city_of_origin
   examples: |
     - soy de [la laguna](city)

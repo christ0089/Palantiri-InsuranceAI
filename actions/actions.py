@@ -24,6 +24,17 @@ class ActionSlotReset(Action):
 
         return [AllSlotsReset()]
 
+class ActionCreateSlots(Action):
+        def name(self) -> Text:
+        return "action_slot_create"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        required_slots = ["Name"]
+        return SlotSet("name", required_slots[0])
+        
+
 class ValidateRestaurantForm(Action):
     def name(self) -> Text:
         return "policy_form"
