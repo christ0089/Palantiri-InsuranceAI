@@ -17,16 +17,30 @@ rules:
   - intent: cost
   - action: utter_costs
 
-- rule: Activate form
+- rule: Say how the policy works
   steps:
-  - intent: confirm
-  - action: policy_form
-  - active_loop: policy_form
+  - intent: how_it_works
+  - action: utter_how_it_works
+
+
 
 - rule: Submit form
   condition:
   # Condition that form is active.
   - active_loop: policy_form
+  steps:
+  # Form is deactivated
+  - action: policy_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: utter_submit
+
+- rule: Submit form woman
+  condition:
+  # Condition that form is active.
+  - active_loop: policy_form_woman
   steps:
   # Form is deactivated
   - action: policy_form

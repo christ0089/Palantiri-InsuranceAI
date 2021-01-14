@@ -124,7 +124,7 @@ nlu:
     - resido aqui
     - [Torreon](city)
     - naci en [torreon](city)
-    - en[ la laguan](city)
+    - en [la laguna]{"entity": "city", "value": "torreon"}
     - soy de [torreon](city)
     - de [la laguna]{"entity": "city", "value": "torreon"}
     - de [torreon](city)
@@ -375,17 +375,17 @@ nlu:
     - fue hace mucho el [2002](time)
     - en el [2020](time)
     - en el [67](time)
-    - para mañana
+    - para [mañana](time)
     - en el [noventa y nueve](time)
-    - el martes
+    - el [martes](time)
     - el once de julio
-    - hhm el mil novecientos [noventa y](time) seis
-    - en el mil novecientos [noventa y](time) seis
+    - hhm el [mil novecientos noventa y seis](time)
+    - en el [mil novecientos noventa y seis](time)
     - el [sesenta y tres](time)
-    - mil novecientos sesenta y tres
-    - celine [noventa y seis](time)[noventa y](time) seis
-    - soy de[ noventa y seis](time)[noventa y](time) seis
-    - el martes por favor
+    - [mil novecientos sesenta y tres](time)
+    - celine [noventa y seis](time)
+    - soy de [noventa y seis](time)
+    - el [martes](time) por favor 
     - he oído [noventa y seis sesenta y dos](time)
 - synonym: torreon
   examples: |

@@ -13,6 +13,7 @@ intents:
 - confirm
 - deny
 - cost
+- how_it_works
 - bot_challenge
 entities:
 - city
@@ -27,15 +28,18 @@ slots:
   Bdbo:
     type: any
     influence_conversation: false
-  Cappointment:
-    type: any
+  Cmaternity:
+    type: text
+    influence_conversation: false
+  Dappointment:
+    type: text
     influence_conversation: false
   name:
     type: text
     influence_conversation: false
     auto_fill: True
   requested_slot:
-    type: unfeaturized
+    type: any
     influence_conversation: false
   sex:
     type: text
@@ -70,17 +74,23 @@ responses:
       soy un Agente de OZCE Seguros.
   utter_submit:
   - text: Pefecto gracias por los datos
+  utter_how_it_works:
+  - text: Claro, al final de contestar la preguntas, un agente se contactar con usted para finalizar los detalles.
   utter_ask_Bdbo:
   - text: Ha muy bien gracias y ¿En qué año nació usted {name}?,
   utter_ask_Acity:
   - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
       vive usted?
-  utter_ask_Cappointment:
+  utter_ask_Cmaternity:
+  - text: Estaría interesada en tener coberturade maternidad?
+  utter_ask_Dappointment:
   - text: Para su comodidad, le enviaré por mensaje para que conozca a detalle los
       beneficios de las opciones que tenemos para ud. así como las formas de pago.
       Por último, profesor, cuando le puedo llamar para dispar dudas de las opciones
       que le acabo de enviar?
+
 forms:
+  ## Form for men 
   policy_form:
     Acity:
     - entity: city
@@ -89,6 +99,23 @@ forms:
     Bdbo:
     - entity: time
       type: from_entity
-    Cappointment:
+    Dappointment:
+    - entity: time
+      type: from_entity
+
+  ## Form for woman
+  policy_form_woman:
+    Acity:
+    - entity: city
+      intent: city_of_origin
+      type: from_entity
+    Bdbo:
+    - entity: time
+      type: from_entity
+    Cmaternity:
+    - type: from_trigger_intent
+      intent: confirm
+      value: accept
+    Dappointment:
     - entity: time
       type: from_entity

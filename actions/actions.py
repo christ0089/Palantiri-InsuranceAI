@@ -34,8 +34,8 @@ class ActionCreateSlots(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         slot = tracker.get_slot('name')
-        evt = SlotSet("name", "Christian")
-        return [evt]
+        evt = [SlotSet("name", "Christian"), SlotSet("sex", "woman")]
+        return evt
 
 class ActionCreateSlots(Action):
     def name(self) -> Text:
@@ -44,20 +44,23 @@ class ActionCreateSlots(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        r = requests.get('https://1ntj0abfh0.execute-api.us-east-1.amazonaws.com/PROD/customer?contactId=5ca32fbd-8f92-46af-92a5-6b0f970f0efe')
+        r = requests.get('https://1ntj0abfh0.execute-api.us-east-1.amazonaws.com/PROD/customer?contactId=c3910e1e-3478-4c0a-ad28-5068a823f9b7')
         
         name = r.json()[0]["fname"]
-        return [SlotSet("name", name)]
+        sex = r.json()[0]["sex"]
+        events = [SlotSet("name", name), SlotSet("sex", sex)]
+        return events
 
-class ValidateRestaurantForm(Action):
+class ValidatePolicyForm(Action):
     def name(self) -> Text:
         return "policy_form"
 
     def run(
         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
     ) -> List[EventType]:
-        required_slots = ["Acity", "Bdbo", "Cappointment"]
-
+        required_slots = ["Acity", "Bdbo", "Dappointment"]
+        if tracker.slots.get('sex') == "woman":
+            required_slots = ["Acity", "Bdbo", "Cmaternity","Dappointment"]
         for slot_name in required_slots:
             if tracker.slots.get(slot_name) is None:
                 # The slot is not filled yet. Request the user to fill this slot next.
