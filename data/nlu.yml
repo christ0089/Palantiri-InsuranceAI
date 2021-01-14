@@ -84,11 +84,12 @@ nlu:
 - intent: how_it_works
   examples: |
     - como funciona
-    - y que es 
+    - y que es
     - oiga que es eso
     - pues como jala
     - y como me van a atender
     - que es
+    - cómo funciona
 - intent: city_of_origin
   examples: |
     - soy de [la laguna](city)
@@ -132,7 +133,6 @@ nlu:
     - vivo en [torreon](city)
     - de [Torreon](city)
     - soy david charekh además en [torreón](city)
-    - en [la laguna]{"entity": "city", "value": "torreon"}
     - en [torreón](city)
     - yo soy de [la laguna]{"entity": "city", "value": "torreon"}
 - intent: cost
@@ -385,7 +385,7 @@ nlu:
     - [mil novecientos sesenta y tres](time)
     - celine [noventa y seis](time)
     - soy de [noventa y seis](time)
-    - el [martes](time) por favor 
+    - el [martes](time) por favor
     - he oído [noventa y seis sesenta y dos](time)
 - synonym: torreon
   examples: |
@@ -395,7 +395,6 @@ nlu:
     - perla de la laguna
     - capital de la plata
     - laguan
-    - la laguan
     - la laguan
 - synonym: bots
   examples: |

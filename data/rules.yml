@@ -1,51 +1,42 @@
 version: "2.0"
-
 rules:
-
-# - rule: Say goodbye anytime the user says goodbye
-#   steps:
-#   - intent: goodbye
-#   - action: utter_goodbye
-
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
-
 - rule: Say costs any time the user says costs
-  steps: 
+  steps:
   - intent: cost
   - action: utter_costs
-
 - rule: Say how the policy works
   steps:
   - intent: how_it_works
   - action: utter_how_it_works
-
-
-
 - rule: Submit form
   condition:
-  # Condition that form is active.
   - active_loop: policy_form
   steps:
-  # Form is deactivated
   - action: policy_form
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
-  # The actions we want to run when the form is submitted.
   - action: utter_submit
-
 - rule: Submit form woman
   condition:
-  # Condition that form is active.
   - active_loop: policy_form_woman
   steps:
-  # Form is deactivated
   - action: policy_form
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
-  # The actions we want to run when the form is submitted.
   - action: utter_submit
+- rule: Policy
+  condition:
+  - slot_was_set:
+    - sex: man
+  steps:
+  - intent: confirm
+  - action: policy_form
+  - active_loop: policy_form_woman
+  - intent: goodbye
+  - action: utter_goodbye
