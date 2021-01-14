@@ -37,7 +37,7 @@ class ActionCreateSlots(Action):
         evt = [SlotSet("name", "Christian"), SlotSet("sex", "woman")]
         return evt
 
-class ActionCreateSlots(Action):
+class ActionQuerySlots(Action):
     def name(self) -> Text:
         return "action_slot_query"
 
@@ -52,7 +52,7 @@ class ActionCreateSlots(Action):
             events = [SlotSet("name", name), SlotSet("sex", sex)]
             return events
         except: 
-            return [SlotSet("name", ""), SlotSet("sex", sex)]
+            return [SlotSet("name", ""), SlotSet("sex", "hombre")]
         
 
 class ValidatePolicyForm(Action):
