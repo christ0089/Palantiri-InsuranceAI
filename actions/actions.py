@@ -44,7 +44,7 @@ class ActionCreateSlots(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        r = requests.get('https://1ntj0abfh0.execute-api.us-east-1.amazonaws.com/PROD/customer?contactId=c3910e1e-3478-4c0a-ad28-5068a823f9b7')
+        r = requests.get('https://1ntj0abfh0.execute-api.us-east-1.amazonaws.com/PROD/customer?contactId='+ tracker["sender_id"])
         
         name = r.json()[0]["fname"]
         sex = r.json()[0]["sex"]
