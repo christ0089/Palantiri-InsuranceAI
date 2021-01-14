@@ -4,6 +4,7 @@ session_config:
 actions:
   - action_slot_reset
   - action_slot_create
+  - action_slot_query
 intents:
 - greet
 - goodbye
@@ -31,7 +32,8 @@ slots:
     influence_conversation: false
   name:
     type: text
-    influence_conversation: true
+    influence_conversation: false
+    auto_fill: True
   requested_slot:
     type: unfeaturized
     influence_conversation: false
@@ -40,7 +42,7 @@ slots:
     influence_conversation: true
 responses:
   utter_greet:
-  - text: Muy bien profesor {{name}}, mi nombre es Sari Agente de OZCE Seguros, le
+  - text: Muy bien profesor {name}, mi nombre es Sari Agente de OZCE Seguros, le
       llamo porque el Profesor Juan Manuel Ríos Ortega me pidió que le llamara, para
       explicarle los grandes beneficios de contar con un seguro de Gastos Médicos
       Mayores, que cubra el covid y otros gastos médicos más, podría hacerle unas
@@ -49,7 +51,7 @@ responses:
   - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
       vive usted?
   utter_age_question:
-  - text: Ha muy bien gracias y ¿En qué año nació usted {{name}}?,
+  - text: Ha muy bien gracias y ¿En qué año nació usted {name}?,
   utter_sms:
   - text: Para su comodidad, le enviaré por mensaje para que conozca a detalle los
       beneficios de las opciones que tenemos para ud. así como las formas de pago.
@@ -62,14 +64,14 @@ responses:
   - text: El costo depende de muchos factores, para ello necesitamos que complete
       las preguntas
   utter_goodbye:
-  - text: Muchas gracias por su atención y el nos estaremos comunicando con Ud.
+  - text: Profesor {name} muchas gracias por su atención y el nos estaremos comunicando con Ud.
   utter_iamabot:
   - text: Me llamo Sari; y le marco a nombre del Profesor Juan Manuel Ríos Ortega,
       soy un Agente de OZCE Seguros.
   utter_submit:
   - text: Pefecto gracias por los datos
   utter_ask_Bdbo:
-  - text: Ha muy bien gracias y ¿En qué año nació usted {{name}}?,
+  - text: Ha muy bien gracias y ¿En qué año nació usted {name}?,
   utter_ask_Acity:
   - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
       vive usted?

@@ -33,8 +33,9 @@ class ActionCreateSlots(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        required_slots = ["Name"]
-        return [SlotSet("name", required_slots[0])]
+        slot = tracker.get_slot('name')
+        evt = SlotSet("name", "Christian")
+        return [evt]
 
 class ActionCreateSlots(Action):
     def name(self) -> Text:
@@ -43,8 +44,10 @@ class ActionCreateSlots(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        required_slots = ["Name"]
-        return [SlotSet("name", required_slots[0])]
+        r = requests.get('https://1ntj0abfh0.execute-api.us-east-1.amazonaws.com/PROD/customer?contactId=5ca32fbd-8f92-46af-92a5-6b0f970f0efe')
+        
+        name = r.json()[0]["fname"]
+        return [SlotSet("name", name)]
 
 class ValidateRestaurantForm(Action):
     def name(self) -> Text:

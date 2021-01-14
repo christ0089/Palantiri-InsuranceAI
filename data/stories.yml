@@ -6,6 +6,7 @@ stories:
   - action: utter_greet
   - intent: goodbye
   - action: utter_goodbye
+
 - story: Story from Conversation ID 021cb753af6c4e2cbb10f3c5b46421d6
   steps:
   - intent: greet
