@@ -7,3 +7,8 @@ stories:
   - action: utter_greet
   - intent: goodbye
   - action: utter_goodbye
+- story: Sad Path
+  steps:
+  - intent: goodbye
+  - action: action_slot_query
+  - action: utter_goodbye

@@ -310,6 +310,7 @@ nlu:
     - sí
     - gracias
     - bien gracias
+    - claro
 - intent: deny
   examples: |
     - no

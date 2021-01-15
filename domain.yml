@@ -1,10 +1,6 @@
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-actions:
-  - action_slot_reset
-  - action_slot_create
-  - action_slot_query
 intents:
 - greet
 - goodbye
@@ -37,7 +33,6 @@ slots:
   name:
     type: text
     influence_conversation: false
-    auto_fill: True
   requested_slot:
     type: any
     influence_conversation: false
@@ -46,11 +41,10 @@ slots:
     influence_conversation: true
 responses:
   utter_greet:
-  - text: Muy bien profesor {name}, mi nombre es Sari Agente de OZCE Seguros, le
-      llamo porque el Profesor Juan Manuel Ríos Ortega me pidió que le llamara, para
-      explicarle los grandes beneficios de contar con un seguro de Gastos Médicos
-      Mayores, que cubra el covid y otros gastos médicos más, podría hacerle unas
-      preguntas?
+  - text: Muy bien profesor {name}, mi nombre es Sari Agente de OZCE Seguros, le llamo
+      porque el Profesor Juan Manuel Ríos Ortega me pidió que le llamara, para explicarle
+      los grandes beneficios de contar con un seguro de Gastos Médicos Mayores, que
+      cubra el covid y otros gastos médicos más, podría hacerle unas preguntas?
   utter_city_of_origin:
   - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
       vive usted?
@@ -68,14 +62,23 @@ responses:
   - text: El costo depende de muchos factores, para ello necesitamos que complete
       las preguntas
   utter_goodbye:
-  - text: Profesor {name} muchas gracias por su atención y el nos estaremos comunicando con Ud.
+  - custom:
+      status: end_conversation
+    text: Profesor {name} muchas gracias por su atención y el nos estaremos comunicando
+      con usted
   utter_iamabot:
   - text: Me llamo Sari; y le marco a nombre del Profesor Juan Manuel Ríos Ortega,
       soy un Agente de OZCE Seguros.
   utter_submit:
-  - text: Pefecto gracias por los datos
+  - custom:
+      status: sms
+    text: Pefecto gracias por los datos
+  - custom:
+      status: sms
+    text: Gracias por los datos.
   utter_how_it_works:
-  - text: Claro, al final de contestar la preguntas, un agente se contactar con usted para finalizar los detalles.
+  - text: Claro, al final de contestar la preguntas, un agente se contactar con usted
+      para finalizar los detalles.
   utter_ask_Bdbo:
   - text: Ha muy bien gracias y ¿En qué año nació usted {name}?,
   utter_ask_Acity:
@@ -88,9 +91,11 @@ responses:
       beneficios de las opciones que tenemos para ud. así como las formas de pago.
       Por último, profesor, cuando le puedo llamar para dispar dudas de las opciones
       que le acabo de enviar?
-
+actions:
+- action_slot_reset
+- action_slot_create
+- action_slot_query
 forms:
-  ## Form for men 
   policy_form:
     Acity:
     - entity: city
@@ -102,8 +107,6 @@ forms:
     Dappointment:
     - entity: time
       type: from_entity
-
-  ## Form for woman
   policy_form_woman:
     Acity:
     - entity: city
@@ -113,8 +116,8 @@ forms:
     - entity: time
       type: from_entity
     Cmaternity:
-    - type: from_trigger_intent
-      intent: confirm
+    - intent: confirm
+      type: from_trigger_intent
       value: accept
     Dappointment:
     - entity: time
