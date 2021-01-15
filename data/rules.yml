@@ -30,13 +30,19 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_submit
-- rule: Policy
+- rule: PolicyMan
   condition:
   - slot_was_set:
     - sex: man
   steps:
   - intent: confirm
   - action: policy_form
-  - active_loop: policy_form_woman
-  - intent: goodbye
-  - action: utter_goodbye
+  - active_loop: policy_form
+- rule: PolicyWoman
+  condition:
+  - slot_was_set:
+    - sex: woman
+  steps:
+  - intent: confirm
+  - action: policy_form
+  - active_loop: policy_form
