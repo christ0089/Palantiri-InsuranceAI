@@ -21,6 +21,7 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_submit
+
 - rule: Submit form woman
   condition:
   - active_loop: policy_form_woman
@@ -30,6 +31,7 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_submit
+
 - rule: PolicyMan
   condition:
   - slot_was_set:
@@ -38,6 +40,7 @@ rules:
   - intent: confirm
   - action: policy_form
   - active_loop: policy_form
+  
 - rule: PolicyWoman
   condition:
   - slot_was_set:

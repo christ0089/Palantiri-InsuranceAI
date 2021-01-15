@@ -7,6 +7,15 @@ stories:
   - action: utter_greet
   - intent: goodbye
   - action: utter_goodbye
+
+- story: Test Happy Path 2
+  steps:
+  - intent: confirm
+  - action: action_slot_query
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye
+  
 - story: Sad Path
   steps:
   - intent: goodbye
