@@ -25,6 +25,11 @@ pipeline:
   - name: FallbackClassifier
     threshold: 0.3
     ambiguity_threshold: 0.1
+  - name: RegexEntityExtractor
+      # text will be processed with case insensitive as default
+    case_sensitive: False
+      # use lookup tables to extract entities
+    use_lookup_tables: True
   - name: "DucklingEntityExtractor"
     url: "http://localhost:8000"
     dimensions: ["time"]

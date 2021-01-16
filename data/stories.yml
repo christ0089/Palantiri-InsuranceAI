@@ -45,7 +45,7 @@ stories:
   - slot_was_set:
     - requested_slot: Acity
   - intent: wrong_input
-  - action: utter_wrong_input_ACity
+  - action: utter_wrong_input_Acity
   - action: policy_form
 
 - story: User made a mistake in the Dbo
@@ -57,7 +57,7 @@ stories:
   - slot_was_set:
     - requested_slot: Bdbo
   - intent: wrong_input
-  - action: utter_wrong_input_Bdbo
+  - action: utter_wrong_input_Acity
   - action: policy_form
 
 - story: User made a mistake in the Appointment
@@ -71,7 +71,7 @@ stories:
   - slot_was_set:
     - requested_slot: Dappointment
   - intent: wrong_input
-  - action: utter_wrong_input_Dappointment
+  - action: utter_wrong_input_Bdbo
   - action: policy_form
 
 
