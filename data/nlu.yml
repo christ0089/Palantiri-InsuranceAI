@@ -119,6 +119,7 @@ nlu:
     - corregir
     - cometi un error
     - error
+    - me equivoque perdon
 - intent: city_of_origin
   examples: |
     - soy de [la laguna](city)
@@ -169,6 +170,10 @@ nlu:
     - sí a [torreón](city)
     - vivo en [torreón](city)
     - en [torreón](city) coahuila
+    - soy de[ Monclova](city)
+    - en [la perla de la laguna](city)[la laguna]{"entity": "city", "value": "torreon"}
+    - soy de [gomez](city)
+    - Naci en [Torreon](city)
 - intent: cost
   examples: |
     - cual es el costo
@@ -244,6 +249,8 @@ nlu:
     - que precio
     - cuánto cuesta
     - cuánto sale
+    - cómo se calcula
+    - oye cuánto cuesta
 - intent: confirm
   examples: |
     - si
@@ -351,6 +358,9 @@ nlu:
     - a qué sí
     - claro que sí adelante
     - claro que sí
+    - sí a verdad
+    - pero sí
+    - adelante
 - intent: deny
   examples: |
     - no
@@ -445,6 +455,8 @@ nlu:
     - el [martes](time) estaría bien
     - bien [noventa y seis](time)
     - [mi novecientos noventa y seis](city)
+    - [monclova](city)
+    - es de [sesenta y tres](time)
 - synonym: torreon
   examples: |
     - la laguna
@@ -454,6 +466,7 @@ nlu:
     - capital de la plata
     - laguan
     - la laguan
+    - la perla de la laguna
 - synonym: bots
   examples: |
     - skynet
