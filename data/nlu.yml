@@ -99,6 +99,16 @@ nlu:
     - cómo funciona
     - cuénta me cómo funciona aquí
     - y cómo funciona esto
+- intent: repeat_question
+  examples: |
+    - me lo podrías repetir
+    - no te entendí
+    - repitelo porfavor
+    - que dijo
+    - que dijiste
+    - cual fue la preguntas
+    - que pregunta hiciste
+    - que necesitas saber
 - intent: city_of_origin
   examples: |
     - soy de [la laguna](city)

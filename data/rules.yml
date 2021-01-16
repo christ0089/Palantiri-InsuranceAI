@@ -8,6 +8,10 @@ rules:
   steps:
   - intent: cost
   - action: utter_costs
+- rule: Repeat las intent answer 
+  steps:
+  - intent: repeat_question
+  - action: utter_repeat
 - rule: Say how the policy works
   steps:
   - intent: how_it_works
@@ -40,7 +44,7 @@ rules:
   - intent: confirm
   - action: policy_form
   - active_loop: policy_form
-  
+
 - rule: PolicyWoman
   condition:
   - slot_was_set:
