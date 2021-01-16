@@ -109,6 +109,16 @@ nlu:
     - cual fue la preguntas
     - que pregunta hiciste
     - que necesitas saber
+- intent: wrong_input
+  examples: |
+    - me equivoque
+    - lo quireo corregir
+    - me confundi
+    - lo puedo cambiar
+    - cambiar
+    - corregir
+    - cometi un error
+    - error
 - intent: city_of_origin
   examples: |
     - soy de [la laguna](city)

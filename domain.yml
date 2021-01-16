@@ -10,6 +10,8 @@ intents:
 - deny
 - cost
 - how_it_works
+- wrong_input
+- repeat_question
 - bot_challenge
 entities:
 - city
@@ -47,6 +49,12 @@ responses:
       cubra el covid y otros gastos médicos más, podría hacerle unas preguntas?
   utter_repeat:
   - text: Claro que sí la pregunta fue.
+  utter_wrong_input_ACity:
+  - text: Que quisieras poder corregir? Tengo que eres de {Acity}.
+  utter_wrong_input_Bdbo:
+  - text: Que quisieras poder corregir? Tengo que naciste el {Bdbo} y que eres de {Acity}.
+  utter_wrong_input_Dappointment:
+  - text: Que quisieras poder corregir? Tengo que tu cita es para el {Dappointment}. Que naciste el {Bdbo} y que eres de {Acity}.
   utter_city_of_origin:
   - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
       vive usted?

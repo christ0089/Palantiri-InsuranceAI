@@ -16,6 +16,7 @@ rules:
   steps:
   - intent: how_it_works
   - action: utter_how_it_works
+
 - rule: Submit form
   condition:
   - active_loop: policy_form

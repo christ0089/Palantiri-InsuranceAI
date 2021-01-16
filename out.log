@@ -3857,3 +3857,391 @@ rasa.shared.exceptions.RasaException: Failed to execute custom action.
 2021-01-15 11:22:49,970 [DEBUG]  Policy prediction ended with events '[]'.
 2021-01-15 11:22:49,971 [DEBUG]  Action 'action_listen' ended with events '[]'.
 2021-01-15 11:22:49,971 [DEBUG]  Deleted lock for conversation 'a5a6f099a46e42eaaad923709d793c17'.
+2021-01-16 09:36:50,594 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2021-01-16 09:36:50,595 [INFO ]  Starting Rasa server on http://localhost:5005
+2021-01-16 09:36:50,595 [DEBUG]  Using the default number of Sanic workers (1).
+2021-01-16 09:36:50,598 [INFO ]  Loading model models/20210116-093436.tar.gz...
+2021-01-16 09:36:50,949 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpl3teywpk'.
+2021-01-16 09:36:50,970 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2021-01-16 09:36:51,254 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2021-01-16 09:36:51,260 [INFO ]  Enabling coroutine debugging. Loop id 140413061742608.
+2021-01-16 09:36:51,274 [INFO ]  Loading model models/20210116-093436.tar.gz...
+2021-01-16 09:36:51,607 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpti6_je_e'.
+2021-01-16 09:36:51,838 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpti6_je_e/nlu/component_5_DIETClassifier.tf_model with finetune_mode=False...
+2021-01-16 09:36:52,015 [DEBUG]  Following metrics will be logged during training: 
+2021-01-16 09:36:52,015 [DEBUG]    t_loss (total loss)
+2021-01-16 09:36:52,016 [DEBUG]    i_acc (intent acc)
+2021-01-16 09:36:52,016 [DEBUG]    i_loss (intent loss)
+2021-01-16 09:36:52,016 [DEBUG]    e_f1 (entity f1)
+2021-01-16 09:36:52,016 [DEBUG]    e_loss (entity loss)
+2021-01-16 09:36:53,420 [DEBUG]  Finished loading the model.
+2021-01-16 09:36:53,423 [DEBUG]  Building tensorflow prediction graph...
+2021-01-16 09:36:58,737 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-16 09:36:58,738 [DEBUG]  Failed to load model for 'ResponseSelector'. Maybe you did not provide enough training data and no model was trained or the path '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpti6_je_e/nlu' doesn't exist?
+2021-01-16 09:36:58,746 [DEBUG]  Connected to InMemoryTrackerStore.
+2021-01-16 09:36:58,746 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2021-01-16 09:36:59,076 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpofs820ki'.
+2021-01-16 09:36:59,200 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpofs820ki/core/policy_1_TEDPolicy/ted_policy.tf_model with finetune_mode=False...
+2021-01-16 09:36:59,580 [DEBUG]  Finished loading the model.
+2021-01-16 09:36:59,587 [DEBUG]  Building tensorflow prediction graph...
+2021-01-16 09:37:04,214 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-16 09:37:04,217 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2021-01-16 09:37:04,217 [INFO ]  Rasa server is up and running.
+2021-01-16 09:37:14,150 [DEBUG]  Issuing ticket for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:14,150 [DEBUG]  Acquiring lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:14,151 [DEBUG]  Acquired lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:14,151 [DEBUG]  Could not find tracker for conversation ID 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:14,151 [DEBUG]  Starting a new session for conversation ID 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:14,156 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-16 09:37:14,156 [DEBUG]  Action 'action_session_start' ended with events '[<rasa.shared.core.events.SessionStarted object at 0x145e5aa90>, ActionExecuted(action: action_listen, policy: None, confidence: None)]'.
+2021-01-16 09:37:14,157 [DEBUG]  Current slot values: 
+	Acity: None
+	Bdbo: None
+	Cmaternity: None
+	Dappointment: None
+	name: None
+	requested_slot: None
+	sex: None
+2021-01-16 09:37:14,731 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-16 09:37:14,732 [DEBUG]  Adding following selector key to message property: default
+2021-01-16 09:37:14,736 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-16 09:37:14,770 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-16 09:37:14,777 [DEBUG]  Received user message 'hola' with intent '{'id': -148671323054787102, 'name': 'greet', 'confidence': 0.9999945163726807}' and entities '[]'
+2021-01-16 09:37:14,780 [DEBUG]  Logged UserUtterance - tracker now has 4 events.
+2021-01-16 09:37:14,787 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+2021-01-16 09:37:14,788 [DEBUG]  There is a memorised next action 'action_slot_query'
+2021-01-16 09:37:14,795 [DEBUG]  Current tracker state:
+[state 1] user text: hola | previous action name: action_listen
+2021-01-16 09:37:14,796 [DEBUG]  There is no applicable rule.
+2021-01-16 09:37:14,797 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+2021-01-16 09:37:14,797 [DEBUG]  There is no applicable rule.
+2021-01-16 09:37:14,798 [DEBUG]  Made prediction using user intent.
+2021-01-16 09:37:14,798 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-16 09:37:14,799 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy.
+2021-01-16 09:37:14,799 [DEBUG]  Predicted next action 'action_slot_query' with confidence 1.00.
+2021-01-16 09:37:14,800 [DEBUG]  Calling action endpoint to run action 'action_slot_query'.
+2021-01-16 09:37:16,894 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x145de37c0>]'.
+2021-01-16 09:37:16,894 [DEBUG]  Action 'action_slot_query' ended with events '[<rasa.shared.core.events.SlotSet object at 0x144b653d0>, <rasa.shared.core.events.SlotSet object at 0x145e73ac0>]'.
+2021-01-16 09:37:16,894 [DEBUG]  Current slot values: 
+	Acity: None
+	Bdbo: None
+	Cmaternity: None
+	Dappointment: None
+	name: DemoMan
+	requested_slot: None
+	sex: man
+2021-01-16 09:37:16,895 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+2021-01-16 09:37:16,895 [DEBUG]  There is a memorised next action 'utter_greet'
+2021-01-16 09:37:16,903 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+2021-01-16 09:37:16,903 [DEBUG]  There is no applicable rule.
+2021-01-16 09:37:16,903 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy.
+2021-01-16 09:37:16,903 [DEBUG]  Predicted next action 'utter_greet' with confidence 1.00.
+2021-01-16 09:37:16,906 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-16 09:37:16,907 [DEBUG]  Action 'utter_greet' ended with events '[BotUttered('Muy bien profesor DemoMan, mi nombre es Sari Agente de OZCE Seguros, le llamo porque el Profesor Juan Manuel Ríos Ortega me pidió que le llamara, para explicarle los grandes beneficios de contar con un seguro de Gastos Médicos Mayores, que cubra el covid y otros gastos médicos más, podría hacerle unas preguntas?', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_greet"}, 1610811436.906657)]'.
+2021-01-16 09:37:16,908 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 3] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+2021-01-16 09:37:16,912 [DEBUG]  There is a memorised next action 'action_listen'
+2021-01-16 09:37:16,927 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 3] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+2021-01-16 09:37:16,928 [DEBUG]  There is no applicable rule.
+2021-01-16 09:37:16,928 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy.
+2021-01-16 09:37:16,928 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-16 09:37:16,928 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-16 09:37:16,929 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-16 09:37:16,929 [DEBUG]  Deleted lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:26,304 [DEBUG]  Issuing ticket for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:26,304 [DEBUG]  Acquiring lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:26,305 [DEBUG]  Acquired lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:26,305 [DEBUG]  Recreating tracker for id 'bca7937974db4272bffc1684bb20ea3c'
+2021-01-16 09:37:26,318 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-16 09:37:26,318 [DEBUG]  Adding following selector key to message property: default
+2021-01-16 09:37:26,322 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-16 09:37:26,336 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-16 09:37:26,336 [DEBUG]  Received user message 'claro que si' with intent '{'id': -8407830600741610351, 'name': 'confirm', 'confidence': 0.9998860359191895}' and entities '[]'
+2021-01-16 09:37:26,337 [DEBUG]  Logged UserUtterance - tracker now has 12 events.
+2021-01-16 09:37:26,338 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 3] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 4] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+2021-01-16 09:37:26,338 [DEBUG]  There is a memorised next action 'policy_form'
+2021-01-16 09:37:26,354 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 3] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 4] user text: claro que si | previous action name: action_listen | slots: {'sex': (1.0,)}
+2021-01-16 09:37:26,355 [DEBUG]  There is no applicable rule.
+2021-01-16 09:37:26,355 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 3] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 4] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+2021-01-16 09:37:26,356 [DEBUG]  There is a rule for the next action 'policy_form'.
+2021-01-16 09:37:26,356 [DEBUG]  Made prediction using user intent.
+2021-01-16 09:37:26,356 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-16 09:37:26,356 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-16 09:37:26,359 [DEBUG]  Predicted next action 'policy_form' with confidence 1.00.
+2021-01-16 09:37:26,359 [DEBUG]  Activated the form 'policy_form'.
+2021-01-16 09:37:26,360 [DEBUG]  No pre-filled required slots to validate.
+2021-01-16 09:37:26,360 [DEBUG]  Validating user input 'UserUttered(text: claro que si, intent: confirm, use_text_for_featurization: False)'.
+2021-01-16 09:37:26,360 [DEBUG]  Validating extracted slots: {}
+2021-01-16 09:37:26,360 [DEBUG]  Request next slot 'Acity'
+2021-01-16 09:37:26,361 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x145e78580>]'.
+2021-01-16 09:37:26,361 [DEBUG]  Action 'policy_form' ended with events '[<rasa.shared.core.events.ActiveLoop object at 0x14601cd90>, <rasa.shared.core.events.SlotSet object at 0x146063400>, BotUttered('Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad vive usted?', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_ask_Acity"}, 1610811446.3611252)]'.
+2021-01-16 09:37:26,365 [DEBUG]  Current slot values: 
+	Acity: None
+	Bdbo: None
+	Cmaternity: None
+	Dappointment: None
+	name: DemoMan
+	requested_slot: Acity
+	sex: man
+2021-01-16 09:37:26,366 [DEBUG]  Current tracker state:
+[state 0] user intent: greet | previous action name: action_listen
+[state 1] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 2] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 3] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+[state 4] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'sex': (1.0,)}
+2021-01-16 09:37:26,366 [DEBUG]  There is no memorised next action
+2021-01-16 09:37:26,379 [DEBUG]  Predicted 'action_listen' after loop 'policy_form'.
+2021-01-16 09:37:26,380 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-16 09:37:26,381 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-16 09:37:26,381 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-16 09:37:26,381 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-16 09:37:26,381 [DEBUG]  Deleted lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:33,723 [DEBUG]  Issuing ticket for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:33,724 [DEBUG]  Acquiring lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:33,724 [DEBUG]  Acquired lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:33,724 [DEBUG]  Recreating tracker for id 'bca7937974db4272bffc1684bb20ea3c'
+2021-01-16 09:37:33,735 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-16 09:37:33,735 [DEBUG]  Adding following selector key to message property: default
+2021-01-16 09:37:33,739 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-16 09:37:33,747 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-16 09:37:33,748 [DEBUG]  Received user message 'soy de torreon' with intent '{'id': 4870111796630602675, 'name': 'city_of_origin', 'confidence': 0.9999940991401672}' and entities '[{'entity': 'city', 'start': 7, 'end': 14, 'confidence_entity': 0.9995418787002563, 'value': 'torreon', 'extractor': 'DIETClassifier'}]'
+2021-01-16 09:37:33,749 [DEBUG]  Current slot values: 
+	Acity: None
+	Bdbo: None
+	Cmaternity: None
+	Dappointment: None
+	name: DemoMan
+	requested_slot: Acity
+	sex: man
+2021-01-16 09:37:33,749 [DEBUG]  Logged UserUtterance - tracker now has 19 events.
+2021-01-16 09:37:33,751 [DEBUG]  Current tracker state:
+[state 0] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 1] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 2] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+[state 3] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'sex': (1.0,)}
+[state 4] user intent: city_of_origin | user entities: ('city',) | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'sex': (1.0,)}
+2021-01-16 09:37:33,751 [DEBUG]  There is no memorised next action
+2021-01-16 09:37:33,770 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 3] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 4] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+[state 5] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'sex': (1.0,)}
+[state 6] user text: soy de torreon | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'sex': (1.0,)}
+2021-01-16 09:37:33,771 [DEBUG]  There is no applicable rule.
+2021-01-16 09:37:33,771 [DEBUG]  Predicted loop 'policy_form'.
+2021-01-16 09:37:33,771 [DEBUG]  Made prediction using user intent.
+2021-01-16 09:37:33,771 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-16 09:37:33,771 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-16 09:37:33,771 [DEBUG]  Predicted next action 'policy_form' with confidence 1.00.
+2021-01-16 09:37:33,772 [DEBUG]  Validating user input 'UserUttered(text: soy de torreon, intent: city_of_origin, entities: torreon (Type: city, Role: None, Group: None), use_text_for_featurization: False)'.
+2021-01-16 09:37:33,772 [DEBUG]  Trying to extract requested slot 'Acity' ...
+2021-01-16 09:37:33,772 [DEBUG]  Got mapping '{'entity': 'city', 'intent': 'city_of_origin', 'type': 'from_entity'}'
+2021-01-16 09:37:33,772 [DEBUG]  Successfully extracted 'torreon' for requested slot 'Acity'
+2021-01-16 09:37:33,772 [DEBUG]  Validating extracted slots: {'Acity': 'torreon'}
+2021-01-16 09:37:33,773 [DEBUG]  Request next slot 'Bdbo'
+2021-01-16 09:37:33,773 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x1460d5ee0>]'.
+2021-01-16 09:37:33,776 [DEBUG]  Action 'policy_form' ended with events '[<rasa.shared.core.events.SlotSet object at 0x1461454c0>, <rasa.shared.core.events.SlotSet object at 0x1460d58b0>, BotUttered('Ha muy bien gracias y ¿En qué año nació usted DemoMan?,', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_ask_Bdbo"}, 1610811453.7733781)]'.
+2021-01-16 09:37:33,776 [DEBUG]  Current slot values: 
+	Acity: torreon
+	Bdbo: None
+	Cmaternity: None
+	Dappointment: None
+	name: DemoMan
+	requested_slot: Bdbo
+	sex: man
+2021-01-16 09:37:33,777 [DEBUG]  Current tracker state:
+[state 0] user intent: greet | previous action name: action_listen
+[state 1] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 2] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 3] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+[state 4] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+2021-01-16 09:37:33,781 [DEBUG]  There is no memorised next action
+2021-01-16 09:37:33,795 [DEBUG]  Predicted 'action_listen' after loop 'policy_form'.
+2021-01-16 09:37:33,795 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-16 09:37:33,796 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-16 09:37:33,796 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-16 09:37:33,796 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-16 09:37:33,796 [DEBUG]  Deleted lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:37,713 [DEBUG]  Issuing ticket for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:37,713 [DEBUG]  Acquiring lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:37,713 [DEBUG]  Acquired lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:37:37,713 [DEBUG]  Recreating tracker for id 'bca7937974db4272bffc1684bb20ea3c'
+2021-01-16 09:37:37,726 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-16 09:37:37,726 [DEBUG]  Adding following selector key to message property: default
+2021-01-16 09:37:37,730 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-16 09:37:37,741 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-16 09:37:37,742 [DEBUG]  Received user message 'me equivique' with intent '{'id': 8113800512398174463, 'name': 'wrong_input', 'confidence': 0.9632412195205688}' and entities '[]'
+2021-01-16 09:37:37,743 [DEBUG]  Logged UserUtterance - tracker now has 26 events.
+2021-01-16 09:37:37,745 [DEBUG]  Current tracker state:
+[state 0] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 1] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 2] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+[state 3] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 4] user intent: wrong_input | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+2021-01-16 09:37:37,745 [DEBUG]  There is no memorised next action
+2021-01-16 09:37:37,762 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 3] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 4] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+[state 5] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 6] user text: me equivique | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+2021-01-16 09:37:37,762 [DEBUG]  There is no applicable rule.
+2021-01-16 09:37:37,762 [DEBUG]  Predicted loop 'policy_form'.
+2021-01-16 09:37:37,762 [DEBUG]  Made prediction using user intent.
+2021-01-16 09:37:37,763 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-16 09:37:37,763 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-16 09:37:37,763 [DEBUG]  Predicted next action 'policy_form' with confidence 1.00.
+2021-01-16 09:37:37,763 [DEBUG]  Validating user input 'UserUttered(text: me equivique, intent: wrong_input, use_text_for_featurization: False)'.
+2021-01-16 09:37:37,763 [DEBUG]  Trying to extract requested slot 'Bdbo' ...
+2021-01-16 09:37:37,763 [DEBUG]  Got mapping '{'entity': 'time', 'type': 'from_entity'}'
+2021-01-16 09:37:37,763 [DEBUG]  Failed to extract requested slot 'Bdbo'
+2021-01-16 09:37:37,764 [DEBUG]  Validating extracted slots: {}
+2021-01-16 09:37:37,765 [DEBUG]  Current tracker state:
+[state 0] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 1] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 2] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+[state 3] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 4] user intent: wrong_input | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+2021-01-16 09:37:37,769 [DEBUG]  There is no memorised next action
+2021-01-16 09:37:37,783 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 3] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 4] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+[state 5] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 6] previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+2021-01-16 09:37:37,784 [DEBUG]  There is no applicable rule.
+2021-01-16 09:37:37,785 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 3] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 4] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+[state 5] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 6] user intent: wrong_input | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+2021-01-16 09:37:37,790 [DEBUG]  There is no applicable rule.
+2021-01-16 09:37:37,790 [DEBUG]  Execution of 'policy_form' was rejected. Setting its confidence to 0.0 in all predictions.
+2021-01-16 09:37:37,790 [DEBUG]  Made prediction using user intent.
+2021-01-16 09:37:37,790 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-16 09:37:37,791 [DEBUG]  Predicted next action using policy_1_TEDPolicy.
+2021-01-16 09:37:37,791 [DEBUG]  Predicted next action 'utter_wrong_input_Dappointment' with confidence 0.36.
+2021-01-16 09:37:37,791 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x14619fac0>]'.
+2021-01-16 09:37:37,792 [DEBUG]  Action 'utter_wrong_input_Dappointment' ended with events '[BotUttered('Que quisieras poder corregir? Tengo que  tu citas es para el None. Que naciste en None y que eres de torreon.', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_wrong_input_Dappointment"}, 1610811457.7917728)]'.
+2021-01-16 09:37:37,798 [DEBUG]  Current tracker state:
+[state 0] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 1] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+[state 2] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 3] user intent: wrong_input | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 4] user intent: wrong_input | previous action name: utter_wrong_input_Dappointment | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+2021-01-16 09:37:37,798 [DEBUG]  There is no memorised next action
+2021-01-16 09:37:37,812 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 3] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 4] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+[state 5] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 6] user intent: wrong_input | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 7] user intent: wrong_input | previous action name: utter_wrong_input_Dappointment | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+2021-01-16 09:37:37,812 [DEBUG]  There is no applicable rule.
+2021-01-16 09:37:37,815 [DEBUG]  Predicted next action using policy_1_TEDPolicy.
+2021-01-16 09:37:37,815 [DEBUG]  Predicted next action 'action_listen' with confidence 0.60.
+2021-01-16 09:37:37,815 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-16 09:37:37,816 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-16 09:37:37,816 [DEBUG]  Deleted lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:38:07,585 [DEBUG]  Issuing ticket for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:38:07,585 [DEBUG]  Acquiring lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:38:07,585 [DEBUG]  Acquired lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
+2021-01-16 09:38:07,585 [DEBUG]  Recreating tracker for id 'bca7937974db4272bffc1684bb20ea3c'
+2021-01-16 09:38:07,596 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-16 09:38:07,597 [DEBUG]  Adding following selector key to message property: default
+2021-01-16 09:38:07,599 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-16 09:38:07,605 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-16 09:38:07,606 [DEBUG]  Received user message 'Soy de la laguna' with intent '{'id': 4870111796630602675, 'name': 'city_of_origin', 'confidence': 0.999995231628418}' and entities '[{'entity': 'city', 'start': 7, 'end': 16, 'confidence_entity': 0.9971553087234497, 'value': 'torreon', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}]'
+2021-01-16 09:38:07,607 [DEBUG]  Current slot values: 
+	Acity: torreon
+	Bdbo: None
+	Cmaternity: None
+	Dappointment: None
+	name: DemoMan
+	requested_slot: Bdbo
+	sex: man
+2021-01-16 09:38:07,608 [DEBUG]  Logged UserUtterance - tracker now has 32 events.
+2021-01-16 09:38:07,609 [DEBUG]  Current tracker state:
+[state 0] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+[state 1] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 2] user intent: wrong_input | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 3] user intent: wrong_input | previous action name: utter_wrong_input_Dappointment | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 4] user intent: city_of_origin | user entities: ('city',) | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+2021-01-16 09:38:07,614 [DEBUG]  There is no memorised next action
+2021-01-16 09:38:07,630 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 3] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 4] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+[state 5] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 6] user intent: wrong_input | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 7] user intent: wrong_input | previous action name: utter_wrong_input_Dappointment | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 8] user text: Soy de la laguna | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+2021-01-16 09:38:07,636 [DEBUG]  There is no applicable rule.
+2021-01-16 09:38:07,636 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: action_slot_query | slots: {'sex': (1.0,)}
+[state 3] user intent: greet | previous action name: utter_greet | slots: {'sex': (1.0,)}
+[state 4] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,)}
+[state 5] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 6] user intent: wrong_input | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 7] user intent: wrong_input | previous action name: utter_wrong_input_Dappointment | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+[state 8] user intent: city_of_origin | user entities: ('city',) | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,)}
+2021-01-16 09:38:07,637 [DEBUG]  There is no applicable rule.
+2021-01-16 09:38:07,638 [DEBUG]  Made prediction using user intent.
+2021-01-16 09:38:07,638 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-16 09:38:07,638 [DEBUG]  Predicted next action using policy_1_TEDPolicy.
+2021-01-16 09:38:07,638 [DEBUG]  Predicted next action 'action_listen' with confidence 0.72.
+2021-01-16 09:38:07,639 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x14613f430>]'.
+2021-01-16 09:38:07,640 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-16 09:38:07,644 [DEBUG]  Deleted lock for conversation 'bca7937974db4272bffc1684bb20ea3c'.
