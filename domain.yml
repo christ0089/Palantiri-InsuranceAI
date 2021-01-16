@@ -50,11 +50,13 @@ responses:
   utter_repeat:
   - text: Claro que sí la pregunta fue.
   utter_wrong_input_ACity:
-  - text: Que quisieras poder corregir? Tengo que eres de {Acity}.
+  - text: Que quisieras poder corregir? Tengo que eres de {Acity} .
   utter_wrong_input_Bdbo:
-  - text: Que quisieras poder corregir? Tengo que naciste el {Bdbo} y que eres de {Acity}.
+  - text: Que quisieras poder corregir? Tengo que naciste el {Bdbo} y que eres de
+      {Acity}.
   utter_wrong_input_Dappointment:
-  - text: Que quisieras poder corregir? Tengo que tu cita es para el {Dappointment}. Que naciste el {Bdbo} y que eres de {Acity}.
+  - text: Que quisieras poder corregir? Tengo que tu cita es para el {Dappointment}.
+      Que naciste el {Bdbo} y que eres de {Acity}.
   utter_city_of_origin:
   - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
       vive usted?
@@ -90,7 +92,7 @@ responses:
   - text: Claro, al final de contestar la preguntas, un agente se contactar con usted
       para finalizar los detalles.
   utter_ask_Bdbo:
-  - text: Ha muy bien gracias y ¿En qué año nació usted {name}?,
+  - text: Ha esa es una muy bonita ciudad. ¿En qué año nació usted {name}?
   utter_ask_Acity:
   - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
       vive usted?
