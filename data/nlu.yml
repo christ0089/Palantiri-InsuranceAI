@@ -49,6 +49,12 @@ nlu:
     - hola, muy bien y usted
     - muy bien, usted
     - hoal
+    - HOa
+    - muy bien a hola
+    - hola abuela
+    - di os
+    - aló
+    - hola muy bien
 - intent: goodbye
   examples: |
     - hasta luego
@@ -81,6 +87,7 @@ nlu:
     - vayase al carajo
     - cuelgo bye
     - ya me voy nos vemos
+    - ella luego
 - intent: how_it_works
   examples: |
     - como funciona
@@ -90,6 +97,8 @@ nlu:
     - y como me van a atender
     - que es
     - cómo funciona
+    - cuénta me cómo funciona aquí
+    - y cómo funciona esto
 - intent: city_of_origin
   examples: |
     - soy de [la laguna](city)
@@ -136,6 +145,10 @@ nlu:
     - en [torreón](city)
     - yo soy de [la laguna]{"entity": "city", "value": "torreon"}
     - yo vivo en [torreón](city)
+    - yo estoy en [la laguna]{"entity": "city", "value": "torreon"}
+    - sí a [torreón](city)
+    - vivo en [torreón](city)
+    - en [torreón](city) coahuila
 - intent: cost
   examples: |
     - cual es el costo
@@ -313,6 +326,11 @@ nlu:
     - bien gracias
     - claro
     - sí por favor
+    - sí claro
+    - muy bien gracias
+    - a qué sí
+    - claro que sí adelante
+    - claro que sí
 - intent: deny
   examples: |
     - no
@@ -368,6 +386,9 @@ nlu:
     - te llamas como?
     - eres [siri](bots)?
     - estoy hablando con [siri](bots)?
+    - eres una [alexa](bots)
+    - a quién eres tú otra vez
+    - quién eres
 - intent: inform
   examples: |
     - naci el [2020](time)
@@ -394,6 +415,16 @@ nlu:
     - el [noventa y seis](time)
     - en el el [martes](time)
     - pasado [mañana](time)
+    - [mañana](time) estaría bien
+    - [9996](time)
+    - en el [996](time)
+    - eh el [martes](time)
+    - ml [noventa y seis](time)
+    - creo que el miércoles estaría bien
+    - era de [noventa y seis](time)
+    - el [martes](time) estaría bien
+    - bien [noventa y seis](time)
+    - [mi novecientos noventa y seis](city)
 - synonym: torreon
   examples: |
     - la laguna

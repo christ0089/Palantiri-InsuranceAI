@@ -1,13 +1,5 @@
 version: "2.0"
 stories:
-- story: Test Happy Path
-  steps:
-  - intent: greet
-  - action: action_slot_query
-  - action: utter_greet
-  - intent: goodbye
-  - action: utter_goodbye
-
 - story: Test Happy Path 2
   steps:
   - intent: confirm
@@ -15,9 +7,64 @@ stories:
   - action: utter_greet
   - intent: goodbye
   - action: utter_goodbye
-  
-- story: Sad Path
+- story: Story from Conversation ID f8e3c9f7479a40c49e29851ff888f5f2
+  steps:
+  - intent: greet
+  - action: action_slot_query
+  - slot_was_set:
+    - name: DemoMan
+  - slot_was_set:
+    - sex: man
+  - action: utter_greet
+- story: Story from Conversation ID 24831615640e4072809a5dc3e7a21889
   steps:
   - intent: goodbye
   - action: action_slot_query
+  - slot_was_set:
+    - name: DemoMan
+  - slot_was_set:
+    - sex: man
+  - action: utter_goodbye
+- story: Story from Conversation ID 32fbe0dcb4074963966f623c3af5759f
+  steps:
+  - intent: greet
+  - action: action_slot_query
+  - slot_was_set:
+    - name: DemoMan
+  - slot_was_set:
+    - sex: man
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story from Conversation ID 75bbce8ae3834544895964306372310e
+  steps:
+  - intent: greet
+  - action: action_slot_query
+  - slot_was_set:
+    - name: DemoMan
+  - slot_was_set:
+    - sex: man
+  - action: utter_greet
+  - intent: confirm
+  - action: policy_form
+  - active_loop: policy_form
+  - slot_was_set:
+    - requested_slot: Acity
+  - slot_was_set:
+    - Acity: torreon
+  - slot_was_set:
+    - requested_slot: Bdbo
+  - slot_was_set:
+    - Bdbo: '9996'
+  - slot_was_set:
+    - requested_slot: Dappointment
+  - slot_was_set:
+    - Dappointment:
+      - mañana
+      - '2021-01-16T00:00:00.000-08:00'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - intent: goodbye
   - action: utter_goodbye
