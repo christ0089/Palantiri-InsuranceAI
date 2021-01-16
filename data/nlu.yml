@@ -454,6 +454,22 @@ nlu:
     - capital de la plata
     - laguan
     - la laguan
+- lookup: city
+  examples: |
+    - Monclova
+    - San Pedro
+    - Sabinas
+    - Gomez
+    - Matamoros
+    - Saltillo
+    - Viesca
+    - la laguna
+    - torres
+    - lagunero
+    - perla de la laguna
+    - capital de la plata
+    - laguan
+    - la laguan
 - synonym: bots
   examples: |
     - skynet
