@@ -9,6 +9,8 @@ rules:
   - intent: cost
   - action: utter_costs
 - rule: Repeat las intent answer 
+  condition:
+  - active_loop: policy_form
   steps:
   - intent: repeat_question
   - action: utter_repeat

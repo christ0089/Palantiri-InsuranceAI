@@ -1,5 +1,7 @@
 version: "2.0"
 stories:
+
+## Selling Stories 
 - story: Story from Conversation ID f8e3c9f7479a40c49e29851ff888f5f2
   steps:
   - intent: greet
@@ -8,7 +10,11 @@ stories:
     - name: DemoMan
   - slot_was_set:
     - sex: man
+  - slot_was_set:
+    - payment: false
   - action: utter_greet
+
+
 - story: Story from Conversation ID 24831615640e4072809a5dc3e7a21889
   steps:
   - intent: goodbye
@@ -17,7 +23,13 @@ stories:
     - name: DemoMan
   - slot_was_set:
     - sex: man
+  - slot_was_set:
+    - payment: false
+  - slot_was_set:
+    - payment: false
   - action: utter_goodbye
+
+
 - story: Story from Conversation ID 32fbe0dcb4074963966f623c3af5759f
   steps:
   - intent: greet
@@ -26,42 +38,22 @@ stories:
     - name: DemoMan
   - slot_was_set:
     - sex: man
+  - slot_was_set:
+    - payment: false
   - action: utter_greet
   - intent: goodbye
   - action: utter_goodbye
-- story: User made a mistake in the City
-  steps:
-  - action: policy_form
-  - active_loop: policy_form
-  - slot_was_set:
-    - requested_slot: Acity
-  - slot_was_set:
-    - requested_slot: Bdbo
-  - intent: wrong_input
-  - action: utter_wrong_input_Acity
-  - intent: city_of_origin
-  - action: policy_form
-- story: User made a mistake in the Dbo
-  steps:
-  - action: policy_form
-  - active_loop: policy_form
-  - slot_was_set:
-    - requested_slot: Acity
-  - slot_was_set:
-    - requested_slot: Bdbo
-  - slot_was_set:
-    - requested_slot: Dappointment
-  - intent: wrong_input
-  - action: utter_wrong_input_Bdbo
-  - action: policy_form
+
 - story: Story from Conversation ID 75bbce8ae3834544895964306372310e
   steps:
   - intent: greet
   - action: action_slot_query
   - slot_was_set:
-    - name: DemoMan
+    - name
   - slot_was_set:
     - sex: man
+  - slot_was_set:
+    - payment: false
   - action: utter_greet
   - intent: confirm
   - action: policy_form
@@ -86,3 +78,31 @@ stories:
   - action: utter_submit
   - intent: goodbye
   - action: utter_goodbye
+
+  ## Mistakes in form data
+- story: User made a mistake in the City
+  steps:
+  - action: policy_form
+  - active_loop: policy_form
+  - slot_was_set:
+    - requested_slot: Acity
+  - slot_was_set:
+    - requested_slot: Bdbo
+  - intent: wrong_input
+  - action: utter_wrong_input_Acity
+  - intent: city_of_origin
+  - action: policy_form
+
+- story: User made a mistake in the Dbo
+  steps:
+  - action: policy_form
+  - active_loop: policy_form
+  - slot_was_set:
+    - requested_slot: Acity
+  - slot_was_set:
+    - requested_slot: Bdbo
+  - slot_was_set:
+    - requested_slot: Dappointment
+  - intent: wrong_input
+  - action: utter_wrong_input_Bdbo
+  - action: policy_form
