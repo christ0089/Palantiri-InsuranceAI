@@ -55,6 +55,7 @@ nlu:
     - di os
     - aló
     - hola muy bien
+    - hola muy bien gracias
 - intent: goodbye
   examples: |
     - hasta luego
@@ -99,6 +100,7 @@ nlu:
     - cómo funciona
     - cuénta me cómo funciona aquí
     - y cómo funciona esto
+    - cómo funciona esto
 - intent: repeat_question
   examples: |
     - me lo podrías repetir
@@ -123,6 +125,9 @@ nlu:
     - error
     - me equivoque perdon
     - oye éste me equivoqué
+    - oye pero me equivoqué
+    - me equivoqué
+    - oye me equivoqué perdón
 - intent: city_of_origin
   examples: |
     - soy de [la laguna](city)
@@ -180,6 +185,11 @@ nlu:
     - en [la perla de la laguna](city)
     - si estoy en [torreón](city)
     - yo vivo en [torreón](city) coahuila
+    - soy de [monclova](city)
+    - vivo en [torreón](city) coahuila méxico
+    - sí es soy de[ gómez](city)
+    - estoy en [la laguna]{"entity": "city", "value": "torreon"}[la laguna](city)
+    - vivo en [torreón](city) coahuila
 - intent: cost
   examples: |
     - cual es el costo
@@ -367,6 +377,7 @@ nlu:
     - claro que sí está bien
     - sí está bien
     - pero sí
+    - ok está bien
 - intent: deny
   examples: |
     - no
@@ -464,6 +475,9 @@ nlu:
     - en el [1996](time)
     - [monclova](city)
     - es de [sesenta y tres](time)
+    - el [12](time) de junio
+    - en [1996](time)
+    - para pasado [mañana](time)
 - synonym: torreon
   examples: |
     - la laguna
