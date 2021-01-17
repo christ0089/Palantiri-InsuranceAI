@@ -1,88 +1,30 @@
 version: "2.0"
 stories:
-- story: Story from Conversation ID f8e3c9f7479a40c49e29851ff888f5f2
+ ## Payment Stories  
+- story: Story for Payment
   steps:
-  - intent: greet
-  - action: action_slot_query
-  - slot_was_set:
-    - name: DemoMan
-  - slot_was_set:
-    - sex: man
-  - action: utter_greet
-- story: Story from Conversation ID 24831615640e4072809a5dc3e7a21889
-  steps:
-  - intent: goodbye
-  - action: action_slot_query
-  - slot_was_set:
-    - name: DemoMan
-  - slot_was_set:
-    - sex: man
-  - action: utter_goodbye
-- story: Story from Conversation ID 32fbe0dcb4074963966f623c3af5759f
-  steps:
-  - intent: greet
-  - action: action_slot_query
-  - slot_was_set:
-    - name: DemoMan
-  - slot_was_set:
-    - sex: man
-  - action: utter_greet
-  - intent: goodbye
-  - action: utter_goodbye
-- story: User made a mistake in the City
-  steps:
-  - action: policy_form
-  - active_loop: policy_form
-  - slot_was_set:
-    - requested_slot: Acity
-  - slot_was_set:
-    - requested_slot: Bdbo
-  - intent: wrong_input
-  - action: utter_wrong_input_Acity
-  - intent: city_of_origin
-  - action: policy_form
-- story: User made a mistake in the Dbo
-  steps:
-  - action: policy_form
-  - active_loop: policy_form
-  - slot_was_set:
-    - requested_slot: Acity
-  - slot_was_set:
-    - requested_slot: Bdbo
-  - slot_was_set:
-    - requested_slot: Dappointment
-  - intent: wrong_input
-  - action: utter_wrong_input_Bdbo
-  - action: policy_form
-- story: Story from Conversation ID 75bbce8ae3834544895964306372310e
-  steps:
-  - intent: greet
-  - action: action_slot_query
-  - slot_was_set:
-    - name: DemoMan
-  - slot_was_set:
-    - sex: man
-  - action: utter_greet
   - intent: confirm
-  - action: policy_form
-  - active_loop: policy_form
+  - action: action_slot_query
   - slot_was_set:
-    - requested_slot: Acity
-  - slot_was_set:
-    - Acity: torreon
-  - slot_was_set:
-    - requested_slot: Bdbo
-  - slot_was_set:
-    - Bdbo: '9996'
-  - slot_was_set:
-    - requested_slot: Dappointment
-  - slot_was_set:
-    - Dappointment:
-      - mañana
-      - '2021-01-16T00:00:00.000-08:00'
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_submit
-  - intent: goodbye
+    - name
+  - action: utter_payment_info
+  - intent: deny
   - action: utter_goodbye
+
+- story: Story for Payment payment_info
+  steps:
+  - intent: payment_info
+  - action: action_slot_query
+  - slot_was_set:
+    - name
+  - slot_was_set:
+    - payment_amount
+  - slot_was_set:
+    - payment_date
+  - action: utter_payment_info
+  - intent: payment_amount
+  - action: utter_payment_ammount_info
+  - intent: deny
+  - action: utter_goodbye
+
+

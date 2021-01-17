@@ -4,14 +4,15 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
-- rule: Say costs any time the user says costs
-  steps:
-  - intent: cost
-  - action: utter_costs
+
+
 - rule: Repeat las intent answer 
+  condition:
+  - active_loop: policy_form
   steps:
   - intent: repeat_question
   - action: utter_repeat
+
 - rule: Say how the policy works
   steps:
   - intent: how_it_works
@@ -36,21 +37,3 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_submit
-
-- rule: PolicyMan
-  condition:
-  - slot_was_set:
-    - sex: man
-  steps:
-  - intent: confirm
-  - action: policy_form
-  - active_loop: policy_form
-
-- rule: PolicyWoman
-  condition:
-  - slot_was_set:
-    - sex: woman
-  steps:
-  - intent: confirm
-  - action: policy_form
-  - active_loop: policy_form

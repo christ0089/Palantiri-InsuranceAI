@@ -13,12 +13,18 @@ intents:
 - wrong_input
 - repeat_question
 - bot_challenge
+- payment_ammount_info
+- payment_amount
+- handover
 entities:
 - city
 - sex
 - name
 - time
 - bots
+- payment_date
+- payment_amount
+- agent_name
 slots:
   Acity:
     type: text
@@ -41,6 +47,15 @@ slots:
   sex:
     type: text
     influence_conversation: true
+  payment:
+    type: boolean
+    influence_conversation: true
+  payment_date:
+    type: text
+    influence_conversation: false
+  payment_amount:
+    type: text
+    influence_conversation: true
 responses:
   utter_greet:
   - text: Muy bien profesor {name}, mi nombre es Sari Agente de OZCE Seguros, le llamo
@@ -49,13 +64,6 @@ responses:
       cubra el covid y otros gastos médicos más, podría hacerle unas preguntas?
   utter_repeat:
   - text: Claro que sí la pregunta fue.
-  utter_wrong_input_Acity:
-  - text: Que quisieras poder corregir? Tengo que eres de {Acity} .
-  utter_wrong_input_Bdbo:
-  - text: Que quisieras poder corregir? Tengo que naciste el {Bdbo} y que eres de {Acity}.
-  utter_wrong_input_Dappointment:
-  - text: Que quisieras poder corregir? Tengo que tu cita es para el {Dappointment}.
-      Que naciste el {Bdbo} y que eres de {Acity}.
   utter_city_of_origin:
   - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
       vive usted?
@@ -80,18 +88,12 @@ responses:
   utter_iamabot:
   - text: Me llamo Sari; y le marco a nombre del Profesor Juan Manuel Ríos Ortega,
       soy un Agente de OZCE Seguros.
-  utter_submit:
-  - custom:
-      status: sms
-    text: Pefecto gracias por los datos
-  - custom:
-      status: sms
-    text: Gracias por los datos.
   utter_how_it_works:
   - text: Claro, al final de contestar la preguntas, un agente se contactar con usted
       para finalizar los detalles.
   utter_ask_Bdbo:
   - text: Ha esa es una muy bonita ciudad. ¿En qué año nació usted {name}?
+ ## Forms Utterances:  
   utter_ask_Acity:
   - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
       vive usted?
@@ -102,6 +104,31 @@ responses:
       beneficios de las opciones que tenemos para ud. así como las formas de pago.
       Por último, profesor, cuando le puedo llamar para dispar dudas de las opciones
       que le acabo de enviar?
+  utter_submit:
+  - custom:
+      status: sms
+    text: Pefecto gracias por los datos
+  - custom:
+      status: sms
+    text: Gracias por los datos.
+  # Wrong form input handlers
+  utter_wrong_input_Acity:
+  - text: Que quisieras poder corregir? Tengo que eres de {Acity} .
+  utter_wrong_input_Bdbo:
+  - text: Que quisieras poder corregir? Tengo que naciste el {Bdbo} y que eres de {Acity}.
+  utter_wrong_input_Dappointment:
+  - text: Que quisieras poder corregir? Tengo que tu cita es para el {Dappointment}.
+      Que naciste el {Bdbo} y que eres de {Acity}.
+## Payment Utterances:
+  utter_payment_ammount_info:
+  - text: Claro tu pago de este mes es de {payment_amount}
+  utter_payment_info: 
+  - custom:
+      status: sms
+  - text: En unos momentos te mandara un sms con los datos para realizar tu pago.
+## Agent Handover
+  utter_handover_assgined:
+  - text: En unos momentos te comunicaremos con {agent_name}.
 actions:
 - action_slot_reset
 - action_slot_create

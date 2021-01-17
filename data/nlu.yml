@@ -494,3 +494,23 @@ nlu:
     - siri
     - alexa
     - google home
+
+- intent: payment_ammount_info
+  examples: 
+  - cuanto debo?
+  - cuanto debo pagar?
+  - cuanto voy a pagar este mes?
+
+- intent: payment_info
+  examples: 
+  - donde debo pagar
+  - donde pago
+  - donde depositó
+  - para realizar el deposit a donde voy
+
+- intent: handover
+  examples:
+  - quiero hablar con alguien
+  - comunicame con mi agente
+  - quiero hablar con mi agente
+  - donde esta mi agente
