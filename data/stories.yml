@@ -1,7 +1,7 @@
 version: "2.0"
 stories:
 
-## Selling Stories 
+## Selling Stories v2
 - story: Story from Conversation ID f8e3c9f7479a40c49e29851ff888f5f2
   steps:
   - intent: greet
@@ -10,8 +10,6 @@ stories:
     - name: DemoMan
   - slot_was_set:
     - sex: man
-  - slot_was_set:
-    - payment: false
   - action: utter_greet
 
 
@@ -23,10 +21,6 @@ stories:
     - name: DemoMan
   - slot_was_set:
     - sex: man
-  - slot_was_set:
-    - payment: false
-  - slot_was_set:
-    - payment: false
   - action: utter_goodbye
 
 
@@ -38,8 +32,6 @@ stories:
     - name: DemoMan
   - slot_was_set:
     - sex: man
-  - slot_was_set:
-    - payment: false
   - action: utter_greet
   - intent: goodbye
   - action: utter_goodbye
@@ -49,11 +41,9 @@ stories:
   - intent: greet
   - action: action_slot_query
   - slot_was_set:
-    - name
+    - name: DemoMan
   - slot_was_set:
     - sex: man
-  - slot_was_set:
-    - payment: false
   - action: utter_greet
   - intent: confirm
   - action: policy_form
