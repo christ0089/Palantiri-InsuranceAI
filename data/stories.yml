@@ -1,12 +1,5 @@
 version: "2.0"
 stories:
-- story: Test Happy Path 2
-  steps:
-  - intent: confirm
-  - action: action_slot_query
-  - action: utter_greet
-  - intent: goodbye
-  - action: utter_goodbye
 - story: Story from Conversation ID f8e3c9f7479a40c49e29851ff888f5f2
   steps:
   - intent: greet
@@ -36,19 +29,7 @@ stories:
   - action: utter_greet
   - intent: goodbye
   - action: utter_goodbye
-
-
 - story: User made a mistake in the City
-  steps:
-  - action: policy_form
-  - active_loop: policy_form
-  - slot_was_set:
-    - requested_slot: Acity
-  - intent: wrong_input
-  - action: utter_wrong_input_Acity
-  - action: policy_form
-
-- story: User made a mistake in the Dbo
   steps:
   - action: policy_form
   - active_loop: policy_form
@@ -58,9 +39,9 @@ stories:
     - requested_slot: Bdbo
   - intent: wrong_input
   - action: utter_wrong_input_Acity
+  - intent: city_of_origin
   - action: policy_form
-
-- story: User made a mistake in the Appointment
+- story: User made a mistake in the Dbo
   steps:
   - action: policy_form
   - active_loop: policy_form
@@ -73,9 +54,6 @@ stories:
   - intent: wrong_input
   - action: utter_wrong_input_Bdbo
   - action: policy_form
-
-
- ###  
 - story: Story from Conversation ID 75bbce8ae3834544895964306372310e
   steps:
   - intent: greet

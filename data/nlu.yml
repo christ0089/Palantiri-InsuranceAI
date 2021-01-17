@@ -109,6 +109,8 @@ nlu:
     - cual fue la preguntas
     - que pregunta hiciste
     - que necesitas saber
+    - lo podrias repetir?
+    - me podrías repetir por favor
 - intent: wrong_input
   examples: |
     - me equivoque
@@ -119,6 +121,8 @@ nlu:
     - corregir
     - cometi un error
     - error
+    - me equivoque perdon
+    - oye éste me equivoqué
 - intent: city_of_origin
   examples: |
     - soy de [la laguna](city)
@@ -169,6 +173,13 @@ nlu:
     - sí a [torreón](city)
     - vivo en [torreón](city)
     - en [torreón](city) coahuila
+    - de [Monclova](city)[Monclova](city)
+    - en [Torreon](city)
+    - soy de [Monclova](city)
+    - en [torreal](city)
+    - en [la perla de la laguna](city)
+    - si estoy en [torreón](city)
+    - yo vivo en [torreón](city) coahuila
 - intent: cost
   examples: |
     - cual es el costo
@@ -244,6 +255,7 @@ nlu:
     - que precio
     - cuánto cuesta
     - cuánto sale
+    - oye cuánto cuesta
 - intent: confirm
   examples: |
     - si
@@ -351,6 +363,10 @@ nlu:
     - a qué sí
     - claro que sí adelante
     - claro que sí
+    - adelante
+    - claro que sí está bien
+    - sí está bien
+    - pero sí
 - intent: deny
   examples: |
     - no
@@ -390,6 +406,7 @@ nlu:
     - ni lo sueñes
     - ni de broma
     - okay bye
+    - el once de julio
 - intent: bot_challenge
   examples: |
     - eres un bot?
@@ -422,9 +439,8 @@ nlu:
     - para [mañana](time)
     - en el [noventa y nueve](time)
     - el [martes](time)
-    - el once de julio
-    - hhm el [mil novecientos noventa y seis](time)
-    - en el [mil novecientos noventa y seis](time)
+    - hhm el mil novecientos [noventa y](time) seis
+    - en el mil novecientos [noventa y](time) seis
     - el [sesenta y tres](time)
     - [mil novecientos sesenta y tres](time)
     - celine [noventa y seis](time)
@@ -445,6 +461,9 @@ nlu:
     - el [martes](time) estaría bien
     - bien [noventa y seis](time)
     - [mi novecientos noventa y seis](city)
+    - en el [1996](time)
+    - [monclova](city)
+    - es de [sesenta y tres](time)
 - synonym: torreon
   examples: |
     - la laguna
@@ -454,23 +473,7 @@ nlu:
     - capital de la plata
     - laguan
     - la laguan
-- lookup: city
-  examples: |
-    - Monclova
-    - San Pedro
-    - Sabinas
-    - Gomez
-    - Matamoros
-    - Piedras Negras
-    - Saltillo
-    - Viesca
-    - la laguna
-    - torres
-    - lagunero
-    - perla de la laguna
-    - capital de la plata
-    - laguan
-    - la laguan
+    - la perla de la laguna
 - synonym: bots
   examples: |
     - skynet
