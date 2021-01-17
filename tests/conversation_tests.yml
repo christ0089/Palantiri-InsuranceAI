@@ -1,0 +1,120 @@
+version: "2.0"
+stories:
+- story: Story from Conversation ID 071d995679ec49738c490dae21300e7f
+  steps:
+  - intent: greet
+  - action: action_slot_query
+  - slot_was_set:
+    - name: DemoMan
+  - slot_was_set:
+    - sex: man
+  - action: utter_greet
+  - intent: confirm
+  - action: policy_form
+  - active_loop: policy_form
+  - slot_was_set:
+    - requested_slot: Acity
+  - intent: city_of_origin
+    entities:
+    - city: Torreon
+  - action: policy_form
+  - slot_was_set:
+    - Acity: Torreon
+  - slot_was_set:
+    - requested_slot: Bdbo
+  - intent: inform
+    entities:
+    - time: '1996'
+    - time: '1996-01-01T00:00:00.000-08:00'
+  - action: policy_form
+  - slot_was_set:
+    - Bdbo:
+      - '1996'
+      - '1996-01-01T00:00:00.000-08:00'
+  - slot_was_set:
+    - requested_slot: Dappointment
+  - intent: inform
+    entities:
+    - time: '12'
+    - time: '2021-06-12T00:00:00.000-07:00'
+  - action: policy_form
+  - slot_was_set:
+    - Dappointment:
+      - '12'
+      - '2021-06-12T00:00:00.000-07:00'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story from Conversation ID 071d995679ec49738c490dae21300e7f
+  steps:
+  - intent: greet
+  - action: action_slot_query
+  - slot_was_set:
+    - name: DemoMan
+  - slot_was_set:
+    - sex: man
+  - action: utter_greet
+  - intent: confirm
+  - action: policy_form
+  - active_loop: policy_form
+  - slot_was_set:
+    - requested_slot: Acity
+  - intent: city_of_origin
+    entities:
+    - city: Torreon
+  - action: policy_form
+  - slot_was_set:
+    - Acity: Torreon
+  - slot_was_set:
+    - requested_slot: Bdbo
+  - intent: inform
+    entities:
+    - time: '1996'
+    - time: '1996-01-01T00:00:00.000-08:00'
+  - action: policy_form
+  - slot_was_set:
+    - Bdbo:
+      - '1996'
+      - '1996-01-01T00:00:00.000-08:00'
+  - slot_was_set:
+    - requested_slot: Dappointment
+  - intent: inform
+    entities:
+    - time: '12'
+    - time: '2021-06-12T00:00:00.000-07:00'
+  - action: policy_form
+  - slot_was_set:
+    - Dappointment:
+      - '12'
+      - '2021-06-12T00:00:00.000-07:00'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - intent: goodbye
+  - action: utter_goodbye
+  - intent: restart
+  - action: action_restart
+  - intent: greet
+  - action: action_slot_query
+  - slot_was_set:
+    - name: DemoMan
+  - slot_was_set:
+    - sex: man
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story from Conversation ID 6eb4d559ad8e4368895d70abe5479d28
+  steps:
+  - intent: greet
+  - action: action_slot_query
+  - slot_was_set:
+    - name: DemoMan
+  - slot_was_set:
+    - sex: man
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye
