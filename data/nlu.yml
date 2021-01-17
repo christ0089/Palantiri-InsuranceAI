@@ -178,7 +178,7 @@ nlu:
     - sí a [torreón](city)
     - vivo en [torreón](city)
     - en [torreón](city) coahuila
-    - de [Monclova](city)[Monclova](city)
+    - de [Monclova](city)
     - en [Torreon](city)
     - soy de [Monclova](city)
     - en [torreal](city)
@@ -187,8 +187,8 @@ nlu:
     - yo vivo en [torreón](city) coahuila
     - soy de [monclova](city)
     - vivo en [torreón](city) coahuila méxico
-    - sí es soy de[ gómez](city)
-    - estoy en [la laguna]{"entity": "city", "value": "torreon"}[la laguna](city)
+    - sí es soy de [gómez](city)
+    - estoy en [la laguna]{"entity": "city", "value": "torreon"}
     - vivo en [torreón](city) coahuila
 - intent: cost
   examples: |
