@@ -14,7 +14,7 @@ intents:
 - repeat_question
 - bot_challenge
 - payment_ammount_info
-- payment_amount
+- payment_info
 - handover
 entities:
 - city
@@ -22,40 +22,16 @@ entities:
 - name
 - time
 - bots
-- payment_date
-- payment_amount
-- agent_name
 slots:
-  Acity:
-    type: text
-    influence_conversation: true
-  Bdbo:
-    type: any
-    influence_conversation: false
-  Cmaternity:
-    type: text
-    influence_conversation: false
-  Dappointment:
-    type: text
-    influence_conversation: false
-  name:
-    type: text
-    influence_conversation: false
-  requested_slot:
-    type: any
-    influence_conversation: false
-  sex:
-    type: text
-    influence_conversation: true
-  payment:
-    type: boolean
-    influence_conversation: true
   payment_date:
+    type: text
+    influence_conversation: false
+  agent_name:
     type: text
     influence_conversation: false
   payment_amount:
     type: text
-    influence_conversation: true
+    influence_conversation: false
 responses:
   utter_greet:
   - text: Muy bien profesor {name}, mi nombre es Sari Agente de OZCE Seguros, le llamo
@@ -93,70 +69,18 @@ responses:
       para finalizar los detalles.
   utter_ask_Bdbo:
   - text: Ha esa es una muy bonita ciudad. ¿En qué año nació usted {name}?
- ## Forms Utterances:  
-  utter_ask_Acity:
-  - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
-      vive usted?
-  utter_ask_Cmaternity:
-  - text: Estaría interesada en tener coberturade maternidad?
-  utter_ask_Dappointment:
-  - text: Para su comodidad, le enviaré por mensaje para que conozca a detalle los
-      beneficios de las opciones que tenemos para ud. así como las formas de pago.
-      Por último, profesor, cuando le puedo llamar para dispar dudas de las opciones
-      que le acabo de enviar?
-  utter_submit:
-  - custom:
-      status: sms
-    text: Pefecto gracias por los datos
-  - custom:
-      status: sms
-    text: Gracias por los datos.
-  # Wrong form input handlers
-  utter_wrong_input_Acity:
-  - text: Que quisieras poder corregir? Tengo que eres de {Acity} .
-  utter_wrong_input_Bdbo:
-  - text: Que quisieras poder corregir? Tengo que naciste el {Bdbo} y que eres de {Acity}.
-  utter_wrong_input_Dappointment:
-  - text: Que quisieras poder corregir? Tengo que tu cita es para el {Dappointment}.
-      Que naciste el {Bdbo} y que eres de {Acity}.
-## Payment Utterances:
+  ## Payment Utterances:
   utter_payment_ammount_info:
   - text: Claro tu pago de este mes es de {payment_amount}
   utter_payment_info: 
   - custom:
       status: sms
-  - text: En unos momentos te mandara un sms con los datos para realizar tu pago.
-## Agent Handover
+    text: En unos momentos te mandara un sms con los datos para realizar tu pago.
+  ## Agent Handover
   utter_handover_assgined:
   - text: En unos momentos te comunicaremos con {agent_name}.
 actions:
 - action_slot_reset
 - action_slot_create
 - action_slot_query
-forms:
-  policy_form:
-    Acity:
-    - entity: city
-      intent: city_of_origin
-      type: from_entity
-    Bdbo:
-    - entity: time
-      type: from_entity
-    Dappointment:
-    - entity: time
-      type: from_entity
-  policy_form_woman:
-    Acity:
-    - entity: city
-      intent: city_of_origin
-      type: from_entity
-    Bdbo:
-    - entity: time
-      type: from_entity
-    Cmaternity:
-    - intent: confirm
-      type: from_trigger_intent
-      value: accept
-    Dappointment:
-    - entity: time
-      type: from_entity
+

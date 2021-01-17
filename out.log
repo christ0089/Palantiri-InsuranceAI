@@ -7560,3 +7560,4 @@ rasa.shared.exceptions.RasaException: Failed to execute custom action.
 2021-01-16 14:46:50,124 [DEBUG]  Policy prediction ended with events '[]'.
 2021-01-16 14:46:50,125 [DEBUG]  Action 'action_listen' ended with events '[]'.
 2021-01-16 14:46:50,127 [DEBUG]  Deleted lock for conversation '83adf3f6b3994ddd9e6b695b86e08d4e'.
+2021-01-17 12:53:21,236 [INFO ]  Killing Sanic server now.

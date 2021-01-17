@@ -52,7 +52,7 @@ class ActionQuerySlots(Action):
             events = [SlotSet("name", name), SlotSet("sex", sex)]
             return events
         except: 
-            return [SlotSet("name", "DemoMan"), SlotSet("sex", "man")]
+            return [SlotSet("name", "DemoMan"), SlotSet("payment_amount", "500 pesos"),SlotSet("payment_data", "22 de Enero")]
         
 
 class ValidatePolicyForm(Action):
