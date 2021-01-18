@@ -13,7 +13,7 @@ intents:
 - wrong_input
 - repeat_question
 - bot_challenge
-- payment_ammount_info
+- payment_amount_info
 - payment_info
 - handover
 entities:
@@ -23,6 +23,9 @@ entities:
 - time
 - bots
 slots:
+  name: 
+    type: text
+    influence_conversation: false
   payment_date:
     type: text
     influence_conversation: false

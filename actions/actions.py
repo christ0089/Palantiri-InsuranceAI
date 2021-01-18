@@ -44,15 +44,23 @@ class ActionQuerySlots(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        evt = []
         try: 
             r = requests.get('https://1ntj0abfh0.execute-api.us-east-1.amazonaws.com/PROD/customer?contactId='+ tracker.sender_id)
         
-            name = r.json()[0]["fname"]
-            sex = r.json()[0]["sex"]
-            events = [SlotSet("name", name), SlotSet("sex", sex)]
-            return events
+            for key in data:
+                evt.append(SlotSet(key, data[key]))
+            return evt
         except: 
-            return [SlotSet("name", "DemoMan"), SlotSet("payment_amount", "500 pesos"),SlotSet("payment_data", "22 de Enero")]
+            data = {
+                "name": "DemoMan",
+                "payment_amount": "500 pesos",
+                "payment_date": "22 de Enero"
+            }
+
+            for key in data:
+                evt.append(SlotSet(key, data[key]))
+            return evt
         
 
 class ValidatePolicyForm(Action):
