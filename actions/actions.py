@@ -68,7 +68,7 @@ class ActionSessionStart(Action):
                 "payment_amount": "500 pesos",
                 "payment_date": "22 de Enero"
             }
-
+    #Change
             for key in data:
                 events.append(SlotSet(key, data[key]))
 
