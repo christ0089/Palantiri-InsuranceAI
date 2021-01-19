@@ -1,50 +1,18 @@
 version: "2.0"
 stories:
  ## Payment Stories  
-- story: Story for Payment
+- story: Story for Payment Deny
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Story for Payment Confirm
   steps:
   - intent: confirm
-  - action: action_slot_query
-  - slot_was_set:
-    - name: DemoMan
-  - slot_was_set:
-    - payment_amount
-  - slot_was_set:
-    - payment_date
-  - action: utter_payment_info
-  - intent: deny
+  - action: payment_form
+  - active_loop: payment_form
+  - intent: goodbye
   - action: utter_goodbye
 
-- story: Story for Payment payment_info
-  steps:
-  - intent: payment_info
-  - action: action_slot_query
-  - slot_was_set:
-    - name: DemoMan
-  - slot_was_set:
-    - payment_amount
-  - slot_was_set:
-    - payment_date
-  - action: utter_payment_info
-  - intent: payment_amount_info
-  - action: utter_payment_ammount_info
-  - intent: deny
-  - action: utter_goodbye
-
-- story: Story for Payment payment_info
-  steps:
-  - intent: payment_info
-  - action: action_slot_query
-  - slot_was_set:
-    - name: DemoMan
-  - slot_was_set:
-    - payment_amount
-  - slot_was_set:
-    - payment_date
-  - action: utter_payment_info
-  - intent: payment_amount_info
-  - action: utter_payment_ammount_info
-  - intent: deny
-  - action: utter_goodbye
 
 

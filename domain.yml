@@ -14,6 +14,7 @@ intents:
 - repeat_question
 - bot_challenge
 - payment_amount_info
+- payment_date_info
 - payment_info
 - handover
 entities:
@@ -33,6 +34,12 @@ slots:
     type: text
     influence_conversation: false
   payment_amount:
+    type: text
+    influence_conversation: false
+  accept_payment:
+    type: bool
+    influence_conversation: true
+  reason_rejection:
     type: text
     influence_conversation: false
 responses:
@@ -70,20 +77,47 @@ responses:
   utter_how_it_works:
   - text: Claro, al final de contestar la preguntas, un agente se contactar con usted
       para finalizar los detalles.
-  utter_ask_Bdbo:
-  - text: Ha esa es una muy bonita ciudad. ¿En qué año nació usted {name}?
   ## Payment Utterances:
   utter_payment_ammount_info:
   - text: Claro tu pago de este mes es de {payment_amount}
-  utter_payment_info: 
+  utter_payment_date_info:
+  - text: Claro tu pago de este mes se debe de pagar para el {payment_date}
+  utter_payment_date:
+  - text: Cree que podamos contar con su pago antes de el {payment_date}? 
+  utter_payment_ammount:
+  - text: Cree que podamos contar con su pago de {payment_amount}?
+  utter_ask_accept_payment:
+  - text: Podremos contar con su pago para el {payment_date} de {payment_amount}. 
+  utter_ask_reason_rejection:
+  - text: Tienes alguna razon por la que no puedas realizar el pago? 
+  ## Payment Confirmation
+  utter_payment_reject: 
+  - custom:
+      status: sms
+    text: Le recordamos que el pago de la poliza es muy importante para su bienestar.
+  utter_payment_accept: 
   - custom:
       status: sms
     text: En unos momentos te mandara un sms con los datos para realizar tu pago.
   ## Agent Handover
-  utter_handover_assgined:
+  utter_handover_assigned:
   - text: En unos momentos te comunicaremos con {agent_name}.
+
 actions:
 - action_slot_reset
-- action_slot_create
 - action_slot_query
-
+- action_session_start
+- action_utter_message
+forms: 
+  payment_form:
+    accept_payment:
+    - type: from_trigger_intent
+      value: true
+      intent: confirm
+  reject_payment_form:
+    accept_payment:
+    - type: from_trigger_intent
+      value: false
+      intent: deny
+    reason_rejection:
+    - type: from_text

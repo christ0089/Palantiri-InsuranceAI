@@ -501,12 +501,20 @@ nlu:
     - cuanto debo pagar?
     - cuanto voy a pagar este mes?
 
+- intent: payment_date_info
+  examples: |
+    - cuando debo pagar
+    - cuando se vence
+    - cuando tengo que pagar
+    - cuanto tiempo tengo para pagar
+    - para pagar cuanto tiempo tengo
+
 - intent: payment_info
   examples: |
     - donde debo pagar
     - donde pago
     - donde depositó
-    - para realizar el deposit a donde voy
+    - para realizar el deposito a donde voy
 
 - intent: handover
   examples: |
