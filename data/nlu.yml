@@ -516,6 +516,12 @@ nlu:
     - donde depositó
     - para realizar el deposito a donde voy
 
+- intent: payment_intent
+  examples: |
+    - lo voy a checar
+    - voy a verficar mis finanzas
+    - voy a platicarlo con mi esposa
+
 - intent: handover
   examples: |
     - quiero hablar con alguien

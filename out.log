@@ -18483,3 +18483,983 @@ rasa.shared.exceptions.RasaException: Failed to execute custom action.
 2021-01-18 20:27:45,120 [DEBUG]  Action 'action_listen' ended with events '[]'.
 2021-01-18 20:27:45,121 [DEBUG]  Deleted lock for conversation '39ab5b001c3d49fa97030d170d2557a5'.
 2021-01-18 20:27:48,459 [INFO ]  Killing Sanic server now.
+2021-01-18 21:28:59,989 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2021-01-18 21:28:59,990 [INFO ]  Starting Rasa server on http://localhost:5005
+2021-01-18 21:28:59,991 [DEBUG]  Using the default number of Sanic workers (1).
+2021-01-18 21:28:59,993 [INFO ]  Loading model models/20210118-212837.tar.gz...
+2021-01-18 21:29:00,656 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp33y1y27c'.
+2021-01-18 21:29:00,674 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2021-01-18 21:29:01,387 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2021-01-18 21:29:01,395 [INFO ]  Enabling coroutine debugging. Loop id 140255433506832.
+2021-01-18 21:29:01,407 [INFO ]  Loading model models/20210118-212837.tar.gz...
+2021-01-18 21:29:02,122 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp06kmvib9'.
+2021-01-18 21:29:02,394 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp06kmvib9/nlu/component_5_DIETClassifier.tf_model with finetune_mode=False...
+2021-01-18 21:29:02,487 [DEBUG]  Following metrics will be logged during training: 
+2021-01-18 21:29:02,487 [DEBUG]    t_loss (total loss)
+2021-01-18 21:29:02,488 [DEBUG]    i_acc (intent acc)
+2021-01-18 21:29:02,488 [DEBUG]    i_loss (intent loss)
+2021-01-18 21:29:02,488 [DEBUG]    e_f1 (entity f1)
+2021-01-18 21:29:02,488 [DEBUG]    e_loss (entity loss)
+2021-01-18 21:29:03,413 [DEBUG]  Finished loading the model.
+2021-01-18 21:29:03,415 [DEBUG]  Building tensorflow prediction graph...
+2021-01-18 21:29:07,680 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-18 21:29:07,681 [DEBUG]  Failed to load model for 'ResponseSelector'. Maybe you did not provide enough training data and no model was trained or the path '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp06kmvib9/nlu' doesn't exist?
+2021-01-18 21:29:07,698 [DEBUG]  Connected to InMemoryTrackerStore.
+2021-01-18 21:29:07,698 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2021-01-18 21:29:08,322 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp0l_ufvwb'.
+2021-01-18 21:29:08,435 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp0l_ufvwb/core/policy_1_TEDPolicy/ted_policy.tf_model with finetune_mode=False...
+2021-01-18 21:29:08,757 [DEBUG]  Finished loading the model.
+2021-01-18 21:29:08,763 [DEBUG]  Building tensorflow prediction graph...
+2021-01-18 21:29:12,026 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-18 21:29:12,028 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2021-01-18 21:29:12,028 [INFO ]  Rasa server is up and running.
+2021-01-18 21:30:24,042 [DEBUG]  Issuing ticket for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:30:24,042 [DEBUG]  Acquiring lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:30:24,043 [DEBUG]  Acquired lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:30:24,043 [DEBUG]  Could not find tracker for conversation ID '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:30:24,043 [DEBUG]  Starting a new session for conversation ID '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:30:24,046 [DEBUG]  Calling action endpoint to run action 'action_session_start'.
+2021-01-18 21:30:26,451 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:30:26,451 [DEBUG]  Action 'action_session_start' ended with events '[<rasa.shared.core.events.SessionStarted object at 0x141e794c0>, <rasa.shared.core.events.SlotSet object at 0x141e9d0a0>, <rasa.shared.core.events.SlotSet object at 0x141e9d8e0>, <rasa.shared.core.events.SlotSet object at 0x141e6c5b0>, ActionExecuted(action: action_listen, policy: None, confidence: None)]'.
+2021-01-18 21:30:26,451 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: None
+	reason_rejection: None
+	requested_slot: None
+2021-01-18 21:30:26,844 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-18 21:30:26,844 [DEBUG]  Adding following selector key to message property: default
+2021-01-18 21:30:26,846 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-18 21:30:26,853 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-18 21:30:26,854 [DEBUG]  Received user message 'perdon cuanto salela mensualidad?' with intent '{'id': 7977390161599800957, 'name': 'cost', 'confidence': 0.8672080636024475}' and entities '[]'
+2021-01-18 21:30:26,856 [DEBUG]  Logged UserUtterance - tracker now has 7 events.
+2021-01-18 21:30:26,856 [DEBUG]  Current tracker state:
+[state 1] user intent: cost | previous action name: action_listen
+2021-01-18 21:30:26,857 [DEBUG]  There is no memorised next action
+2021-01-18 21:30:26,866 [DEBUG]  Current tracker state:
+[state 1] user text: perdon cuanto salela mensualidad? | previous action name: action_listen
+2021-01-18 21:30:26,867 [DEBUG]  There is no applicable rule.
+2021-01-18 21:30:26,868 [DEBUG]  Current tracker state:
+[state 1] user intent: cost | previous action name: action_listen
+2021-01-18 21:30:26,868 [DEBUG]  There is no applicable rule.
+2021-01-18 21:30:26,868 [DEBUG]  Made prediction using user intent.
+2021-01-18 21:30:26,869 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-18 21:30:26,869 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:30:26,869 [DEBUG]  Predicted next action 'action_default_fallback' with confidence 0.30.
+2021-01-18 21:30:26,872 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x141868070>]'.
+2021-01-18 21:30:26,872 [DEBUG]  Action 'action_default_fallback' ended with events '[<rasa.shared.core.events.UserUtteranceReverted object at 0x141e6c4c0>]'.
+2021-01-18 21:30:26,873 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: None
+	reason_rejection: None
+	requested_slot: None
+2021-01-18 21:30:26,873 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-18 21:30:26,873 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:30:26,873 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-18 21:30:26,877 [DEBUG]  Deleted lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:30:48,633 [DEBUG]  Issuing ticket for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:30:48,633 [DEBUG]  Acquiring lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:30:48,633 [DEBUG]  Acquired lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:30:48,633 [DEBUG]  Recreating tracker for id '2b554948ddd14518bd32cbfa77b9d987'
+2021-01-18 21:30:48,645 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-18 21:30:48,645 [DEBUG]  Adding following selector key to message property: default
+2021-01-18 21:30:48,648 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-18 21:30:48,658 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-18 21:30:48,659 [DEBUG]  Received user message 'Cuando vence?' with intent '{'id': 3375755357935840702, 'name': 'payment_date_info', 'confidence': 0.8582075238227844}' and entities '[]'
+2021-01-18 21:30:48,660 [DEBUG]  Logged UserUtterance - tracker now has 12 events.
+2021-01-18 21:30:48,661 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+2021-01-18 21:30:48,661 [DEBUG]  There is no memorised next action
+2021-01-18 21:30:48,669 [DEBUG]  Current tracker state:
+[state 1] user text: Cuando vence? | previous action name: action_listen
+2021-01-18 21:30:48,670 [DEBUG]  There is no applicable rule.
+2021-01-18 21:30:48,671 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+2021-01-18 21:30:48,672 [DEBUG]  There is a rule for the next action 'action_slot_query'.
+2021-01-18 21:30:48,672 [DEBUG]  Made prediction using user intent.
+2021-01-18 21:30:48,672 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-18 21:30:48,672 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:30:48,673 [DEBUG]  Predicted next action 'action_slot_query' with confidence 1.00.
+2021-01-18 21:30:48,680 [DEBUG]  Calling action endpoint to run action 'action_slot_query'.
+2021-01-18 21:30:49,352 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x1420ccdc0>]'.
+2021-01-18 21:30:49,353 [DEBUG]  Action 'action_slot_query' ended with events '[<rasa.shared.core.events.SlotSet object at 0x1420e1910>, <rasa.shared.core.events.SlotSet object at 0x1420e1460>, <rasa.shared.core.events.SlotSet object at 0x1420e19a0>]'.
+2021-01-18 21:30:49,353 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: None
+	reason_rejection: None
+	requested_slot: None
+2021-01-18 21:30:49,354 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+2021-01-18 21:30:49,354 [DEBUG]  There is no memorised next action
+2021-01-18 21:30:49,360 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+2021-01-18 21:30:49,361 [DEBUG]  There is a rule for the next action 'utter_payment_date_info'.
+2021-01-18 21:30:49,361 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:30:49,361 [DEBUG]  Predicted next action 'utter_payment_date_info' with confidence 1.00.
+2021-01-18 21:30:49,362 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:30:49,362 [DEBUG]  Action 'utter_payment_date_info' ended with events '[BotUttered('Claro tu pago de este mes se debe de pagar para el 22 de Enero', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_payment_date_info"}, 1611027049.362356)]'.
+2021-01-18 21:30:49,369 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+2021-01-18 21:30:49,370 [DEBUG]  There is no memorised next action
+2021-01-18 21:30:49,379 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+2021-01-18 21:30:49,381 [DEBUG]  There is a rule for the next action 'utter_payment_ammount'.
+2021-01-18 21:30:49,381 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:30:49,382 [DEBUG]  Predicted next action 'utter_payment_ammount' with confidence 1.00.
+2021-01-18 21:30:49,382 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:30:49,382 [DEBUG]  Action 'utter_payment_ammount' ended with events '[BotUttered('Cree que podamos contar con su pago de 500 pesos?', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_payment_ammount"}, 1611027049.382394)]'.
+2021-01-18 21:30:49,388 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+2021-01-18 21:30:49,388 [DEBUG]  There is no memorised next action
+2021-01-18 21:30:49,399 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+2021-01-18 21:30:49,399 [DEBUG]  There is a rule for the next action 'action_listen'.
+2021-01-18 21:30:49,400 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:30:49,400 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-18 21:30:49,400 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:30:49,400 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-18 21:30:49,414 [DEBUG]  Deleted lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:31:55,750 [DEBUG]  Issuing ticket for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:31:55,750 [DEBUG]  Acquiring lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:31:55,751 [DEBUG]  Acquired lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:31:55,751 [DEBUG]  Recreating tracker for id '2b554948ddd14518bd32cbfa77b9d987'
+2021-01-18 21:31:55,762 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-18 21:31:55,763 [DEBUG]  Adding following selector key to message property: default
+2021-01-18 21:31:55,765 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-18 21:31:55,772 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-18 21:31:55,773 [DEBUG]  Received user message 'disculpe senorita, cuanto dijo que sale la mensualidad' with intent '{'id': 7977390161599800957, 'name': 'cost', 'confidence': 0.7548685073852539}' and entities '[]'
+2021-01-18 21:31:55,774 [DEBUG]  Logged UserUtterance - tracker now has 23 events.
+2021-01-18 21:31:55,775 [DEBUG]  Current tracker state:
+[state 0] user intent: payment_date_info | previous action name: action_listen
+[state 1] user intent: payment_date_info | previous action name: action_slot_query
+[state 2] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 3] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 4] user intent: cost | previous action name: action_listen
+2021-01-18 21:31:55,776 [DEBUG]  There is no memorised next action
+2021-01-18 21:31:55,791 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user text: disculpe senorita, cuanto dijo que sale la mensualidad | previous action name: action_listen
+2021-01-18 21:31:55,791 [DEBUG]  There is no applicable rule.
+2021-01-18 21:31:55,792 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: cost | previous action name: action_listen
+2021-01-18 21:31:55,806 [DEBUG]  There is no applicable rule.
+2021-01-18 21:31:55,806 [DEBUG]  Made prediction using user intent.
+2021-01-18 21:31:55,807 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-18 21:31:55,807 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:31:55,807 [DEBUG]  Predicted next action 'action_default_fallback' with confidence 0.30.
+2021-01-18 21:31:55,807 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x1420e9ee0>]'.
+2021-01-18 21:31:55,808 [DEBUG]  Action 'action_default_fallback' ended with events '[<rasa.shared.core.events.UserUtteranceReverted object at 0x1421eef70>]'.
+2021-01-18 21:31:55,814 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: None
+	reason_rejection: None
+	requested_slot: None
+2021-01-18 21:31:55,815 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+2021-01-18 21:31:55,815 [DEBUG]  There is no memorised next action
+2021-01-18 21:31:55,824 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+2021-01-18 21:31:55,825 [DEBUG]  There is a rule for the next action 'action_listen'.
+2021-01-18 21:31:55,825 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:31:55,825 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-18 21:31:55,826 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:31:55,832 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-18 21:31:55,833 [DEBUG]  Deleted lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:32:28,710 [DEBUG]  Issuing ticket for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:32:28,710 [DEBUG]  Acquiring lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:32:28,710 [DEBUG]  Acquired lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:32:28,710 [DEBUG]  Recreating tracker for id '2b554948ddd14518bd32cbfa77b9d987'
+2021-01-18 21:32:28,720 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-18 21:32:28,721 [DEBUG]  Adding following selector key to message property: default
+2021-01-18 21:32:28,722 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-18 21:32:28,821 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-18 21:32:28,822 [DEBUG]  Received user message 'Ya pague' with intent '{'id': -696493301885703627, 'name': 'goodbye', 'confidence': 0.9984895586967468}' and entities '[{'start': 0, 'end': 2, 'text': 'Ya', 'value': '2021-01-18T19:32:28.000-08:00', 'confidence': 1.0, 'additional_info': {'values': [{'value': '2021-01-18T19:32:28.000-08:00', 'grain': 'second', 'type': 'value'}], 'value': '2021-01-18T19:32:28.000-08:00', 'grain': 'second', 'type': 'value'}, 'entity': 'time', 'extractor': 'DucklingEntityExtractor'}]'
+2021-01-18 21:32:28,822 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: None
+	reason_rejection: None
+	requested_slot: None
+2021-01-18 21:32:28,823 [DEBUG]  Logged UserUtterance - tracker now has 28 events.
+2021-01-18 21:32:28,824 [DEBUG]  Current tracker state:
+[state 0] user intent: payment_date_info | previous action name: action_listen
+[state 1] user intent: payment_date_info | previous action name: action_slot_query
+[state 2] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 3] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 4] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+2021-01-18 21:32:28,824 [DEBUG]  There is no memorised next action
+2021-01-18 21:32:28,842 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user text: Ya pague | previous action name: action_listen
+2021-01-18 21:32:28,843 [DEBUG]  There is no applicable rule.
+2021-01-18 21:32:28,844 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+2021-01-18 21:32:28,849 [DEBUG]  There is no applicable rule.
+2021-01-18 21:32:28,849 [DEBUG]  Made prediction using user intent.
+2021-01-18 21:32:28,849 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-18 21:32:28,849 [DEBUG]  Predicted next action using policy_1_TEDPolicy.
+2021-01-18 21:32:28,849 [DEBUG]  Predicted next action 'utter_goodbye' with confidence 0.88.
+2021-01-18 21:32:28,850 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x1421d2df0>]'.
+2021-01-18 21:32:28,850 [DEBUG]  Action 'utter_goodbye' ended with events '[BotUttered('Profesor DemoMan muchas gracias por su atención y el nos estaremos comunicando con usted', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": {"status": "end_conversation"}}, {"template_name": "utter_goodbye"}, 1611027148.850135)]'.
+2021-01-18 21:32:28,857 [DEBUG]  Current tracker state:
+[state 0] user intent: payment_date_info | previous action name: action_slot_query
+[state 1] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 2] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 3] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 4] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+2021-01-18 21:32:28,857 [DEBUG]  There is no memorised next action
+2021-01-18 21:32:28,885 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+2021-01-18 21:32:28,887 [DEBUG]  There is no applicable rule.
+2021-01-18 21:32:28,887 [DEBUG]  Predicted next action using policy_1_TEDPolicy.
+2021-01-18 21:32:28,887 [DEBUG]  Predicted next action 'action_listen' with confidence 0.99.
+2021-01-18 21:32:28,888 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:32:28,893 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-18 21:32:28,893 [DEBUG]  Deleted lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:33:38,771 [DEBUG]  Issuing ticket for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:33:38,773 [DEBUG]  Acquiring lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:33:38,773 [DEBUG]  Acquired lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:33:38,773 [DEBUG]  Recreating tracker for id '2b554948ddd14518bd32cbfa77b9d987'
+2021-01-18 21:33:38,788 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-18 21:33:38,788 [DEBUG]  Adding following selector key to message property: default
+2021-01-18 21:33:38,790 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-18 21:33:38,799 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-18 21:33:38,801 [DEBUG]  Received user message 'no quiero pagar' with intent '{'id': -7146407505199773744, 'name': 'deny', 'confidence': 0.9806289672851562}' and entities '[]'
+2021-01-18 21:33:38,802 [DEBUG]  Logged UserUtterance - tracker now has 33 events.
+2021-01-18 21:33:38,804 [DEBUG]  Current tracker state:
+[state 0] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 1] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 2] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 3] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 4] user intent: deny | previous action name: action_listen
+2021-01-18 21:33:38,804 [DEBUG]  There is no memorised next action
+2021-01-18 21:33:38,816 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user text: no quiero pagar | previous action name: action_listen
+2021-01-18 21:33:38,817 [DEBUG]  There is no applicable rule.
+2021-01-18 21:33:38,817 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+2021-01-18 21:33:38,817 [DEBUG]  There is a rule for the next action 'reject_payment_form'.
+2021-01-18 21:33:38,818 [DEBUG]  Made prediction using user intent.
+2021-01-18 21:33:38,818 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-18 21:33:38,831 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:33:38,833 [DEBUG]  Predicted next action 'reject_payment_form' with confidence 1.00.
+2021-01-18 21:33:38,833 [DEBUG]  Activated the form 'reject_payment_form'.
+2021-01-18 21:33:38,833 [DEBUG]  No pre-filled required slots to validate.
+2021-01-18 21:33:38,833 [DEBUG]  Validating user input 'UserUttered(text: no quiero pagar, intent: deny, use_text_for_featurization: False)'.
+2021-01-18 21:33:38,834 [DEBUG]  Extracted 'False' for extra slot 'accept_payment'.
+2021-01-18 21:33:38,834 [DEBUG]  Validating extracted slots: {'accept_payment': False}
+2021-01-18 21:33:38,838 [DEBUG]  Request next slot 'reason_rejection'
+2021-01-18 21:33:38,839 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x142235e20>]'.
+2021-01-18 21:33:38,839 [DEBUG]  Action 'reject_payment_form' ended with events '[<rasa.shared.core.events.ActiveLoop object at 0x142394bb0>, <rasa.shared.core.events.SlotSet object at 0x1423948b0>, <rasa.shared.core.events.SlotSet object at 0x1422671f0>, BotUttered('Tienes alguna razon por la que no puedas realizar el pago?', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_ask_reason_rejection"}, 1611027218.8392022)]'.
+2021-01-18 21:33:38,849 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: False
+	reason_rejection: None
+	requested_slot: reason_rejection
+2021-01-18 21:33:38,850 [DEBUG]  Current tracker state:
+[state 0] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 1] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 2] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 3] user intent: deny | previous action name: action_listen
+[state 4] user intent: deny | previous action name: reject_payment_form | active loop: {'name': 'reject_payment_form'} | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:33:38,850 [DEBUG]  There is no memorised next action
+2021-01-18 21:33:38,860 [DEBUG]  Predicted 'action_listen' after loop 'reject_payment_form'.
+2021-01-18 21:33:38,860 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:33:38,861 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-18 21:33:38,868 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:33:38,868 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-18 21:33:38,869 [DEBUG]  Deleted lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:33:53,568 [DEBUG]  Issuing ticket for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:33:53,568 [DEBUG]  Acquiring lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:33:53,568 [DEBUG]  Acquired lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:33:53,568 [DEBUG]  Recreating tracker for id '2b554948ddd14518bd32cbfa77b9d987'
+2021-01-18 21:33:53,584 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-18 21:33:53,584 [DEBUG]  Adding following selector key to message property: default
+2021-01-18 21:33:53,588 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-18 21:33:53,595 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-18 21:33:53,596 [DEBUG]  Received user message 'Pues no me interesa' with intent '{'id': -7146407505199773744, 'name': 'deny', 'confidence': 0.9782539010047913}' and entities '[]'
+2021-01-18 21:33:53,597 [DEBUG]  Logged UserUtterance - tracker now has 41 events.
+2021-01-18 21:33:53,598 [DEBUG]  Current tracker state:
+[state 0] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 1] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 2] user intent: deny | previous action name: action_listen
+[state 3] user intent: deny | previous action name: reject_payment_form | active loop: {'name': 'reject_payment_form'} | slots: {'accept_payment': (1.0, 0.0)}
+[state 4] user intent: deny | previous action name: action_listen | active loop: {'name': 'reject_payment_form'} | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:33:53,599 [DEBUG]  There is no memorised next action
+2021-01-18 21:33:53,613 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | active loop: {'name': 'reject_payment_form'} | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user text: Pues no me interesa | previous action name: action_listen | active loop: {'name': 'reject_payment_form'} | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:33:53,617 [DEBUG]  There is no applicable rule.
+2021-01-18 21:33:53,618 [DEBUG]  Predicted loop 'reject_payment_form'.
+2021-01-18 21:33:53,618 [DEBUG]  Made prediction using user intent.
+2021-01-18 21:33:53,618 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-18 21:33:53,618 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:33:53,618 [DEBUG]  Predicted next action 'reject_payment_form' with confidence 1.00.
+2021-01-18 21:33:53,619 [DEBUG]  Validating user input 'UserUttered(text: Pues no me interesa, intent: deny, use_text_for_featurization: False)'.
+2021-01-18 21:33:53,623 [DEBUG]  Trying to extract requested slot 'reason_rejection' ...
+2021-01-18 21:33:53,624 [DEBUG]  Got mapping '{'type': 'from_text'}'
+2021-01-18 21:33:53,624 [DEBUG]  Successfully extracted 'Pues no me interesa' for requested slot 'reason_rejection'
+2021-01-18 21:33:53,624 [DEBUG]  Validating extracted slots: {'reason_rejection': 'Pues no me interesa'}
+2021-01-18 21:33:53,625 [DEBUG]  Deactivating the form 'reject_payment_form'
+2021-01-18 21:33:53,625 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x14246f850>]'.
+2021-01-18 21:33:53,625 [DEBUG]  Action 'reject_payment_form' ended with events '[<rasa.shared.core.events.SlotSet object at 0x1423946d0>, <rasa.shared.core.events.SlotSet object at 0x142485700>, <rasa.shared.core.events.ActiveLoop object at 0x142394b80>]'.
+2021-01-18 21:33:53,646 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: False
+	reason_rejection: Pues no me interesa
+	requested_slot: None
+2021-01-18 21:33:53,647 [DEBUG]  Current tracker state:
+[state 0] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 1] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 2] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 3] user intent: deny | previous action name: action_listen
+[state 4] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:33:53,655 [DEBUG]  There is no memorised next action
+2021-01-18 21:33:53,668 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:33:53,668 [DEBUG]  There is a rule for the next action 'action_utter_message'.
+2021-01-18 21:33:53,675 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:33:53,675 [DEBUG]  Predicted next action 'action_utter_message' with confidence 1.00.
+2021-01-18 21:33:53,676 [DEBUG]  Calling action endpoint to run action 'action_utter_message'.
+2021-01-18 21:33:53,688 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:33:53,689 [DEBUG]  Action 'action_utter_message' ended with events '[BotUttered('Le recordamos que el pago de la poliza es muy importante para su bienestar.', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": {"status": "sms"}}, {"template_name": "utter_payment_reject"}, 1611027233.6887949)]'.
+2021-01-18 21:33:53,689 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: False
+	reason_rejection: Pues no me interesa
+	requested_slot: None
+2021-01-18 21:33:53,690 [DEBUG]  Current tracker state:
+[state 0] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 1] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 2] user intent: deny | previous action name: action_listen
+[state 3] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 4] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:33:53,697 [DEBUG]  There is no memorised next action
+2021-01-18 21:33:53,708 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:33:53,708 [DEBUG]  There is a rule for the next action 'action_listen'.
+2021-01-18 21:33:53,724 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:33:53,724 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-18 21:33:53,725 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:33:53,725 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-18 21:33:53,726 [DEBUG]  Deleted lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:38:06,273 [DEBUG]  Issuing ticket for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:38:06,277 [DEBUG]  Acquiring lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:38:06,277 [DEBUG]  Acquired lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:38:06,278 [DEBUG]  Recreating tracker for id '2b554948ddd14518bd32cbfa77b9d987'
+2021-01-18 21:38:06,306 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-18 21:38:06,306 [DEBUG]  Adding following selector key to message property: default
+2021-01-18 21:38:06,313 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-18 21:38:06,322 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-18 21:38:06,325 [DEBUG]  Received user message 'hasta cuado tengo para pagar' with intent '{'id': 3375755357935840702, 'name': 'payment_date_info', 'confidence': 0.49825170636177063}' and entities '[]'
+2021-01-18 21:38:06,327 [DEBUG]  Logged UserUtterance - tracker now has 50 events.
+2021-01-18 21:38:06,329 [DEBUG]  Current tracker state:
+[state 0] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 1] user intent: deny | previous action name: action_listen
+[state 2] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 3] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 4] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:38:06,330 [DEBUG]  There is no memorised next action
+2021-01-18 21:38:06,344 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user text: hasta cuado tengo para pagar | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:38:06,354 [DEBUG]  There is no applicable rule.
+2021-01-18 21:38:06,355 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:38:06,363 [DEBUG]  There is a rule for the next action 'action_slot_query'.
+2021-01-18 21:38:06,363 [DEBUG]  Made prediction using user intent.
+2021-01-18 21:38:06,364 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-18 21:38:06,364 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:38:06,364 [DEBUG]  Predicted next action 'action_slot_query' with confidence 1.00.
+2021-01-18 21:38:06,365 [DEBUG]  Calling action endpoint to run action 'action_slot_query'.
+2021-01-18 21:38:08,412 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x1424e7070>]'.
+2021-01-18 21:38:08,413 [DEBUG]  Action 'action_slot_query' ended with events '[<rasa.shared.core.events.SlotSet object at 0x142581a90>, <rasa.shared.core.events.SlotSet object at 0x1425819a0>, <rasa.shared.core.events.SlotSet object at 0x142581910>]'.
+2021-01-18 21:38:08,413 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: False
+	reason_rejection: Pues no me interesa
+	requested_slot: None
+2021-01-18 21:38:08,414 [DEBUG]  Current tracker state:
+[state 0] user intent: deny | previous action name: action_listen
+[state 1] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 2] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 3] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 4] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:38:08,414 [DEBUG]  There is no memorised next action
+2021-01-18 21:38:08,425 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 11] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:38:08,431 [DEBUG]  There is a rule for the next action 'utter_payment_date_info'.
+2021-01-18 21:38:08,431 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:38:08,431 [DEBUG]  Predicted next action 'utter_payment_date_info' with confidence 1.00.
+2021-01-18 21:38:08,432 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:38:08,432 [DEBUG]  Action 'utter_payment_date_info' ended with events '[BotUttered('Claro tu pago de este mes se debe de pagar para el 22 de Enero', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_payment_date_info"}, 1611027488.432738)]'.
+2021-01-18 21:38:08,433 [DEBUG]  Current tracker state:
+[state 0] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 1] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 2] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 3] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 4] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:38:08,440 [DEBUG]  There is no memorised next action
+2021-01-18 21:38:08,453 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 11] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 12] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:38:08,465 [DEBUG]  There is a rule for the next action 'utter_payment_ammount'.
+2021-01-18 21:38:08,465 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:38:08,465 [DEBUG]  Predicted next action 'utter_payment_ammount' with confidence 1.00.
+2021-01-18 21:38:08,466 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:38:08,466 [DEBUG]  Action 'utter_payment_ammount' ended with events '[BotUttered('Cree que podamos contar con su pago de 500 pesos?', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_payment_ammount"}, 1611027488.4664571)]'.
+2021-01-18 21:38:08,472 [DEBUG]  Current tracker state:
+[state 0] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 1] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 2] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:38:08,473 [DEBUG]  There is no memorised next action
+2021-01-18 21:38:08,485 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 11] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 12] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 13] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:38:08,504 [DEBUG]  There is a rule for the next action 'action_listen'.
+2021-01-18 21:38:08,504 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:38:08,504 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-18 21:38:08,505 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:38:08,505 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-18 21:38:08,514 [DEBUG]  Deleted lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:38:21,926 [DEBUG]  Issuing ticket for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:38:21,926 [DEBUG]  Acquiring lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:38:21,926 [DEBUG]  Acquired lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:38:21,926 [DEBUG]  Recreating tracker for id '2b554948ddd14518bd32cbfa77b9d987'
+2021-01-18 21:38:21,944 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-18 21:38:21,945 [DEBUG]  Adding following selector key to message property: default
+2021-01-18 21:38:21,947 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-18 21:38:21,956 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-18 21:38:21,958 [DEBUG]  Received user message 'Si claro' with intent '{'id': -2040344400947815661, 'name': 'confirm', 'confidence': 0.9999979734420776}' and entities '[]'
+2021-01-18 21:38:21,959 [DEBUG]  Logged UserUtterance - tracker now has 61 events.
+2021-01-18 21:38:21,960 [DEBUG]  Current tracker state:
+[state 0] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 1] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 2] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 3] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 4] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:38:21,971 [DEBUG]  There is no memorised next action
+2021-01-18 21:38:21,986 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 11] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 12] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 13] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 14] user text: Si claro | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:38:21,992 [DEBUG]  There is no applicable rule.
+2021-01-18 21:38:21,993 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 11] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 12] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 13] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 14] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-18 21:38:22,010 [DEBUG]  There is a rule for the next action 'payment_form'.
+2021-01-18 21:38:22,010 [DEBUG]  Made prediction using user intent.
+2021-01-18 21:38:22,010 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-18 21:38:22,010 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:38:22,011 [DEBUG]  Predicted next action 'payment_form' with confidence 1.00.
+2021-01-18 21:38:22,012 [DEBUG]  Activated the form 'payment_form'.
+2021-01-18 21:38:22,012 [DEBUG]  Validating pre-filled required slots: {'accept_payment': False}
+2021-01-18 21:38:22,019 [DEBUG]  Validating extracted slots: {'accept_payment': False}
+2021-01-18 21:38:22,019 [DEBUG]  Validating user input 'UserUttered(text: Si claro, intent: confirm, use_text_for_featurization: False)'.
+2021-01-18 21:38:22,020 [DEBUG]  Extracted 'True' for extra slot 'accept_payment'.
+2021-01-18 21:38:22,020 [DEBUG]  Validating extracted slots: {'accept_payment': True}
+2021-01-18 21:38:22,021 [DEBUG]  Deactivating the form 'payment_form'
+2021-01-18 21:38:22,043 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x1425e02e0>]'.
+2021-01-18 21:38:22,043 [DEBUG]  Action 'payment_form' ended with events '[<rasa.shared.core.events.ActiveLoop object at 0x142640700>, <rasa.shared.core.events.SlotSet object at 0x142640850>, <rasa.shared.core.events.SlotSet object at 0x14263ed00>, <rasa.shared.core.events.SlotSet object at 0x14263ed90>, <rasa.shared.core.events.ActiveLoop object at 0x142640eb0>]'.
+2021-01-18 21:38:22,051 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: True
+	reason_rejection: Pues no me interesa
+	requested_slot: None
+2021-01-18 21:38:22,053 [DEBUG]  Current tracker state:
+[state 0] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 1] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 2] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 3] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 4] user intent: confirm | previous action name: payment_form | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:38:22,066 [DEBUG]  There is no memorised next action
+2021-01-18 21:38:22,083 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 11] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 12] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 13] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 14] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 15] user intent: confirm | previous action name: payment_form | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:38:22,091 [DEBUG]  There is a rule for the next action 'action_utter_message'.
+2021-01-18 21:38:22,091 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:38:22,091 [DEBUG]  Predicted next action 'action_utter_message' with confidence 1.00.
+2021-01-18 21:38:22,102 [DEBUG]  Calling action endpoint to run action 'action_utter_message'.
+2021-01-18 21:38:22,117 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:38:22,118 [DEBUG]  Action 'action_utter_message' ended with events '[BotUttered('En unos momentos te mandara un sms con los datos para realizar tu pago.', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": {"status": "sms"}}, {"template_name": "utter_payment_accept"}, 1611027502.117901)]'.
+2021-01-18 21:38:22,118 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: True
+	reason_rejection: Pues no me interesa
+	requested_slot: None
+2021-01-18 21:38:22,119 [DEBUG]  Current tracker state:
+[state 0] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 1] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 2] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 3] user intent: confirm | previous action name: payment_form | slots: {'accept_payment': (1.0, 1.0)}
+[state 4] user intent: confirm | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:38:22,124 [DEBUG]  There is no memorised next action
+2021-01-18 21:38:22,140 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 11] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 12] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 13] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 14] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 15] user intent: confirm | previous action name: payment_form | slots: {'accept_payment': (1.0, 1.0)}
+[state 16] user intent: confirm | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:38:22,152 [DEBUG]  There is a rule for the next action 'action_listen'.
+2021-01-18 21:38:22,152 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:38:22,161 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-18 21:38:22,162 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:38:22,162 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-18 21:38:22,163 [DEBUG]  Deleted lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:38:33,663 [DEBUG]  Issuing ticket for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:38:33,664 [DEBUG]  Acquiring lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:38:33,664 [DEBUG]  Acquired lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:38:33,664 [DEBUG]  Recreating tracker for id '2b554948ddd14518bd32cbfa77b9d987'
+2021-01-18 21:38:33,682 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-18 21:38:33,682 [DEBUG]  Adding following selector key to message property: default
+2021-01-18 21:38:33,685 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-18 21:38:33,692 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-18 21:38:33,693 [DEBUG]  Received user message 'cuando debo pagar' with intent '{'id': 3375755357935840702, 'name': 'payment_date_info', 'confidence': 0.6275432109832764}' and entities '[]'
+2021-01-18 21:38:33,695 [DEBUG]  Logged UserUtterance - tracker now has 72 events.
+2021-01-18 21:38:33,696 [DEBUG]  Current tracker state:
+[state 0] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 1] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 2] user intent: confirm | previous action name: payment_form | slots: {'accept_payment': (1.0, 1.0)}
+[state 3] user intent: confirm | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 1.0)}
+[state 4] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:38:33,706 [DEBUG]  There is no memorised next action
+2021-01-18 21:38:33,718 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 11] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 12] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 13] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 14] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 15] user intent: confirm | previous action name: payment_form | slots: {'accept_payment': (1.0, 1.0)}
+[state 16] user intent: confirm | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 1.0)}
+[state 17] user text: cuando debo pagar | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:38:33,726 [DEBUG]  There is no applicable rule.
+2021-01-18 21:38:33,728 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 11] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 12] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 13] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 14] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 15] user intent: confirm | previous action name: payment_form | slots: {'accept_payment': (1.0, 1.0)}
+[state 16] user intent: confirm | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 1.0)}
+[state 17] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:38:33,734 [DEBUG]  There is a rule for the next action 'action_slot_query'.
+2021-01-18 21:38:33,735 [DEBUG]  Made prediction using user intent.
+2021-01-18 21:38:33,739 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-18 21:38:33,740 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:38:33,740 [DEBUG]  Predicted next action 'action_slot_query' with confidence 1.00.
+2021-01-18 21:38:33,742 [DEBUG]  Calling action endpoint to run action 'action_slot_query'.
+2021-01-18 21:38:34,522 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x14263ac70>]'.
+2021-01-18 21:38:34,523 [DEBUG]  Action 'action_slot_query' ended with events '[<rasa.shared.core.events.SlotSet object at 0x142725250>, <rasa.shared.core.events.SlotSet object at 0x142725e20>, <rasa.shared.core.events.SlotSet object at 0x142725a60>]'.
+2021-01-18 21:38:34,523 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: True
+	reason_rejection: Pues no me interesa
+	requested_slot: None
+2021-01-18 21:38:34,524 [DEBUG]  Current tracker state:
+[state 0] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 1] user intent: confirm | previous action name: payment_form | slots: {'accept_payment': (1.0, 1.0)}
+[state 2] user intent: confirm | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 1.0)}
+[state 3] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+[state 4] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:38:34,525 [DEBUG]  There is no memorised next action
+2021-01-18 21:38:34,536 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 11] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 12] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 13] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 14] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 15] user intent: confirm | previous action name: payment_form | slots: {'accept_payment': (1.0, 1.0)}
+[state 16] user intent: confirm | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 1.0)}
+[state 17] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+[state 18] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:38:34,538 [DEBUG]  There is a rule for the next action 'utter_payment_date_info'.
+2021-01-18 21:38:34,538 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:38:34,538 [DEBUG]  Predicted next action 'utter_payment_date_info' with confidence 1.00.
+2021-01-18 21:38:34,539 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:38:34,540 [DEBUG]  Action 'utter_payment_date_info' ended with events '[BotUttered('Claro tu pago de este mes se debe de pagar para el 22 de Enero', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_payment_date_info"}, 1611027514.5394502)]'.
+2021-01-18 21:38:34,542 [DEBUG]  Current tracker state:
+[state 0] user intent: confirm | previous action name: payment_form | slots: {'accept_payment': (1.0, 1.0)}
+[state 1] user intent: confirm | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 1.0)}
+[state 2] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+[state 3] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 1.0)}
+[state 4] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:38:34,547 [DEBUG]  There is no memorised next action
+2021-01-18 21:38:34,561 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 11] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 12] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 13] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 14] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 15] user intent: confirm | previous action name: payment_form | slots: {'accept_payment': (1.0, 1.0)}
+[state 16] user intent: confirm | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 1.0)}
+[state 17] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+[state 18] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 1.0)}
+[state 19] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:38:34,576 [DEBUG]  There is a rule for the next action 'action_listen'.
+2021-01-18 21:38:34,577 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:38:34,577 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-18 21:38:34,578 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:38:34,578 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-18 21:38:34,579 [DEBUG]  Deleted lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:39:32,926 [DEBUG]  Issuing ticket for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:39:32,927 [DEBUG]  Acquiring lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:39:32,927 [DEBUG]  Acquired lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:39:32,927 [DEBUG]  Recreating tracker for id '2b554948ddd14518bd32cbfa77b9d987'
+2021-01-18 21:39:32,941 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-18 21:39:32,941 [DEBUG]  Adding following selector key to message property: default
+2021-01-18 21:39:32,943 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-18 21:39:32,953 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-18 21:39:32,954 [DEBUG]  Received user message 'adios' with intent '{'id': -696493301885703627, 'name': 'goodbye', 'confidence': 0.9999794363975525}' and entities '[]'
+2021-01-18 21:39:32,955 [DEBUG]  Logged UserUtterance - tracker now has 81 events.
+2021-01-18 21:39:32,957 [DEBUG]  Current tracker state:
+[state 0] user intent: confirm | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 1.0)}
+[state 1] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+[state 2] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 1.0)}
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 1.0)}
+[state 4] user intent: goodbye | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:39:32,960 [DEBUG]  There is no memorised next action
+2021-01-18 21:39:32,980 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 11] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 12] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 13] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 14] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 15] user intent: confirm | previous action name: payment_form | slots: {'accept_payment': (1.0, 1.0)}
+[state 16] user intent: confirm | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 1.0)}
+[state 17] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+[state 18] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 1.0)}
+[state 19] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 1.0)}
+[state 20] user text: adios | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:39:32,992 [DEBUG]  There is no applicable rule.
+2021-01-18 21:39:32,993 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 11] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 12] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 13] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 14] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 15] user intent: confirm | previous action name: payment_form | slots: {'accept_payment': (1.0, 1.0)}
+[state 16] user intent: confirm | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 1.0)}
+[state 17] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+[state 18] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 1.0)}
+[state 19] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 1.0)}
+[state 20] user intent: goodbye | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:39:32,996 [DEBUG]  There is no applicable rule.
+2021-01-18 21:39:32,997 [DEBUG]  Made prediction using user intent.
+2021-01-18 21:39:32,997 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-18 21:39:32,997 [DEBUG]  Predicted next action using policy_1_TEDPolicy.
+2021-01-18 21:39:32,997 [DEBUG]  Predicted next action 'utter_goodbye' with confidence 0.88.
+2021-01-18 21:39:32,998 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x142797190>]'.
+2021-01-18 21:39:32,998 [DEBUG]  Action 'utter_goodbye' ended with events '[BotUttered('Profesor DemoMan muchas gracias por su atención y el nos estaremos comunicando con usted', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": {"status": "end_conversation"}}, {"template_name": "utter_goodbye"}, 1611027572.99849)]'.
+2021-01-18 21:39:33,000 [DEBUG]  Current tracker state:
+[state 0] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+[state 1] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 1.0)}
+[state 2] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 1.0)}
+[state 3] user intent: goodbye | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+[state 4] user intent: goodbye | previous action name: utter_goodbye | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:39:33,007 [DEBUG]  There is no memorised next action
+2021-01-18 21:39:33,019 [DEBUG]  Current tracker state:
+[state 1] user intent: payment_date_info | previous action name: action_listen
+[state 2] user intent: payment_date_info | previous action name: action_slot_query
+[state 3] user intent: payment_date_info | previous action name: utter_payment_date_info
+[state 4] user intent: payment_date_info | previous action name: utter_payment_ammount
+[state 5] user intent: goodbye | user entities: ('time',) | previous action name: action_listen
+[state 6] user intent: goodbye | user entities: ('time',) | previous action name: utter_goodbye
+[state 7] user intent: deny | previous action name: action_listen
+[state 8] user intent: deny | previous action name: reject_payment_form | slots: {'accept_payment': (1.0, 0.0)}
+[state 9] user intent: deny | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 0.0)}
+[state 10] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 11] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 0.0)}
+[state 12] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 0.0)}
+[state 13] user intent: payment_date_info | previous action name: utter_payment_ammount | slots: {'accept_payment': (1.0, 0.0)}
+[state 14] user intent: confirm | previous action name: action_listen | slots: {'accept_payment': (1.0, 0.0)}
+[state 15] user intent: confirm | previous action name: payment_form | slots: {'accept_payment': (1.0, 1.0)}
+[state 16] user intent: confirm | previous action name: action_utter_message | slots: {'accept_payment': (1.0, 1.0)}
+[state 17] user intent: payment_date_info | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+[state 18] user intent: payment_date_info | previous action name: action_slot_query | slots: {'accept_payment': (1.0, 1.0)}
+[state 19] user intent: payment_date_info | previous action name: utter_payment_date_info | slots: {'accept_payment': (1.0, 1.0)}
+[state 20] user intent: goodbye | previous action name: action_listen | slots: {'accept_payment': (1.0, 1.0)}
+[state 21] user intent: goodbye | previous action name: utter_goodbye | slots: {'accept_payment': (1.0, 1.0)}
+2021-01-18 21:39:33,038 [DEBUG]  There is no applicable rule.
+2021-01-18 21:39:33,039 [DEBUG]  Predicted next action using policy_1_TEDPolicy.
+2021-01-18 21:39:33,039 [DEBUG]  Predicted next action 'action_listen' with confidence 0.99.
+2021-01-18 21:39:33,040 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:39:33,040 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-18 21:39:33,042 [DEBUG]  Deleted lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
+2021-01-18 21:39:37,501 [INFO ]  Killing Sanic server now.
