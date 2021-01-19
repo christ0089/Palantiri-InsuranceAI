@@ -7,13 +7,14 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
-from typing import Any, Text, Dict, List
+from typing import Any, Text, Dict, List, Optional
 
 import requests
 
 from rasa_sdk import Action, Tracker
-from rasa_sdk.events import SlotSet, EventType
+from rasa_sdk.events import SlotSet, EventType, SessionStarted, ActionExecuted
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.forms import FormValidationAction
 
 class ActionSlotReset(Action):
 
@@ -26,16 +27,6 @@ class ActionSlotReset(Action):
 
         return [AllSlotsReset()]
 
-class ActionCreateSlots(Action):
-    def name(self) -> Text:
-        return "action_slot_create"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        slot = tracker.get_slot('name')
-        evt = [SlotSet("name", "Christian"), SlotSet("sex", "woman")]
-        return evt
 
 class ActionQuerySlots(Action):
     def name(self) -> Text:
@@ -54,6 +45,36 @@ class ActionQuerySlots(Action):
         except: 
             return [SlotSet("name", "DemoMan"), SlotSet("sex", "man")]
         
+class ActionSessionStart(Action):
+    def name(self) -> Text:
+        return "action_session_start"
+
+
+    async def run(
+      self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]
+    ) -> List[Dict[Text, Any]]:
+
+        # the session should begin with a `session_started` event
+        events = [SessionStarted()]
+        try: 
+            r = requests.get('https://1ntj0abfh0.execute-api.us-east-1.amazonaws.com/PROD/customer?contactId='+ tracker.sender_id)
+        
+            for key in data:
+                events.append(SlotSet(key, data[key]))
+        except: 
+            data = {
+                "name": "DemoMan",
+                "sex": "man",
+                "payment_amount": "500 pesos",
+                "payment_date": "22 de Enero"
+            }
+
+            for key in data:
+                events.append(SlotSet(key, data[key]))
+
+        # an `action_listen` should be added at the end as a user message follows
+        events.append(ActionExecuted("action_listen"))
+        return events
 
 class ValidatePolicyForm(Action):
     def name(self) -> Text:
@@ -73,17 +94,48 @@ class ValidatePolicyForm(Action):
         # All slots are filled.
         return [SlotSet("requested_slot", None)]
 
-
-class actionHelloWorld(Action):
-
+class ValidatePaymentForm(Action):
     def name(self) -> Text:
-        return "action_get_dbo"
+        return "payment_form"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    def run(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
+    ) -> List[EventType]:
+        required_slots = ["accept_payment"]
+        for slot_name in required_slots:
+            if tracker.slots.get(slot_name) is None:
+                # The slot is not filled yet. Request the user to fill this slot next.
+                return [SlotSet("requested_slot", slot_name)]
 
-        
-        dispatcher.utter_message(text="Hello World!")
+        # All slots are filled.
+        return [SlotSet("requested_slot", None)]
 
+class ValidateRejPaymentForm(Action):
+    def name(self) -> Text:
+        return "reject_payment_form"
+
+    def run(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
+    ) -> List[EventType]:
+        required_slots = ["accept_payment", "reason_rejection"]
+        for slot_name in required_slots:
+            if tracker.slots.get(slot_name) is None:
+                # The slot is not filled yet. Request the user to fill this slot next.
+                return [SlotSet("requested_slot", slot_name)]
+
+        # All slots are filled.
+        return [SlotSet("requested_slot", None)]
+
+class PaymentMessage(Action):
+    def name(self) -> Text:
+        return "action_utter_message"
+
+    def run(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
+    ) -> List[EventType]:
+        if tracker.get_slot("accept_payment") == False:
+            dispatcher.utter_message(template="utter_payment_reject")
+        if tracker.get_slot("accept_payment") == True:
+            dispatcher.utter_message(template="utter_payment_accept")
         return []
+

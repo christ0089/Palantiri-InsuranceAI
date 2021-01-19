@@ -5,33 +5,18 @@ stories:
 - story: Story from Conversation ID f8e3c9f7479a40c49e29851ff888f5f2
   steps:
   - intent: greet
-  - action: action_slot_query
-  - slot_was_set:
-    - name: DemoMan
-  - slot_was_set:
-    - sex: man
   - action: utter_greet
 
 
 - story: Story from Conversation ID 24831615640e4072809a5dc3e7a21889
   steps:
   - intent: goodbye
-  - action: action_slot_query
-  - slot_was_set:
-    - name: DemoMan
-  - slot_was_set:
-    - sex: man
   - action: utter_goodbye
 
 
 - story: Story from Conversation ID 32fbe0dcb4074963966f623c3af5759f
   steps:
   - intent: greet
-  - action: action_slot_query
-  - slot_was_set:
-    - name: DemoMan
-  - slot_was_set:
-    - sex: man
   - action: utter_greet
   - intent: goodbye
   - action: utter_goodbye
@@ -39,11 +24,6 @@ stories:
 - story: Story from Conversation ID 75bbce8ae3834544895964306372310e
   steps:
   - intent: greet
-  - action: action_slot_query
-  - slot_was_set:
-    - name: DemoMan
-  - slot_was_set:
-    - sex: man
   - action: utter_greet
   - intent: confirm
   - action: policy_form

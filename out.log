@@ -7560,3 +7560,350 @@ rasa.shared.exceptions.RasaException: Failed to execute custom action.
 2021-01-16 14:46:50,124 [DEBUG]  Policy prediction ended with events '[]'.
 2021-01-16 14:46:50,125 [DEBUG]  Action 'action_listen' ended with events '[]'.
 2021-01-16 14:46:50,127 [DEBUG]  Deleted lock for conversation '83adf3f6b3994ddd9e6b695b86e08d4e'.
+2021-01-18 21:10:03,918 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2021-01-18 21:10:03,919 [INFO ]  Starting Rasa server on http://localhost:5005
+2021-01-18 21:10:03,919 [DEBUG]  Using the default number of Sanic workers (1).
+2021-01-18 21:10:03,921 [INFO ]  Loading model models/20210118-210344.tar.gz...
+2021-01-18 21:10:04,289 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp7757lj5d'.
+2021-01-18 21:10:04,300 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2021-01-18 21:10:04,902 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2021-01-18 21:10:04,910 [INFO ]  Enabling coroutine debugging. Loop id 140619128946704.
+2021-01-18 21:10:04,921 [INFO ]  Loading model models/20210118-210344.tar.gz...
+2021-01-18 21:10:05,238 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpozeq2lek'.
+2021-01-18 21:10:05,459 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpozeq2lek/nlu/component_5_DIETClassifier.tf_model with finetune_mode=False...
+2021-01-18 21:10:05,591 [DEBUG]  Following metrics will be logged during training: 
+2021-01-18 21:10:05,592 [DEBUG]    t_loss (total loss)
+2021-01-18 21:10:05,592 [DEBUG]    i_acc (intent acc)
+2021-01-18 21:10:05,592 [DEBUG]    i_loss (intent loss)
+2021-01-18 21:10:05,592 [DEBUG]    e_f1 (entity f1)
+2021-01-18 21:10:05,592 [DEBUG]    e_loss (entity loss)
+2021-01-18 21:10:06,907 [DEBUG]  Finished loading the model.
+2021-01-18 21:10:06,909 [DEBUG]  Building tensorflow prediction graph...
+2021-01-18 21:10:11,164 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-18 21:10:11,165 [DEBUG]  Failed to load model for 'ResponseSelector'. Maybe you did not provide enough training data and no model was trained or the path '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpozeq2lek/nlu' doesn't exist?
+2021-01-18 21:10:11,178 [DEBUG]  Connected to InMemoryTrackerStore.
+2021-01-18 21:10:11,178 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2021-01-18 21:10:11,477 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpri1o4wg3'.
+2021-01-18 21:10:11,612 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpri1o4wg3/core/policy_1_TEDPolicy/ted_policy.tf_model with finetune_mode=False...
+2021-01-18 21:10:12,010 [DEBUG]  Finished loading the model.
+2021-01-18 21:10:12,017 [DEBUG]  Building tensorflow prediction graph...
+2021-01-18 21:10:15,628 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-18 21:10:15,631 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2021-01-18 21:10:15,631 [INFO ]  Rasa server is up and running.
+2021-01-18 21:16:20,439 [DEBUG]  Issuing ticket for conversation '841cf009d1654054bb30b2fca7132774'.
+2021-01-18 21:16:20,440 [DEBUG]  Acquiring lock for conversation '841cf009d1654054bb30b2fca7132774'.
+2021-01-18 21:16:20,440 [DEBUG]  Acquired lock for conversation '841cf009d1654054bb30b2fca7132774'.
+2021-01-18 21:16:20,440 [DEBUG]  Could not find tracker for conversation ID '841cf009d1654054bb30b2fca7132774'.
+2021-01-18 21:16:20,440 [DEBUG]  Starting a new session for conversation ID '841cf009d1654054bb30b2fca7132774'.
+2021-01-18 21:16:20,449 [DEBUG]  Calling action endpoint to run action 'action_session_start'.
+2021-01-18 21:16:22,743 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:16:22,743 [DEBUG]  Action 'action_session_start' ended with events '[<rasa.shared.core.events.SessionStarted object at 0x146a15d90>, <rasa.shared.core.events.SlotSet object at 0x146a15790>, <rasa.shared.core.events.SlotSet object at 0x146a15610>, <rasa.shared.core.events.SlotSet object at 0x146b6ce80>, ActionExecuted(action: action_listen, policy: None, confidence: None)]'.
+2021-01-18 21:16:22,744 [ERROR]  Tried to set non existent slot 'payment_amount'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:22,744 [ERROR]  Tried to set non existent slot 'payment_date'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:22,744 [DEBUG]  Current slot values: 
+	Acity: None
+	Bdbo: None
+	Cmaternity: None
+	Dappointment: None
+	name: DemoMan
+	requested_slot: None
+	sex: None
+2021-01-18 21:16:23,159 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-18 21:16:23,159 [DEBUG]  Adding following selector key to message property: default
+2021-01-18 21:16:23,162 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-18 21:16:23,177 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-18 21:16:23,178 [DEBUG]  Received user message 'Hola' with intent '{'id': -1871596879240281211, 'name': 'greet', 'confidence': 0.9999746084213257}' and entities '[]'
+2021-01-18 21:16:23,179 [DEBUG]  Logged UserUtterance - tracker now has 7 events.
+2021-01-18 21:16:23,180 [ERROR]  Tried to set non existent slot 'payment_amount'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,180 [ERROR]  Tried to set non existent slot 'payment_date'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,181 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+2021-01-18 21:16:23,181 [DEBUG]  There is a memorised next action 'utter_greet'
+2021-01-18 21:16:23,181 [ERROR]  Tried to set non existent slot 'payment_amount'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,182 [ERROR]  Tried to set non existent slot 'payment_date'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,197 [ERROR]  Tried to set non existent slot 'payment_amount'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,198 [ERROR]  Tried to set non existent slot 'payment_date'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,198 [DEBUG]  Current tracker state:
+[state 1] user text: Hola | previous action name: action_listen
+2021-01-18 21:16:23,199 [DEBUG]  There is no applicable rule.
+2021-01-18 21:16:23,199 [ERROR]  Tried to set non existent slot 'payment_amount'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,199 [ERROR]  Tried to set non existent slot 'payment_date'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,207 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+2021-01-18 21:16:23,208 [DEBUG]  There is no applicable rule.
+2021-01-18 21:16:23,208 [DEBUG]  Made prediction using user intent.
+2021-01-18 21:16:23,208 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-18 21:16:23,208 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy.
+2021-01-18 21:16:23,208 [DEBUG]  Predicted next action 'utter_greet' with confidence 1.00.
+2021-01-18 21:16:23,209 [ERROR]  Tried to set non existent slot 'payment_amount'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,216 [ERROR]  Tried to set non existent slot 'payment_date'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,218 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x146461a60>]'.
+2021-01-18 21:16:23,218 [DEBUG]  Action 'utter_greet' ended with events '[BotUttered('Muy bien profesor DemoMan, mi nombre es Sari Agente de OZCE Seguros, le llamo porque el Profesor Juan Manuel Ríos Ortega me pidió que le llamara, para explicarle los grandes beneficios de contar con un seguro de Gastos Médicos Mayores, que cubra el covid y otros gastos médicos más, podría hacerle unas preguntas?', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_greet"}, 1611026183.2180228)]'.
+2021-01-18 21:16:23,219 [ERROR]  Tried to set non existent slot 'payment_amount'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,235 [ERROR]  Tried to set non existent slot 'payment_date'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,235 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+2021-01-18 21:16:23,235 [DEBUG]  There is a memorised next action 'action_listen'
+2021-01-18 21:16:23,236 [ERROR]  Tried to set non existent slot 'payment_amount'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,236 [ERROR]  Tried to set non existent slot 'payment_date'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,253 [ERROR]  Tried to set non existent slot 'payment_amount'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,254 [ERROR]  Tried to set non existent slot 'payment_date'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,254 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+[state 2] user intent: greet | previous action name: utter_greet
+2021-01-18 21:16:23,254 [DEBUG]  There is no applicable rule.
+2021-01-18 21:16:23,254 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy.
+2021-01-18 21:16:23,254 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-18 21:16:23,261 [ERROR]  Tried to set non existent slot 'payment_amount'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,262 [ERROR]  Tried to set non existent slot 'payment_date'. Make sure you added all your slots to your domain file.
+2021-01-18 21:16:23,262 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:16:23,262 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-18 21:16:23,262 [DEBUG]  Deleted lock for conversation '841cf009d1654054bb30b2fca7132774'.
+2021-01-18 21:19:46,108 [INFO ]  Killing Sanic server now.
+2021-01-18 21:21:24,711 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2021-01-18 21:21:24,712 [INFO ]  Starting Rasa server on http://localhost:5005
+2021-01-18 21:21:24,713 [DEBUG]  Using the default number of Sanic workers (1).
+2021-01-18 21:21:24,715 [INFO ]  Loading model models/20210118-212043.tar.gz...
+2021-01-18 21:21:25,355 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp2pli6eso'.
+2021-01-18 21:21:25,372 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2021-01-18 21:21:25,686 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2021-01-18 21:21:25,696 [INFO ]  Enabling coroutine debugging. Loop id 140442632634384.
+2021-01-18 21:21:25,707 [INFO ]  Loading model models/20210118-212043.tar.gz...
+2021-01-18 21:21:26,318 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp7wnvajpk'.
+2021-01-18 21:21:26,545 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp7wnvajpk/nlu/component_5_DIETClassifier.tf_model with finetune_mode=False...
+2021-01-18 21:21:26,644 [DEBUG]  Following metrics will be logged during training: 
+2021-01-18 21:21:26,645 [DEBUG]    t_loss (total loss)
+2021-01-18 21:21:26,645 [DEBUG]    i_acc (intent acc)
+2021-01-18 21:21:26,645 [DEBUG]    i_loss (intent loss)
+2021-01-18 21:21:26,645 [DEBUG]    e_f1 (entity f1)
+2021-01-18 21:21:26,645 [DEBUG]    e_loss (entity loss)
+2021-01-18 21:21:27,608 [DEBUG]  Finished loading the model.
+2021-01-18 21:21:27,611 [DEBUG]  Building tensorflow prediction graph...
+2021-01-18 21:21:31,776 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-18 21:21:31,778 [DEBUG]  Failed to load model for 'ResponseSelector'. Maybe you did not provide enough training data and no model was trained or the path '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp7wnvajpk/nlu' doesn't exist?
+2021-01-18 21:21:31,794 [DEBUG]  Connected to InMemoryTrackerStore.
+2021-01-18 21:21:31,794 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2021-01-18 21:21:32,409 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp_rjc5wcy'.
+2021-01-18 21:21:32,531 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp_rjc5wcy/core/policy_1_TEDPolicy/ted_policy.tf_model with finetune_mode=False...
+2021-01-18 21:21:32,893 [DEBUG]  Finished loading the model.
+2021-01-18 21:21:32,900 [DEBUG]  Building tensorflow prediction graph...
+2021-01-18 21:21:36,547 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-18 21:21:36,549 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2021-01-18 21:21:36,550 [INFO ]  Rasa server is up and running.
+2021-01-18 21:21:42,443 [DEBUG]  Issuing ticket for conversation '15d23ab6d96b4ec28eb8e519d75953ca'.
+2021-01-18 21:21:42,443 [DEBUG]  Acquiring lock for conversation '15d23ab6d96b4ec28eb8e519d75953ca'.
+2021-01-18 21:21:42,443 [DEBUG]  Acquired lock for conversation '15d23ab6d96b4ec28eb8e519d75953ca'.
+2021-01-18 21:21:42,444 [DEBUG]  Could not find tracker for conversation ID '15d23ab6d96b4ec28eb8e519d75953ca'.
+2021-01-18 21:21:42,444 [DEBUG]  Starting a new session for conversation ID '15d23ab6d96b4ec28eb8e519d75953ca'.
+2021-01-18 21:21:42,447 [DEBUG]  Calling action endpoint to run action 'action_session_start'.
+2021-01-18 21:21:43,348 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:21:43,348 [DEBUG]  Action 'action_session_start' ended with events '[<rasa.shared.core.events.SessionStarted object at 0x14a26e910>, <rasa.shared.core.events.SlotSet object at 0x14a26e9d0>, <rasa.shared.core.events.SlotSet object at 0x14a26e340>, <rasa.shared.core.events.SlotSet object at 0x14a3a78b0>, <rasa.shared.core.events.SlotSet object at 0x14a3a7730>, ActionExecuted(action: action_listen, policy: None, confidence: None)]'.
+2021-01-18 21:21:43,349 [DEBUG]  Current slot values: 
+	Acity: None
+	Bdbo: None
+	Cmaternity: None
+	Dappointment: None
+	name: DemoMan
+	sex: man
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	requested_slot: None
+2021-01-18 21:21:43,736 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-18 21:21:43,736 [DEBUG]  Adding following selector key to message property: default
+2021-01-18 21:21:43,738 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-18 21:21:43,746 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-18 21:21:43,747 [DEBUG]  Received user message 'hola' with intent '{'id': -8212115462913718628, 'name': 'greet', 'confidence': 0.9999586343765259}' and entities '[]'
+2021-01-18 21:21:43,748 [DEBUG]  Logged UserUtterance - tracker now has 8 events.
+2021-01-18 21:21:43,749 [DEBUG]  Current tracker state:
+[state 0] slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 1] user intent: greet | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+2021-01-18 21:21:43,749 [DEBUG]  There is no memorised next action
+2021-01-18 21:21:43,761 [DEBUG]  Current tracker state:
+[state 0] slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 1] user text: hola | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+2021-01-18 21:21:43,761 [DEBUG]  There is no applicable rule.
+2021-01-18 21:21:43,762 [DEBUG]  Current tracker state:
+[state 0] slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 1] user intent: greet | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+2021-01-18 21:21:43,763 [DEBUG]  There is no applicable rule.
+2021-01-18 21:21:43,763 [DEBUG]  Made prediction using user intent.
+2021-01-18 21:21:43,763 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-18 21:21:43,765 [DEBUG]  Predicted next action using policy_1_TEDPolicy.
+2021-01-18 21:21:43,765 [DEBUG]  Predicted next action 'action_listen' with confidence 0.64.
+2021-01-18 21:21:43,766 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x148150e50>]'.
+2021-01-18 21:21:43,766 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-18 21:21:43,766 [DEBUG]  Deleted lock for conversation '15d23ab6d96b4ec28eb8e519d75953ca'.
+2021-01-18 21:25:35,563 [DEBUG]  Issuing ticket for conversation '15d23ab6d96b4ec28eb8e519d75953ca'.
+2021-01-18 21:25:35,565 [DEBUG]  Acquiring lock for conversation '15d23ab6d96b4ec28eb8e519d75953ca'.
+2021-01-18 21:25:35,565 [DEBUG]  Acquired lock for conversation '15d23ab6d96b4ec28eb8e519d75953ca'.
+2021-01-18 21:25:35,565 [DEBUG]  Recreating tracker for id '15d23ab6d96b4ec28eb8e519d75953ca'
+2021-01-18 21:25:35,585 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-18 21:25:35,585 [DEBUG]  Adding following selector key to message property: default
+2021-01-18 21:25:35,587 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-18 21:25:35,595 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-18 21:25:35,596 [DEBUG]  Received user message 'okay' with intent '{'id': 4659497022919992154, 'name': 'confirm', 'confidence': 0.9996612668037415}' and entities '[]'
+2021-01-18 21:25:35,597 [DEBUG]  Logged UserUtterance - tracker now has 11 events.
+2021-01-18 21:25:35,597 [DEBUG]  Current tracker state:
+[state 0] slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 1] user intent: greet | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 2] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+2021-01-18 21:25:35,598 [DEBUG]  There is no memorised next action
+2021-01-18 21:25:35,615 [DEBUG]  Current tracker state:
+[state 0] slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 1] user intent: greet | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 2] user text: okay | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+2021-01-18 21:25:35,615 [DEBUG]  There is no applicable rule.
+2021-01-18 21:25:35,616 [DEBUG]  Current tracker state:
+[state 0] slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 1] user intent: greet | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 2] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+2021-01-18 21:25:35,616 [DEBUG]  There is a rule for the next action 'policy_form'.
+2021-01-18 21:25:35,626 [DEBUG]  Made prediction using user intent.
+2021-01-18 21:25:35,626 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-18 21:25:35,626 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:25:35,629 [DEBUG]  Predicted next action 'policy_form' with confidence 1.00.
+2021-01-18 21:25:35,630 [DEBUG]  Activated the form 'policy_form'.
+2021-01-18 21:25:35,630 [DEBUG]  No pre-filled required slots to validate.
+2021-01-18 21:25:35,630 [DEBUG]  Validating user input 'UserUttered(text: okay, intent: confirm, use_text_for_featurization: False)'.
+2021-01-18 21:25:35,630 [DEBUG]  Validating extracted slots: {}
+2021-01-18 21:25:35,632 [DEBUG]  Request next slot 'Acity'
+2021-01-18 21:25:35,634 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x14a4b3f40>]'.
+2021-01-18 21:25:35,634 [DEBUG]  Action 'policy_form' ended with events '[<rasa.shared.core.events.ActiveLoop object at 0x14a4aea00>, <rasa.shared.core.events.SlotSet object at 0x14a4a9cd0>, BotUttered('Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad vive usted?', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_ask_Acity"}, 1611026735.634179)]'.
+2021-01-18 21:25:35,634 [DEBUG]  Current slot values: 
+	Acity: None
+	Bdbo: None
+	Cmaternity: None
+	Dappointment: None
+	name: DemoMan
+	sex: man
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	requested_slot: Acity
+2021-01-18 21:25:35,659 [DEBUG]  Current tracker state:
+[state 0] slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 1] user intent: greet | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 2] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 3] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+2021-01-18 21:25:35,659 [DEBUG]  There is no memorised next action
+2021-01-18 21:25:35,669 [DEBUG]  Predicted 'action_listen' after loop 'policy_form'.
+2021-01-18 21:25:35,669 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:25:35,669 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-18 21:25:35,669 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:25:35,669 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-18 21:25:35,670 [DEBUG]  Deleted lock for conversation '15d23ab6d96b4ec28eb8e519d75953ca'.
+2021-01-18 21:25:45,288 [DEBUG]  Issuing ticket for conversation '15d23ab6d96b4ec28eb8e519d75953ca'.
+2021-01-18 21:25:45,289 [DEBUG]  Acquiring lock for conversation '15d23ab6d96b4ec28eb8e519d75953ca'.
+2021-01-18 21:25:45,289 [DEBUG]  Acquired lock for conversation '15d23ab6d96b4ec28eb8e519d75953ca'.
+2021-01-18 21:25:45,289 [DEBUG]  Recreating tracker for id '15d23ab6d96b4ec28eb8e519d75953ca'
+2021-01-18 21:25:45,302 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-18 21:25:45,302 [DEBUG]  Adding following selector key to message property: default
+2021-01-18 21:25:45,304 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-18 21:25:45,315 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-18 21:25:45,316 [DEBUG]  Received user message 'de torreon' with intent '{'id': -7453461066509186042, 'name': 'city_of_origin', 'confidence': 0.9999969005584717}' and entities '[{'entity': 'city', 'start': 3, 'end': 10, 'confidence_entity': 0.9996609687805176, 'value': 'torreon', 'extractor': 'DIETClassifier'}]'
+2021-01-18 21:25:45,317 [DEBUG]  Current slot values: 
+	Acity: None
+	Bdbo: None
+	Cmaternity: None
+	Dappointment: None
+	name: DemoMan
+	sex: man
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	requested_slot: Acity
+2021-01-18 21:25:45,317 [DEBUG]  Logged UserUtterance - tracker now has 18 events.
+2021-01-18 21:25:45,319 [DEBUG]  Current tracker state:
+[state 0] slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 1] user intent: greet | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 2] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 3] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 4] user intent: city_of_origin | user entities: ('city',) | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+2021-01-18 21:25:45,322 [DEBUG]  There is no memorised next action
+2021-01-18 21:25:45,339 [DEBUG]  Current tracker state:
+[state 0] slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 1] user intent: greet | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 2] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 3] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 4] user text: de torreon | previous action name: action_listen | active loop: {'name': 'policy_form'} | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+2021-01-18 21:25:45,340 [DEBUG]  There is no applicable rule.
+2021-01-18 21:25:45,340 [DEBUG]  Predicted loop 'policy_form'.
+2021-01-18 21:25:45,340 [DEBUG]  Made prediction using user intent.
+2021-01-18 21:25:45,344 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-18 21:25:45,345 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:25:45,345 [DEBUG]  Predicted next action 'policy_form' with confidence 1.00.
+2021-01-18 21:25:45,346 [DEBUG]  Validating user input 'UserUttered(text: de torreon, intent: city_of_origin, entities: torreon (Type: city, Role: None, Group: None), use_text_for_featurization: False)'.
+2021-01-18 21:25:45,346 [DEBUG]  Trying to extract requested slot 'Acity' ...
+2021-01-18 21:25:45,346 [DEBUG]  Got mapping '{'entity': 'city', 'intent': 'city_of_origin', 'type': 'from_entity'}'
+2021-01-18 21:25:45,346 [DEBUG]  Successfully extracted 'torreon' for requested slot 'Acity'
+2021-01-18 21:25:45,357 [DEBUG]  Validating extracted slots: {'Acity': 'torreon'}
+2021-01-18 21:25:45,358 [DEBUG]  Request next slot 'Bdbo'
+2021-01-18 21:25:45,358 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x14a52fa30>]'.
+2021-01-18 21:25:45,358 [DEBUG]  Action 'policy_form' ended with events '[<rasa.shared.core.events.SlotSet object at 0x14a594250>, <rasa.shared.core.events.SlotSet object at 0x14a58f280>, BotUttered('Ha esa es una muy bonita ciudad. ¿En qué año nació usted DemoMan?', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_ask_Bdbo"}, 1611026745.358559)]'.
+2021-01-18 21:25:45,359 [DEBUG]  Current slot values: 
+	Acity: torreon
+	Bdbo: None
+	Cmaternity: None
+	Dappointment: None
+	name: DemoMan
+	sex: man
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	requested_slot: Bdbo
+2021-01-18 21:25:45,359 [DEBUG]  Current tracker state:
+[state 0] slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 1] user intent: greet | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 2] user intent: confirm | previous action name: action_listen | slots: {'sex': (1.0,), 'payment_amount': (1.0,)}
+[state 3] user intent: confirm | previous action name: policy_form | active loop: {'name': 'policy_form'} | slots: {'Acity': (1.0,), 'sex': (1.0,), 'payment_amount': (1.0,)}
+2021-01-18 21:25:45,372 [DEBUG]  There is no memorised next action
+2021-01-18 21:25:45,380 [DEBUG]  Predicted 'action_listen' after loop 'policy_form'.
+2021-01-18 21:25:45,381 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-18 21:25:45,381 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-18 21:25:45,382 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-18 21:25:45,382 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-18 21:25:45,382 [DEBUG]  Deleted lock for conversation '15d23ab6d96b4ec28eb8e519d75953ca'.

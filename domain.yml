@@ -32,15 +32,21 @@ slots:
   Dappointment:
     type: text
     influence_conversation: false
+  # Data to query from customer
   name:
     type: text
-    influence_conversation: false
-  requested_slot:
-    type: any
     influence_conversation: false
   sex:
     type: text
     influence_conversation: true
+  payment_date:
+    type: text
+    influence_conversation: false
+  agent_name:
+    type: text
+    influence_conversation: false
+  payment_amount:
+    type: text
 responses:
   utter_greet:
   - text: Muy bien profesor {name}, mi nombre es Sari Agente de OZCE Seguros, le llamo
@@ -104,8 +110,8 @@ responses:
       que le acabo de enviar?
 actions:
 - action_slot_reset
-- action_slot_create
 - action_slot_query
+- action_session_start
 forms:
   policy_form:
     Acity:
