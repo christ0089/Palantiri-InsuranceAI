@@ -378,6 +378,8 @@ nlu:
     - sí está bien
     - pero sí
     - ok está bien
+    - claro que si
+    - Claro que si
 - intent: deny
   examples: |
     - no
@@ -418,6 +420,9 @@ nlu:
     - ni de broma
     - okay bye
     - el once de julio
+    - no quiero pagar
+    - No quiero pagar
+    - no quiero pagae
 - intent: bot_challenge
   examples: |
     - eres un bot?
@@ -478,6 +483,38 @@ nlu:
     - el [12](time) de junio
     - en [1996](time)
     - para pasado [mañana](time)
+- intent: payment_amount_info
+  examples: |
+    - cuanto debo?
+    - cuanto debo pagar?
+    - cuanto voy a pagar este mes?
+    - de cuánto es la cantidad
+    - cuánto es la mensualidad
+    - sí la mensualidad
+- intent: payment_date_info
+  examples: |
+    - cuando debo pagar
+    - cuando se vence
+    - cuando tengo que pagar
+    - cuanto tiempo tengo para pagar
+    - para pagar cuanto tiempo tengo
+- intent: payment_info
+  examples: |
+    - donde debo pagar
+    - donde pago
+    - donde depositó
+    - para realizar el deposito a donde voy
+- intent: payment_intent
+  examples: |
+    - lo voy a checar
+    - voy a verficar mis finanzas
+    - voy a platicarlo con mi esposa
+- intent: handover
+  examples: |
+    - quiero hablar con alguien
+    - comunicame con mi agente
+    - quiero hablar con mi agente
+    - donde esta mi agente
 - synonym: torreon
   examples: |
     - la laguna
@@ -494,37 +531,3 @@ nlu:
     - siri
     - alexa
     - google home
-
-- intent: payment_amount_info
-  examples: |
-    - cuanto debo?
-    - cuanto debo pagar?
-    - cuanto voy a pagar este mes?
-
-- intent: payment_date_info
-  examples: |
-    - cuando debo pagar
-    - cuando se vence
-    - cuando tengo que pagar
-    - cuanto tiempo tengo para pagar
-    - para pagar cuanto tiempo tengo
-
-- intent: payment_info
-  examples: |
-    - donde debo pagar
-    - donde pago
-    - donde depositó
-    - para realizar el deposito a donde voy
-
-- intent: payment_intent
-  examples: |
-    - lo voy a checar
-    - voy a verficar mis finanzas
-    - voy a platicarlo con mi esposa
-
-- intent: handover
-  examples: |
-    - quiero hablar con alguien
-    - comunicame con mi agente
-    - quiero hablar con mi agente
-    - donde esta mi agente

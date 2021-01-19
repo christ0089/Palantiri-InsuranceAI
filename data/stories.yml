@@ -1,18 +1,10 @@
 version: "2.0"
 stories:
- ## Payment Stories  
 - story: Story for Payment Deny
   steps:
   - intent: goodbye
   - action: utter_goodbye
-
 - story: Story for Payment Confirm
   steps:
-  - intent: confirm
-  - action: payment_form
-  - active_loop: payment_form
   - intent: goodbye
   - action: utter_goodbye
-
-
-

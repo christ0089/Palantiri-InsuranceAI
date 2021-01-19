@@ -4,51 +4,43 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
-
-- rule: Say payment ammount 
+- rule: Say payment ammount
   steps:
   - intent: payment_amount_info
   - action: action_slot_query
   - action: utter_payment_ammount_info
   - action: utter_payment_date
-
-- rule: Say payment date 
+- rule: Say payment date
   steps:
   - intent: payment_date_info
   - action: action_slot_query
   - action: utter_payment_date_info
   - action: utter_payment_ammount
-
-- rule: Say payment ammount 
+- rule: Say payment ammount
   condition:
-    - slot_was_set:
-      - accept_payment: true 
+  - slot_was_set:
+    - accept_payment: true
   steps:
   - intent: payment_amount_info
   - action: action_slot_query
   - action: utter_payment_ammount_info
-
-- rule: Say payment date 
+- rule: Say payment date
   condition:
-    - slot_was_set:
-      - accept_payment: true 
+  - slot_was_set:
+    - accept_payment: true
   steps:
   - intent: payment_date_info
   - action: action_slot_query
   - action: utter_payment_date_info
-
-
-- rule: Say payment date 
+- rule: Say payment date
   steps:
   - intent: payment_info
   - action: action_slot_query
   - action: utter_payment_accept
-
 - rule: Handover
   steps:
   - intent: handover
   - action: utter_handover_assigned
-
 - rule: Submit form payment accept
   condition:
   - active_loop: payment_form
@@ -58,8 +50,6 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_utter_message
-
-
 - rule: Submit form payment reject
   condition:
   - active_loop: reject_payment_form
@@ -69,15 +59,19 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_utter_message
-
 - rule: Submit form payment reject
+  condition:
+  - slot_was_set:
+    - accept_payment: null
   steps:
   - intent: confirm
   - action: payment_form
   - active_loop: payment_form
-
 - rule: Submit form payment reject
-  steps: 
+  condition:
+  - slot_was_set:
+    - accept_payment: null
+  steps:
   - intent: deny
   - action: reject_payment_form
   - active_loop: reject_payment_form
