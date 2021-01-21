@@ -58,17 +58,16 @@ class ActionSessionStart(Action):
         events = [SessionStarted()]
         try: 
             r = requests.get('https://1ntj0abfh0.execute-api.us-east-1.amazonaws.com/PROD/customer?contactId='+ tracker.sender_id)
-        
+            data = r.json()
             for key in data:
                 events.append(SlotSet(key, data[key]))
         except: 
             data = {
                 "name": "DemoMan",
-                "sex": "man",
                 "payment_amount": "500 pesos",
                 "payment_date": "22 de Enero"
             }
-    #Change
+
             for key in data:
                 events.append(SlotSet(key, data[key]))
 
