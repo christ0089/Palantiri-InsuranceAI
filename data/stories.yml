@@ -4,7 +4,3 @@ stories:
   steps:
   - intent: goodbye
   - action: utter_goodbye
-- story: Story for Payment Confirm
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye

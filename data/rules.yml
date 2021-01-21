@@ -9,16 +9,14 @@ rules:
   steps:
   - intent: greet
   - action: utter_greet
-# Payment Intent
 - rule: Payment Intent data
-  steps: 
+  steps:
   - intent: payment_intent
   - action: utter_payment_intent
 - rule: Payment Done
   steps:
   - intent: payment_done
   - action: utter_payment_done
-# Payment Questions 
 - rule: Say payment ammount
   steps:
   - intent: payment_amount_info
@@ -74,7 +72,7 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_utter_message
-- rule: Submit form payment reject
+- rule: Submit form payment accept
   condition:
   - slot_was_set:
     - accept_payment: null
