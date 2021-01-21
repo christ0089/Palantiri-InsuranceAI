@@ -144,4 +144,10 @@ class ActionSessionStart(Action):
 
         # an `action_listen` should be added at the end as a user message follows
         events.append(ActionExecuted("action_listen"))
+
+        # dispatcher.utter_message(template="utter_start",
+        #     name = data["name"],
+        #     payment_amount = data["payment_amount"],
+        #     payment_date = data["payment_date"]
+        # )
         return events

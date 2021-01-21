@@ -4,6 +4,21 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+- rule: Say `hello` when the user starts a conversation with intent `greet`
+  conversation_start: true
+  steps:
+  - intent: greet
+  - action: utter_greet
+# Payment Intent
+- rule: Payment Intent data
+  steps: 
+  - intent: payment_intent
+  - action: utter_payment_intent
+- rule: Payment Done
+  steps:
+  - intent: payment_done
+  - action: utter_payment_done
+# Payment Questions 
 - rule: Say payment ammount
   steps:
   - intent: payment_amount_info
@@ -73,5 +88,13 @@ rules:
     - accept_payment: null
   steps:
   - intent: deny
+  - action: reject_payment_form
+  - active_loop: reject_payment_form
+- rule: Submit form payment reject
+  condition:
+  - slot_was_set:
+    - accept_payment: null
+  steps:
+  - intent: payment_deny
   - action: reject_payment_form
   - active_loop: reject_payment_form

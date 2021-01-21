@@ -111,7 +111,7 @@ nlu:
     - cual fue la preguntas
     - que pregunta hiciste
     - que necesitas saber
-    - lo podrias repetir?
+    - lo podrias repetir
     - me podrías repetir por favor
 - intent: wrong_input
   examples: |
@@ -194,7 +194,7 @@ nlu:
   examples: |
     - cual es el costo
     - cual es el precio
-    - precio?
+    - precio
     - y esto cuanto cuesta
     - me van a cobrar
     - me lo van a regalar
@@ -425,20 +425,20 @@ nlu:
     - no quiero pagae
 - intent: bot_challenge
   examples: |
-    - eres un bot?
-    - eres un humano?
-    - quien eres?
-    - estoy hablando con un bot?
-    - que eres?
-    - eres un robot?
-    - estoy hablando con quien?
-    - con quien estoy hablando?
-    - como te llamas?
-    - hola quien eres?
-    - bueno quien eres?
-    - te llamas como?
-    - eres [siri](bots)?
-    - estoy hablando con [siri](bots)?
+    - eres un bot
+    - eres un humano
+    - quien eres
+    - estoy hablando con un bot
+    - que eres
+    - eres un robot
+    - estoy hablando con quien
+    - con quien estoy hablando
+    - como te llamas
+    - hola quien eres
+    - bueno quien eres
+    - te llamas como
+    - eres [siri](bots)
+    - estoy hablando con [siri](bots)
     - eres una [alexa](bots)
     - a quién eres tú otra vez
     - quién eres
@@ -485,12 +485,85 @@ nlu:
     - para pasado [mañana](time)
 - intent: payment_amount_info
   examples: |
-    - cuanto debo?
-    - cuanto debo pagar?
-    - cuanto voy a pagar este mes?
+    - cuanto debo
+    - cuanto debo pagar
+    - cuanto voy a pagar este mes
     - de cuánto es la cantidad
     - cuánto es la mensualidad
     - sí la mensualidad
+    - Cuanto es lo que tengo que pagar
+    - Cuanto dijo que debo pagar
+    - Cuanto dijo que sale la mensualidad
+    - Cuánto dijo que debo pagar este mes
+    - Me repite la cantidad
+    - Me repite la cantidad, por favor
+    - Que me dijo Cuanto es
+    - Cuanto sale, Señorita
+    - Como dijo Cuanto sale
+    - Como dijo Cuanto sale, Señorita
+    - No le entendí, de cuanto es la mensualidad de la póliza
+    - No le entendí, de cuanto dijo que es la mensualidad de la póliza
+    - No le entendí, de cuanto dijo que es el pago de la póliza
+    - No le entendí, de cuanto dijo que es el pago de este mes
+    - No le entendí, de cuanto dijo que es el pago
+    - No le entendí, Cuanto dijo
+    - No le entendí, Cuánto dijo que era
+    - No le entendí, Cuánto dijo que era la  mensualidad
+    - No entendí, Cuanto dijo que debo pagar
+    - No le entendí, Me repite la cantidad
+    - No le entendí, Me repite la cantidad por favor
+    - No entendí, Cuanto es lo que tengo que pagar
+    - No le entendí, Como dijo Cuanto sale
+    - No le entendí, Como dijo que sale
+    - No le entendí, En cuanto dijo que sale
+    - No le entendí, En cuanto sale
+    - Perdón, de cuanto es la mensualidad de la póliza
+    - Perdón, de cuanto dijo que es la mensualidad de la póliza
+    - Perdón, de cuanto dijo que es el pago de la póliza
+    - Perdón, de cuanto dijo que es el pago de este mes
+    - Perdón, de cuanto dijo que es el pago
+    - Perdón, Cuanto dijo
+    - Perdón, Cuánto dijo que era
+    - Perdón, Cuánto dijo que era la  mensualidad
+    - Perdón, Cuanto dijo que debo pagar
+    - Perdón, Me repite la cantidad
+    - Perdón, Me repite la cantidad por favor
+    - Perdón, Cuanto es lo que tengo que pagar
+    - Perdón, Como dijo Cuanto sale
+    - Perdón, Como dijo que sale
+    - Perdón,En cuanto dijo que sale
+    - Perdón,En cuanto sale
+    - Como dijo, de cuanto es la mensualidad de la póliza
+    - Como dijo, de cuanto dijo que es la mensualidad de la póliza
+    - Como dijo, de cuanto dijo que es el pago de la póliza
+    - Como dijo, de cuanto dijo que es el pago de este mes
+    - Como dijo, de cuanto dijo que es el pago
+    - Como dijo, Cuanto dijo
+    - Cómo dijo, Cuánto dijo que era
+    - Cómo dijo, Cuánto dijo que era la  mensualidad
+    - Cómo Dijo, Cuanto dijo que debo pagar
+    - Cómo dijo Me repite la cantidad
+    - Cómo dijo Me repite la cantidad por favor
+    - Como Dijo, Cuanto es lo que tengo que pagar
+    - Cómo dijo Como dijo Cuanto sale
+    - Cómo dijo Como dijo que sale
+    - Cómo dijo En cuanto dijo que sale
+    - Cómo dijo En cuanto sale
+    - Señorita, me puede repetir
+    - Señorita, de cuanto es la mensualidad de la póliza
+    - Señorita, de cuanto dijo que es la mensualidad de la póliza
+    - Señorita, de cuanto dijo que es el pago de la póliza
+    - Señorita, de cuanto dijo que es el pago de este mes
+    - Señorita, de cuanto dijo que es el pago
+    - Señorita, Cuánto dijo que era la  mensualidad
+    - Señorita, Cuanto dijo que debo pagar
+    - Señorita, Me repite la cantidad
+    - Señorita, Me repite la cantidad por favor
+    - Señorita, Cuanto es lo que tengo que pagar
+    - Señorita, Como dijo Cuanto sale
+    - Señorita, Como dijo que sale
+    - Señorita, En cuanto dijo que sale
+    - Señorita, En cuanto sale
 - intent: payment_date_info
   examples: |
     - cuando debo pagar
@@ -498,17 +571,107 @@ nlu:
     - cuando tengo que pagar
     - cuanto tiempo tengo para pagar
     - para pagar cuanto tiempo tengo
+    - Hasta cuando tengo para pagar
+    - Señorita, hasta cuando tengo para pagar
+    - Cuando vence la mensualidad
+    - Cual dijo que es la fecha de vencimiento
+    - Cuando dijo que es la fecha de vencimiento de la póliza
+    - me repite la fecha de vencimiento
+    - me repite la fecha de vencimiento de la póliza
+    - me repite la fecha de vencimiento, por favor
+    - Señorita, cuando dijo que vence
+    - Señorita, Cuando dijo que vence la póliza
+    - Señorita, hasta cuando tengo para pagar
+    - Señorita, hasta cuando tengo para pagar la póliza
+    - Que día vence
+    - Que día vence la póliza
+    - perdón, que día dijo que vence
+    - perdón, que día dijo que vence la póliza
+    - perdón , cuando vence
+    - perdón, cuando vence la póliza
+    - no le escuché bien, cuando vence
+    - no le escuchué bien, cuando vence la poliza
+    - me puede repetir la fecha de vencimiento por favor
+    - me puede repetir la fecha de vencimiento de la poliza por favor
+    - me puede repetir la fecha de vencimiento de la poliza
+    - Perdón no eschué bien, puede repetrime la fecha de vencimiento, por favor
+    - Como dijo Hasta cuando puedo pagar
+    - Señorita, me repite la fecha de vencimiento por favor
 - intent: payment_info
   examples: |
     - donde debo pagar
     - donde pago
     - donde depositó
     - para realizar el deposito a donde voy
+    - Donde puedo pagar
+    - Puedo pagar en  el Oxxo
+    - Puedo pagar en farmacias Guadalajara
+    - En que bancos puedo pagar
+    - Le puedo pagar con tranferncia
+    - Puedo pagar con tarjeta de crédito
+    - Puedo pagar con tarjeta de debito
+    - Puedo pagar con la tarjeta de un familiar
+    - Puedo pagar con la tarjeta de credito de mi papá
+    - Puedo pagar con la tarjeta de credito de mi mamá
+    - Puedo pagar con la tarjeta de credirto de mi hermana
+    - Puedo pagar con la tarjeta de credirto de mi hermano
+    - Puedo pagar con la tarjeta de credirto de mi esposa
+    - Puedo pagar con la tarjeta de credirto de mi esposo
+    - Puedo pagar con la tarjeta de credirto de mi hijo
+    - Puedo pagar con la tarjeta de credirto de mi hija
+- intent: payment_repeat
+  examples: |
+    - me puede repetir cuando es la fecha de vencimiento y el monto de la mensualidad, por favor
+    - Cuando dijo que es la fecha de vencimiento y la mensualidad
+    - Cuanto es la mensualidad y la fecha de vencimiento
+    - me repite la fecha de vencimiento y la cantidad a pagar, por favor
+    - me repite fecha y monto del pago mensual, por favor
+    - me repite la mensualidad y fecha de vencimiento por favor
+    - me repite la mensualdiad y fecha de vencimiento
+    - no entendí, me puede repetir cuando vence y cuanto hay que pagar
+    - Cuanto dijo que hay que pagar y cuando vence
+    - Cuanto dijo que hay que pagar y hasta cuando tengo para pagar
+    - Cuanto hay que pagar y hasta cuando
 - intent: payment_intent
   examples: |
     - lo voy a checar
     - voy a verficar mis finanzas
     - voy a platicarlo con mi esposa
+    - No se, deje checo
+    - deje veo 
+    - deje veo, por que he traido muchas gastos
+    - voy a checar mis finanzas
+    - espero que si, pero no estoy seguro
+    - No estoy seguro
+    - A que caray deje veo
+    - No se si voy a continuar, deje checo
+    - Yo creo que si
+    - Si solo deje checo com ando
+    - Yo creo que si, para mañana 
+    - Si, no debe haber problema
+    - Si , espero que si
+    - Ando muy gastado pero yo creo que si
+    - Si esta semana espero poder pagar la mensualidad
+- intent: payment_done
+  examples: |
+    - Ya page
+    - Ya lo hice
+    - Por que me llama si page ayer
+    - Ya page ayer
+    - Hoy acabo de pagar
+    - Acabo de pagar hace un rato
+- intent: payment_deny
+  examples: |
+    - Oiga, no estoy de acuerdo se me hace mucho el monto de la póliza
+    - Me pude expplicar la cobertura de la póliza
+    - Me pude expplicar la cobertura de la póliza, po favor
+    - Puedo ir al hospital Santa María que esta qui en la ciudad
+    - Si tengo una emergencia que hago
+    - Cual es su celuar por si tengo alguna duda
+    - A que telefno le peudo marcar si tengo una duda
+    - Me puede explicar como funciona la póliza
+    - A que hospitales puedo ir en caso de emergencia
+    - A que hospitales puedo ir en caso de un accidente
 - intent: handover
   examples: |
     - quiero hablar con alguien

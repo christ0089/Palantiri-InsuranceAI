@@ -16,6 +16,10 @@ intents:
 - payment_amount_info
 - payment_date_info
 - payment_info
+- payment_deny
+- payment_done
+- payment_intent
+- payment_repeat
 - handover
 entities:
 - city
@@ -44,23 +48,7 @@ slots:
     influence_conversation: false
 responses:
   utter_greet:
-  - text: Muy bien profesor {name}, mi nombre es Sari Agente de OZCE Seguros, le llamo
-      porque el Profesor Juan Manuel Ríos Ortega me pidió que le llamara, para explicarle
-      los grandes beneficios de contar con un seguro de Gastos Médicos Mayores, que
-      cubra el covid y otros gastos médicos más, podría hacerle unas preguntas?
-  utter_repeat:
-  - text: Claro que sí la pregunta fue.
-  utter_city_of_origin:
-  - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
-      vive usted?
-  utter_age_question:
-  - text: Ha muy bien gracias y ¿En qué año nació usted {name}?,
-  utter_sms:
-  - text: Para su comodidad, le enviaré por mensaje para que conozca a detalle los
-      beneficios de las opciones que tenemos para ud. así como las formas de pago.
-  utter_appointment:
-  - text: Por último, profesor, cuando le puedo llamar para dispar dudas de las opciones
-      que le acabo de enviar?
+  - text: Muy bien profesor {name}, mi nombre es Sari Agente de OZCE Seguros. Cree que podamos contar con su pago?
   utter_happy:
   - text: Muy bien, tambien.
   utter_costs:
@@ -102,7 +90,17 @@ responses:
   ## Agent Handover
   utter_handover_assigned:
   - text: En unos momentos te comunicaremos con {agent_name}.
-
+  ## Agent Start
+  utter_start:
+  - text: "Estimado Profesor {name}, espero se encuentre bien, le llamo de OZSE Seguros, para recordarle que la fecha de vencimiento de su póliza de seguros de gastos médicos es el  {payment_date}, y el saldo de este mes es de {payment_amount}. Para su comodidad, le estoy enviando un mensaje donde, si usted gusta, pueda realizar su pago electrónico o hacer el depósito a la cuenta de OZSE Seguros que le estoy enviando."
+  utter_payment_done:
+  - custom:
+      status: end_conversation
+  - text: Muchas gracias, disulpe la llamada y que tenga un exelente día
+  utter_payment_repeat:
+  - text: "Estimado Profesor {name}, espero se encuentre bien, le llamo de OZSE Seguros, para recordarle que la fecha de vencimiento de su póliza de seguros de gastos médicos es el  {payment_date}, y el saldo de este mes es de {payment_amount}. Para su comodidad, le estoy enviando un mensaje donde, si usted gusta, pueda realizar su pago electrónico o hacer el depósito a la cuenta de OZSE Seguros que le estoy enviando."
+  utter_payment_intent:
+  - text: Entiendo, ojalá y pueda realizar su pago, por que recuerde, que estar asegurado es estar protegido, muchas gracias por su atención y que tenga un excelente día
 actions:
 - action_slot_reset
 - action_slot_query
@@ -119,5 +117,8 @@ forms:
     - type: from_trigger_intent
       value: false
       intent: deny
+    - type: from_trigger_intent
+      value: false
+      intent: payment_deny
     reason_rejection:
     - type: from_text

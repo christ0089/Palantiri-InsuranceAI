@@ -19463,3 +19463,421 @@ rasa.shared.exceptions.RasaException: Failed to execute custom action.
 2021-01-18 21:39:33,040 [DEBUG]  Action 'action_listen' ended with events '[]'.
 2021-01-18 21:39:33,042 [DEBUG]  Deleted lock for conversation '2b554948ddd14518bd32cbfa77b9d987'.
 2021-01-18 21:39:37,501 [INFO ]  Killing Sanic server now.
+2021-01-20 12:11:59,010 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2021-01-20 12:11:59,012 [INFO ]  Starting Rasa server on http://localhost:5005
+2021-01-20 12:11:59,013 [DEBUG]  Using the default number of Sanic workers (1).
+2021-01-20 12:11:59,014 [INFO ]  Loading model models/20210118-212837.tar.gz...
+2021-01-20 12:11:59,743 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmps0iyxtp3'.
+2021-01-20 12:11:59,764 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2021-01-20 12:12:00,050 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2021-01-20 12:12:00,065 [INFO ]  Enabling coroutine debugging. Loop id 140441509609488.
+2021-01-20 12:12:00,076 [INFO ]  Loading model models/20210118-212837.tar.gz...
+2021-01-20 12:12:00,738 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpolpcby5n'.
+2021-01-20 12:12:01,161 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpolpcby5n/nlu/component_5_DIETClassifier.tf_model with finetune_mode=False...
+2021-01-20 12:12:01,348 [DEBUG]  Following metrics will be logged during training: 
+2021-01-20 12:12:01,348 [DEBUG]    t_loss (total loss)
+2021-01-20 12:12:01,348 [DEBUG]    i_acc (intent acc)
+2021-01-20 12:12:01,348 [DEBUG]    i_loss (intent loss)
+2021-01-20 12:12:01,348 [DEBUG]    e_f1 (entity f1)
+2021-01-20 12:12:01,349 [DEBUG]    e_loss (entity loss)
+2021-01-20 12:12:02,701 [DEBUG]  Finished loading the model.
+2021-01-20 12:12:02,704 [DEBUG]  Building tensorflow prediction graph...
+2021-01-20 12:12:06,922 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-20 12:12:06,924 [DEBUG]  Failed to load model for 'ResponseSelector'. Maybe you did not provide enough training data and no model was trained or the path '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpolpcby5n/nlu' doesn't exist?
+2021-01-20 12:12:06,940 [DEBUG]  Connected to InMemoryTrackerStore.
+2021-01-20 12:12:06,940 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2021-01-20 12:12:07,535 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp8osou6n6'.
+2021-01-20 12:12:07,649 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp8osou6n6/core/policy_1_TEDPolicy/ted_policy.tf_model with finetune_mode=False...
+2021-01-20 12:12:07,987 [DEBUG]  Finished loading the model.
+2021-01-20 12:12:07,994 [DEBUG]  Building tensorflow prediction graph...
+2021-01-20 12:12:11,396 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-20 12:12:11,398 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2021-01-20 12:12:11,399 [INFO ]  Rasa server is up and running.
+2021-01-20 12:12:54,513 [INFO ]  Killing Sanic server now.
+2021-01-20 12:13:07,043 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2021-01-20 12:13:07,045 [INFO ]  Starting Rasa server on http://localhost:5005
+2021-01-20 12:13:07,045 [DEBUG]  Using the default number of Sanic workers (1).
+2021-01-20 12:13:07,048 [INFO ]  Loading model models/20210118-212837.tar.gz...
+2021-01-20 12:13:07,677 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpbjgo5h3n'.
+2021-01-20 12:13:07,700 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2021-01-20 12:13:07,983 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2021-01-20 12:13:07,988 [INFO ]  Enabling coroutine debugging. Loop id 140269996130320.
+2021-01-20 12:13:07,998 [INFO ]  Loading model models/20210118-212837.tar.gz...
+2021-01-20 12:13:08,638 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp23spo8i7'.
+2021-01-20 12:13:08,847 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp23spo8i7/nlu/component_5_DIETClassifier.tf_model with finetune_mode=False...
+2021-01-20 12:13:08,991 [DEBUG]  Following metrics will be logged during training: 
+2021-01-20 12:13:08,991 [DEBUG]    t_loss (total loss)
+2021-01-20 12:13:08,991 [DEBUG]    i_acc (intent acc)
+2021-01-20 12:13:08,991 [DEBUG]    i_loss (intent loss)
+2021-01-20 12:13:08,991 [DEBUG]    e_f1 (entity f1)
+2021-01-20 12:13:08,991 [DEBUG]    e_loss (entity loss)
+2021-01-20 12:13:10,252 [DEBUG]  Finished loading the model.
+2021-01-20 12:13:10,254 [DEBUG]  Building tensorflow prediction graph...
+2021-01-20 12:13:14,547 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-20 12:13:14,549 [DEBUG]  Failed to load model for 'ResponseSelector'. Maybe you did not provide enough training data and no model was trained or the path '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp23spo8i7/nlu' doesn't exist?
+2021-01-20 12:13:14,569 [DEBUG]  Connected to InMemoryTrackerStore.
+2021-01-20 12:13:14,569 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2021-01-20 12:13:15,154 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmph8c9x_a9'.
+2021-01-20 12:13:15,270 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmph8c9x_a9/core/policy_1_TEDPolicy/ted_policy.tf_model with finetune_mode=False...
+2021-01-20 12:13:15,608 [DEBUG]  Finished loading the model.
+2021-01-20 12:13:15,614 [DEBUG]  Building tensorflow prediction graph...
+2021-01-20 12:13:18,890 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-20 12:13:18,893 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2021-01-20 12:13:18,893 [INFO ]  Rasa server is up and running.
+2021-01-20 12:13:37,592 [DEBUG]  Issuing ticket for conversation '7675b883909441b5abd3590dc0fb285a'.
+2021-01-20 12:13:37,592 [DEBUG]  Acquiring lock for conversation '7675b883909441b5abd3590dc0fb285a'.
+2021-01-20 12:13:37,593 [DEBUG]  Acquired lock for conversation '7675b883909441b5abd3590dc0fb285a'.
+2021-01-20 12:13:37,593 [DEBUG]  Could not find tracker for conversation ID '7675b883909441b5abd3590dc0fb285a'.
+2021-01-20 12:13:37,593 [DEBUG]  Starting a new session for conversation ID '7675b883909441b5abd3590dc0fb285a'.
+2021-01-20 12:13:37,599 [DEBUG]  Calling action endpoint to run action 'action_session_start'.
+2021-01-20 12:13:39,781 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-20 12:13:39,781 [DEBUG]  Action 'action_session_start' ended with events '[<rasa.shared.core.events.SessionStarted object at 0x14461af10>, <rasa.shared.core.events.SlotSet object at 0x14461a040>, <rasa.shared.core.events.SlotSet object at 0x14461a1f0>, <rasa.shared.core.events.SlotSet object at 0x144759c40>, ActionExecuted(action: action_listen, policy: None, confidence: None)]'.
+2021-01-20 12:13:39,782 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: None
+	reason_rejection: None
+	requested_slot: None
+2021-01-20 12:13:40,216 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-20 12:13:40,216 [DEBUG]  Adding following selector key to message property: default
+2021-01-20 12:13:40,220 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-20 12:13:40,221 [ERROR]  Failed to connect to duckling http server. Make sure the duckling server is running/healthy/not stale and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x143ab50d0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2021-01-20 12:13:40,221 [DEBUG]  Received user message 'hola' with intent '{'id': -7433238440097165544, 'name': 'greet', 'confidence': 0.999921441078186}' and entities '[]'
+2021-01-20 12:13:40,221 [DEBUG]  Logged UserUtterance - tracker now has 7 events.
+2021-01-20 12:13:40,226 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+2021-01-20 12:13:40,227 [DEBUG]  There is no memorised next action
+2021-01-20 12:13:40,245 [DEBUG]  Current tracker state:
+[state 1] user text: hola | previous action name: action_listen
+2021-01-20 12:13:40,246 [DEBUG]  There is no applicable rule.
+2021-01-20 12:13:40,250 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+2021-01-20 12:13:40,251 [DEBUG]  There is no applicable rule.
+2021-01-20 12:13:40,251 [DEBUG]  Made prediction using user intent.
+2021-01-20 12:13:40,251 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-20 12:13:40,251 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-20 12:13:40,251 [DEBUG]  Predicted next action 'action_default_fallback' with confidence 0.30.
+2021-01-20 12:13:40,284 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x144759ca0>]'.
+2021-01-20 12:13:40,285 [DEBUG]  Action 'action_default_fallback' ended with events '[<rasa.shared.core.events.UserUtteranceReverted object at 0x144792af0>]'.
+2021-01-20 12:13:40,285 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: None
+	reason_rejection: None
+	requested_slot: None
+2021-01-20 12:13:40,285 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-20 12:13:40,286 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-20 12:13:40,286 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-20 12:13:40,287 [DEBUG]  Deleted lock for conversation '7675b883909441b5abd3590dc0fb285a'.
+2021-01-20 12:14:41,322 [INFO ]  Killing Sanic server now.
+2021-01-20 12:14:52,636 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2021-01-20 12:14:52,638 [INFO ]  Starting Rasa server on http://localhost:5005
+2021-01-20 12:14:52,639 [DEBUG]  Using the default number of Sanic workers (1).
+2021-01-20 12:14:52,643 [INFO ]  Loading model models/20210118-212837.tar.gz...
+2021-01-20 12:14:53,300 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp91o_4whl'.
+2021-01-20 12:14:53,319 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2021-01-20 12:14:53,601 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2021-01-20 12:14:53,609 [INFO ]  Enabling coroutine debugging. Loop id 140513081212944.
+2021-01-20 12:14:53,620 [INFO ]  Loading model models/20210118-212837.tar.gz...
+2021-01-20 12:14:54,293 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp1whdwa00'.
+2021-01-20 12:14:54,537 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp1whdwa00/nlu/component_5_DIETClassifier.tf_model with finetune_mode=False...
+2021-01-20 12:14:54,635 [DEBUG]  Following metrics will be logged during training: 
+2021-01-20 12:14:54,635 [DEBUG]    t_loss (total loss)
+2021-01-20 12:14:54,635 [DEBUG]    i_acc (intent acc)
+2021-01-20 12:14:54,636 [DEBUG]    i_loss (intent loss)
+2021-01-20 12:14:54,636 [DEBUG]    e_f1 (entity f1)
+2021-01-20 12:14:54,636 [DEBUG]    e_loss (entity loss)
+2021-01-20 12:14:55,559 [DEBUG]  Finished loading the model.
+2021-01-20 12:14:55,562 [DEBUG]  Building tensorflow prediction graph...
+2021-01-20 12:14:59,692 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-20 12:14:59,693 [DEBUG]  Failed to load model for 'ResponseSelector'. Maybe you did not provide enough training data and no model was trained or the path '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp1whdwa00/nlu' doesn't exist?
+2021-01-20 12:14:59,710 [DEBUG]  Connected to InMemoryTrackerStore.
+2021-01-20 12:14:59,710 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2021-01-20 12:15:00,331 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp70r7um1c'.
+2021-01-20 12:15:00,444 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmp70r7um1c/core/policy_1_TEDPolicy/ted_policy.tf_model with finetune_mode=False...
+2021-01-20 12:15:00,753 [DEBUG]  Finished loading the model.
+2021-01-20 12:15:00,760 [DEBUG]  Building tensorflow prediction graph...
+2021-01-20 12:15:04,025 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-20 12:15:04,027 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2021-01-20 12:15:04,027 [INFO ]  Rasa server is up and running.
+2021-01-20 12:15:06,930 [DEBUG]  Issuing ticket for conversation 'e20ce6e7dbcf45a4b4ad1759d87466af'.
+2021-01-20 12:15:06,931 [DEBUG]  Acquiring lock for conversation 'e20ce6e7dbcf45a4b4ad1759d87466af'.
+2021-01-20 12:15:06,931 [DEBUG]  Acquired lock for conversation 'e20ce6e7dbcf45a4b4ad1759d87466af'.
+2021-01-20 12:15:06,931 [DEBUG]  Could not find tracker for conversation ID 'e20ce6e7dbcf45a4b4ad1759d87466af'.
+2021-01-20 12:15:06,931 [DEBUG]  Starting a new session for conversation ID 'e20ce6e7dbcf45a4b4ad1759d87466af'.
+2021-01-20 12:15:06,933 [DEBUG]  Calling action endpoint to run action 'action_session_start'.
+2021-01-20 12:15:07,947 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-20 12:15:07,947 [DEBUG]  Action 'action_session_start' ended with events '[<rasa.shared.core.events.SessionStarted object at 0x14393c6a0>, <rasa.shared.core.events.SlotSet object at 0x1439b92b0>, <rasa.shared.core.events.SlotSet object at 0x1439b92e0>, <rasa.shared.core.events.SlotSet object at 0x143afd460>, ActionExecuted(action: action_listen, policy: None, confidence: None)]'.
+2021-01-20 12:15:07,947 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: None
+	reason_rejection: None
+	requested_slot: None
+2021-01-20 12:15:08,357 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-20 12:15:08,357 [DEBUG]  Adding following selector key to message property: default
+2021-01-20 12:15:08,360 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-20 12:15:08,402 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-20 12:15:08,402 [DEBUG]  Received user message 'Hola' with intent '{'id': -7623482945095641753, 'name': 'greet', 'confidence': 0.9999485611915588}' and entities '[]'
+2021-01-20 12:15:08,403 [DEBUG]  Logged UserUtterance - tracker now has 7 events.
+2021-01-20 12:15:08,404 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+2021-01-20 12:15:08,404 [DEBUG]  There is no memorised next action
+2021-01-20 12:15:08,414 [DEBUG]  Current tracker state:
+[state 1] user text: Hola | previous action name: action_listen
+2021-01-20 12:15:08,415 [DEBUG]  There is no applicable rule.
+2021-01-20 12:15:08,416 [DEBUG]  Current tracker state:
+[state 1] user intent: greet | previous action name: action_listen
+2021-01-20 12:15:08,417 [DEBUG]  There is no applicable rule.
+2021-01-20 12:15:08,417 [DEBUG]  Made prediction using user intent.
+2021-01-20 12:15:08,417 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-20 12:15:08,417 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-20 12:15:08,417 [DEBUG]  Predicted next action 'action_default_fallback' with confidence 0.30.
+2021-01-20 12:15:08,418 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x1439b9cd0>]'.
+2021-01-20 12:15:08,418 [DEBUG]  Action 'action_default_fallback' ended with events '[<rasa.shared.core.events.UserUtteranceReverted object at 0x1439ba5b0>]'.
+2021-01-20 12:15:08,418 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: None
+	reason_rejection: None
+	requested_slot: None
+2021-01-20 12:15:08,419 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-20 12:15:08,419 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-20 12:15:08,419 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-20 12:15:08,420 [DEBUG]  Deleted lock for conversation 'e20ce6e7dbcf45a4b4ad1759d87466af'.
+2021-01-20 12:15:37,474 [INFO ]  Killing Sanic server now.
+2021-01-20 12:18:01,254 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2021-01-20 12:18:01,256 [INFO ]  Starting Rasa server on http://localhost:5005
+2021-01-20 12:18:01,256 [DEBUG]  Using the default number of Sanic workers (1).
+2021-01-20 12:18:01,259 [INFO ]  Loading model models/20210120-121745.tar.gz...
+2021-01-20 12:18:01,570 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpdy_k6qw8'.
+2021-01-20 12:18:01,582 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2021-01-20 12:18:01,877 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2021-01-20 12:18:01,884 [INFO ]  Enabling coroutine debugging. Loop id 140278552510480.
+2021-01-20 12:18:01,896 [INFO ]  Loading model models/20210120-121745.tar.gz...
+2021-01-20 12:18:02,211 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpo9fg0bj6'.
+2021-01-20 12:18:02,447 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpo9fg0bj6/nlu/component_5_DIETClassifier.tf_model with finetune_mode=False...
+2021-01-20 12:18:02,545 [DEBUG]  Following metrics will be logged during training: 
+2021-01-20 12:18:02,545 [DEBUG]    t_loss (total loss)
+2021-01-20 12:18:02,545 [DEBUG]    i_acc (intent acc)
+2021-01-20 12:18:02,545 [DEBUG]    i_loss (intent loss)
+2021-01-20 12:18:02,545 [DEBUG]    e_f1 (entity f1)
+2021-01-20 12:18:02,545 [DEBUG]    e_loss (entity loss)
+2021-01-20 12:18:03,476 [DEBUG]  Finished loading the model.
+2021-01-20 12:18:03,478 [DEBUG]  Building tensorflow prediction graph...
+2021-01-20 12:18:07,650 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-20 12:18:07,651 [DEBUG]  Failed to load model for 'ResponseSelector'. Maybe you did not provide enough training data and no model was trained or the path '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpo9fg0bj6/nlu' doesn't exist?
+2021-01-20 12:18:07,662 [DEBUG]  Connected to InMemoryTrackerStore.
+2021-01-20 12:18:07,662 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2021-01-20 12:18:07,964 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpsbdd4lvt'.
+2021-01-20 12:18:08,085 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpsbdd4lvt/core/policy_1_TEDPolicy/ted_policy.tf_model with finetune_mode=False...
+2021-01-20 12:18:08,425 [DEBUG]  Finished loading the model.
+2021-01-20 12:18:08,433 [DEBUG]  Building tensorflow prediction graph...
+2021-01-20 12:18:11,243 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-20 12:18:11,246 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2021-01-20 12:18:11,246 [INFO ]  Rasa server is up and running.
+2021-01-20 12:18:20,104 [DEBUG]  Issuing ticket for conversation '07330333de8947cca79f64ddfa5e17e3'.
+2021-01-20 12:18:20,104 [DEBUG]  Acquiring lock for conversation '07330333de8947cca79f64ddfa5e17e3'.
+2021-01-20 12:18:20,104 [DEBUG]  Acquired lock for conversation '07330333de8947cca79f64ddfa5e17e3'.
+2021-01-20 12:18:20,104 [DEBUG]  Could not find tracker for conversation ID '07330333de8947cca79f64ddfa5e17e3'.
+2021-01-20 12:18:20,105 [DEBUG]  Starting a new session for conversation ID '07330333de8947cca79f64ddfa5e17e3'.
+2021-01-20 12:18:20,110 [DEBUG]  Calling action endpoint to run action 'action_session_start'.
+2021-01-20 12:18:21,251 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-20 12:18:21,251 [DEBUG]  Action 'action_session_start' ended with events '[BotUttered('Estimado Profesor DemoMan, espero se encuentre bien, le llamo de OZSE Seguros, para recordarle que la fecha de vencimiento de su póliza de seguros de gastos médicos es el  22 de Enero, y el saldo de este mes es de 500 pesos. Para su comodidad, le estoy enviando un mensaje donde, si usted gusta, pueda realizar su pago electrónico o hacer el depósito a la cuenta de OZSE Seguros que le estoy enviando.', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_start", "name": "DemoMan", "payment_amount": "500 pesos", "payment_date": "22 de Enero"}, 1611166701.2509482), <rasa.shared.core.events.SessionStarted object at 0x13b23ca00>, <rasa.shared.core.events.SlotSet object at 0x13b23c460>, <rasa.shared.core.events.SlotSet object at 0x13b23c100>, <rasa.shared.core.events.SlotSet object at 0x13b23c8b0>, ActionExecuted(action: action_listen, policy: None, confidence: None)]'.
+2021-01-20 12:18:21,252 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: None
+	reason_rejection: None
+	requested_slot: None
+2021-01-20 12:18:21,697 [DEBUG]  There is no trained model for 'ResponseSelector': The component is either not trained or didn't receive enough training data.
+2021-01-20 12:18:21,697 [DEBUG]  Adding following selector key to message property: default
+2021-01-20 12:18:21,701 [DEBUG]  Starting new HTTP connection (1): localhost:8000
+2021-01-20 12:18:21,710 [DEBUG]  http://localhost:8000 "POST /parse HTTP/1.1" 200 None
+2021-01-20 12:18:21,711 [DEBUG]  Received user message 'no quiero pagar' with intent '{'id': 7385348025872207094, 'name': 'deny', 'confidence': 0.9993924498558044}' and entities '[]'
+2021-01-20 12:18:21,712 [DEBUG]  Logged UserUtterance - tracker now has 8 events.
+2021-01-20 12:18:21,713 [DEBUG]  Current tracker state:
+[state 1] user intent: deny | previous action name: action_listen
+2021-01-20 12:18:21,714 [DEBUG]  There is no memorised next action
+2021-01-20 12:18:21,725 [DEBUG]  Current tracker state:
+[state 1] user text: no quiero pagar | previous action name: action_listen
+2021-01-20 12:18:21,726 [DEBUG]  There is no applicable rule.
+2021-01-20 12:18:21,726 [DEBUG]  Current tracker state:
+[state 1] user intent: deny | previous action name: action_listen
+2021-01-20 12:18:21,728 [DEBUG]  There is a rule for the next action 'reject_payment_form'.
+2021-01-20 12:18:21,728 [DEBUG]  Made prediction using user intent.
+2021-01-20 12:18:21,728 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2021-01-20 12:18:21,729 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-20 12:18:21,737 [DEBUG]  Predicted next action 'reject_payment_form' with confidence 1.00.
+2021-01-20 12:18:21,738 [DEBUG]  Activated the form 'reject_payment_form'.
+2021-01-20 12:18:21,738 [DEBUG]  No pre-filled required slots to validate.
+2021-01-20 12:18:21,739 [DEBUG]  Validating user input 'UserUttered(text: no quiero pagar, intent: deny, use_text_for_featurization: False)'.
+2021-01-20 12:18:21,739 [DEBUG]  Extracted 'False' for extra slot 'accept_payment'.
+2021-01-20 12:18:21,739 [DEBUG]  Validating extracted slots: {'accept_payment': False}
+2021-01-20 12:18:21,740 [DEBUG]  Request next slot 'reason_rejection'
+2021-01-20 12:18:21,750 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x13b1a32e0>]'.
+2021-01-20 12:18:21,750 [DEBUG]  Action 'reject_payment_form' ended with events '[<rasa.shared.core.events.ActiveLoop object at 0x13b23ccd0>, <rasa.shared.core.events.SlotSet object at 0x13b2366d0>, <rasa.shared.core.events.SlotSet object at 0x13b236b20>, BotUttered('Tienes alguna razon por la que no puedas realizar el pago?', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"template_name": "utter_ask_reason_rejection"}, 1611166701.7412732)]'.
+2021-01-20 12:18:21,753 [DEBUG]  Current slot values: 
+	name: DemoMan
+	payment_date: 22 de Enero
+	agent_name: None
+	payment_amount: 500 pesos
+	accept_payment: False
+	reason_rejection: None
+	requested_slot: reason_rejection
+2021-01-20 12:18:21,754 [DEBUG]  Current tracker state:
+[state 1] user intent: deny | previous action name: action_listen
+[state 2] user intent: deny | previous action name: reject_payment_form | active loop: {'name': 'reject_payment_form'} | slots: {'accept_payment': (1.0, 0.0)}
+2021-01-20 12:18:21,754 [DEBUG]  There is no memorised next action
+2021-01-20 12:18:21,763 [DEBUG]  Predicted 'action_listen' after loop 'reject_payment_form'.
+2021-01-20 12:18:21,763 [DEBUG]  Predicted next action using policy_2_RulePolicy.
+2021-01-20 12:18:21,764 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2021-01-20 12:18:21,764 [DEBUG]  Policy prediction ended with events '[]'.
+2021-01-20 12:18:21,764 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2021-01-20 12:18:21,765 [DEBUG]  Deleted lock for conversation '07330333de8947cca79f64ddfa5e17e3'.
+2021-01-20 15:25:33,457 [INFO ]  Killing Sanic server now.
+2021-01-20 17:01:34,343 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2021-01-20 17:01:34,344 [INFO ]  Starting Rasa server on http://localhost:5005
+2021-01-20 17:01:34,345 [DEBUG]  Using the default number of Sanic workers (1).
+2021-01-20 17:01:34,347 [INFO ]  Loading model models/20210120-155957.tar.gz...
+2021-01-20 17:01:34,714 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpkmwxn02o'.
+2021-01-20 17:01:34,725 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2021-01-20 17:01:35,011 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2021-01-20 17:01:35,019 [INFO ]  Enabling coroutine debugging. Loop id 140585458122768.
+2021-01-20 17:01:35,031 [INFO ]  Loading model models/20210120-155957.tar.gz...
+2021-01-20 17:01:35,374 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpbbt0qkoe'.
+2021-01-20 17:01:35,601 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpbbt0qkoe/nlu/component_5_DIETClassifier.tf_model with finetune_mode=False...
+2021-01-20 17:01:35,698 [DEBUG]  Following metrics will be logged during training: 
+2021-01-20 17:01:35,698 [DEBUG]    t_loss (total loss)
+2021-01-20 17:01:35,698 [DEBUG]    i_acc (intent acc)
+2021-01-20 17:01:35,698 [DEBUG]    i_loss (intent loss)
+2021-01-20 17:01:35,698 [DEBUG]    e_f1 (entity f1)
+2021-01-20 17:01:35,698 [DEBUG]    e_loss (entity loss)
+2021-01-20 17:01:36,752 [DEBUG]  Finished loading the model.
+2021-01-20 17:01:36,755 [DEBUG]  Building tensorflow prediction graph...
+2021-01-20 17:01:42,172 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-20 17:01:42,175 [DEBUG]  Failed to load model for 'ResponseSelector'. Maybe you did not provide enough training data and no model was trained or the path '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpbbt0qkoe/nlu' doesn't exist?
+2021-01-20 17:01:42,184 [DEBUG]  Connected to InMemoryTrackerStore.
+2021-01-20 17:01:42,185 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2021-01-20 17:01:42,598 [DEBUG]  Extracted model to '/var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpfa02dr0q'.
+2021-01-20 17:01:42,715 [DEBUG]  Loading the model from /var/folders/66/_qf_0mys70n0z09tx55qtjqr0000gn/T/tmpfa02dr0q/core/policy_1_TEDPolicy/ted_policy.tf_model with finetune_mode=False...
+2021-01-20 17:01:43,047 [DEBUG]  Finished loading the model.
+2021-01-20 17:01:43,054 [DEBUG]  Building tensorflow prediction graph...
+2021-01-20 17:01:45,946 [DEBUG]  Finished building tensorflow prediction graph.
+2021-01-20 17:01:45,948 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2021-01-20 17:01:45,948 [INFO ]  Rasa server is up and running.
