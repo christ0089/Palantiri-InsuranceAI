@@ -31,6 +31,9 @@ slots:
   name: 
     type: text
     influence_conversation: false
+  sex: 
+    type: text
+    influence_conversation: false
   payment_date:
     type: text
     influence_conversation: false

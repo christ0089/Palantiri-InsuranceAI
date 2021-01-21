@@ -54,6 +54,8 @@ rules:
   steps:
   - intent: handover
   - action: utter_handover_assigned
+
+## Payment Forms Submit
 - rule: Submit form payment accept
   condition:
   - active_loop: payment_form
@@ -72,6 +74,7 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_utter_message
+## Payment Submit
 - rule: Submit form payment accept
   condition:
   - slot_was_set:

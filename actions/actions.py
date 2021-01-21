@@ -37,11 +37,13 @@ class ActionQuerySlots(Action):
         evt = []
         try: 
             r = requests.get('https://1ntj0abfh0.execute-api.us-east-1.amazonaws.com/PROD/customer?contactId='+ tracker.sender_id)
-        
+            data = r.json()[0]
             for key in data:
                 evt.append(SlotSet(key, data[key]))
             return evt
         except: 
+
+            
             data = {
                 "name": "DemoMan",
                 "payment_amount": "500 pesos",
@@ -129,7 +131,7 @@ class ActionSessionStart(Action):
         events = [SessionStarted()]
         try: 
             r = requests.get('https://1ntj0abfh0.execute-api.us-east-1.amazonaws.com/PROD/customer?contactId='+ tracker.sender_id)
-        
+            data = r.json()[0]
             for key in data:
                 events.append(SlotSet(key, data[key]))
         except: 
