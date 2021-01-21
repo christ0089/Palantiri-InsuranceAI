@@ -131,8 +131,8 @@ class ActionSessionStart(Action):
         events = [SessionStarted()]
         try: 
             r = requests.get('https://1ntj0abfh0.execute-api.us-east-1.amazonaws.com/PROD/customer?contactId='+ tracker.sender_id)
-            if r.statusCode == 400:
-                raise  Exception("No Data supplied" )
+            print(r.status_code)
+            if r.status_code > 300:
             data = r.json()
             for key in data:
                 events.append(SlotSet(key, data[key]))
