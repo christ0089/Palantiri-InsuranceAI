@@ -1,53 +1,95 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet
-- goodbye
-- city_of_origin
-- inform
-- confirm
-- deny
-- cost
-- how_it_works
-- wrong_input
-- repeat_question
-- bot_challenge
-- payment_amount_info
-- payment_date_info
-- payment_info
-- payment_deny
-- payment_done
-- payment_intent
-- payment_repeat
-- handover
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- city_of_origin:
+    use_entities: true
+- inform:
+    use_entities: true
+- confirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- cost:
+    use_entities: true
+- how_it_works:
+    use_entities: true
+- wrong_input:
+    use_entities: true
+- repeat_question:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- payment_amount_info:
+    use_entities: true
+- payment_date_info:
+    use_entities: true
+- payment_info:
+    use_entities: true
+- payment_deny:
+    use_entities: true
+- payment_done:
+    use_entities: true
+- payment_intent:
+    use_entities: true
+- payment_repeat:
+    use_entities: true
+- handover:
+    use_entities: true
 entities:
 - city
 - sex
 - name
 - time
 - bots
+- payment_reason
 slots:
-  name: 
-    type: text
-    influence_conversation: false
-  sex: 
-    type: text
-    influence_conversation: false
-  payment_date:
-    type: text
-    influence_conversation: false
+  accept_payment:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   agent_name:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  name:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   payment_amount:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
-  accept_payment:
-    type: bool
-    influence_conversation: true
+  payment_date:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
   reason_rejection:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  sex:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
 responses:
   utter_greet:
@@ -55,53 +97,45 @@ responses:
   utter_happy:
   - text: Muy bien, tambien.
   utter_costs:
-  - text: El costo depende de muchos factores, para ello necesitamos que complete
-      las preguntas
+  - text: El costo depende de muchos factores, para ello necesitamos que complete las preguntas. Quisiera hablar con un representante para checar detalles más específicos?
   utter_goodbye:
   - custom:
       status: end_conversation
-    text: Profesor {name} muchas gracias por su atención y el nos estaremos comunicando
-      con usted
+    text: Profesor {name} muchas gracias por su atención y el nos estaremos comunicando con usted
   utter_iamabot:
-  - text: Me llamo Sari; y le marco a nombre del Profesor Juan Manuel Ríos Ortega,
-      soy un Agente de OZCE Seguros.
+  - text: Me llamo Sari; y le marco a nombre del Profesor Juan Manuel Ríos Ortega, soy un Agente de OZCE Seguros.
   utter_how_it_works:
-  - text: Claro, al final de contestar la preguntas, un agente se contactar con usted
-      para finalizar los detalles.
-  ## Payment Utterances:
+  - text: Claro, al final de contestar la preguntas, un agente se contactar con usted para finalizar los detalles.
   utter_payment_ammount_info:
   - text: Claro tu pago de este mes es de {payment_amount}
   utter_payment_date_info:
   - text: Claro tu pago de este mes se debe de pagar para el {payment_date}
   utter_payment_date:
-  - text: Cree que podamos contar con su pago antes de el {payment_date}? 
+  - text: Cree que podamos contar con su pago antes de el {payment_date}?
   utter_payment_ammount:
   - text: Cree que podamos contar con su pago de {payment_amount}?
   utter_ask_accept_payment:
-  - text: Podremos contar con su pago para el {payment_date} de {payment_amount}. 
+  - text: Podremos contar con su pago para el {payment_date} de {payment_amount}.
   utter_ask_reason_rejection:
-  - text: Tienes alguna razon por la que no puedas realizar el pago? 
-  ## Payment Confirmation
-  utter_payment_reject: 
+  - text: Cuál es la razón por la que no puedas realizar el pago?
+  utter_payment_reject:
   - custom:
       status: sms
-    text: Le recordamos que el pago de la poliza es muy importante para su bienestar.
-  utter_payment_accept: 
+    text: Le recordamos que el pago de la poliza es muy importante para su bienestar y el de sus compañeros. Hay algo mas con lo que lo pueda ayudar?
+  utter_payment_accept:
   - custom:
       status: sms
     text: En unos momentos te mandara un sms con los datos para realizar tu pago.
-  ## Agent Handover
   utter_handover_assigned:
   - text: En unos momentos te comunicaremos con {agent_name}.
-  ## Agent Start
   utter_start:
-  - text: "Estimado Profesor {name}, espero se encuentre bien, le llamo de OZSE Seguros, para recordarle que la fecha de vencimiento de su póliza de seguros de gastos médicos es el  {payment_date}, y el saldo de este mes es de {payment_amount}. Para su comodidad, le estoy enviando un mensaje donde, si usted gusta, pueda realizar su pago electrónico o hacer el depósito a la cuenta de OZSE Seguros que le estoy enviando."
+  - text: Estimado Profesor {name}, espero se encuentre bien, le llamo de OZSE Seguros, para recordarle que la fecha de vencimiento de su póliza de seguros de gastos médicos es el  {payment_date}, y el saldo de este mes es de {payment_amount}. Para su comodidad, le estoy enviando un mensaje donde, si usted gusta, pueda realizar su pago electrónico o hacer el depósito a la cuenta de OZSE Seguros que le estoy enviando.
   utter_payment_done:
   - custom:
       status: end_conversation
   - text: Muchas gracias, disulpe la llamada y que tenga un exelente día
   utter_payment_repeat:
-  - text: "Estimado Profesor {name}, espero se encuentre bien, le llamo de OZSE Seguros, para recordarle que la fecha de vencimiento de su póliza de seguros de gastos médicos es el  {payment_date}, y el saldo de este mes es de {payment_amount}. Para su comodidad, le estoy enviando un mensaje donde, si usted gusta, pueda realizar su pago electrónico o hacer el depósito a la cuenta de OZSE Seguros que le estoy enviando."
+  - text: Estimado Profesor {name}, espero se encuentre bien, le llamo de OZSE Seguros, para recordarle que la fecha de vencimiento de su póliza de seguros de gastos médicos es el  {payment_date}, y el saldo de este mes es de {payment_amount}. Para su comodidad, le estoy enviando un mensaje donde, si usted gusta, pueda realizar su pago electrónico o hacer el depósito a la cuenta de OZSE Seguros que le estoy enviando.
   utter_payment_intent:
   - text: Entiendo, ojalá y pueda realizar su pago, por que recuerde, que estar asegurado es estar protegido, muchas gracias por su atención y que tenga un excelente día
 actions:
@@ -109,19 +143,22 @@ actions:
 - action_slot_query
 - action_session_start
 - action_utter_message
-forms: 
+forms:
   payment_form:
     accept_payment:
-    - type: from_trigger_intent
+    - intent: confirm
+      type: from_trigger_intent
       value: true
-      intent: confirm
   reject_payment_form:
     accept_payment:
-    - type: from_trigger_intent
+    - intent: deny
+      type: from_trigger_intent
       value: false
-      intent: deny
-    - type: from_trigger_intent
+    - intent: payment_deny
+      type: from_trigger_intent
       value: false
-      intent: payment_deny
     reason_rejection:
     - type: from_text
+    - entity: payment_reason
+      type: from_entity
+e2e_actions: []

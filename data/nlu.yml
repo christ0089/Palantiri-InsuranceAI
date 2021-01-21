@@ -56,6 +56,7 @@ nlu:
     - aló
     - hola muy bien
     - hola muy bien gracias
+    - HOla
 - intent: goodbye
   examples: |
     - hasta luego
@@ -380,6 +381,7 @@ nlu:
     - ok está bien
     - claro que si
     - Claro que si
+    - quiero pagar
 - intent: deny
   examples: |
     - no
@@ -423,6 +425,10 @@ nlu:
     - no quiero pagar
     - No quiero pagar
     - no quiero pagae
+    - norte no puedo pagar
+    - no no no es muy justa el servicio
+    - si no me gusta el servicio
+    - y si no tengo dinero
 - intent: bot_challenge
   examples: |
     - eres un bot
@@ -564,6 +570,8 @@ nlu:
     - Señorita, Como dijo que sale
     - Señorita, En cuanto dijo que sale
     - Señorita, En cuanto sale
+    - buenas tardes me podría dar el monto a pagar
+    - cuánto se debe
 - intent: payment_date_info
   examples: |
     - cuando debo pagar
@@ -581,7 +589,6 @@ nlu:
     - me repite la fecha de vencimiento, por favor
     - Señorita, cuando dijo que vence
     - Señorita, Cuando dijo que vence la póliza
-    - Señorita, hasta cuando tengo para pagar
     - Señorita, hasta cuando tengo para pagar la póliza
     - Que día vence
     - Que día vence la póliza
@@ -597,6 +604,11 @@ nlu:
     - Perdón no eschué bien, puede repetrime la fecha de vencimiento, por favor
     - Como dijo Hasta cuando puedo pagar
     - Señorita, me repite la fecha de vencimiento por favor
+    - hasta qué día tengo para hacer mis pagos
+    - cuál es mi último día de pago
+    - cuál es mi fecha de vencimiento
+    - cuál es el saldo de este mes
+    - si cuándo puedo pagar
 - intent: payment_info
   examples: |
     - donde debo pagar
@@ -619,6 +631,9 @@ nlu:
     - Puedo pagar con la tarjeta de credirto de mi esposo
     - Puedo pagar con la tarjeta de credirto de mi hijo
     - Puedo pagar con la tarjeta de credirto de mi hija
+    - en qué banco debo realizar el pago
+    - dónde puedo hacer el pago
+    - me puede dar el saldo a pagar
 - intent: payment_repeat
   examples: |
     - me puede repetir cuando es la fecha de vencimiento y el monto de la mensualidad, por favor
@@ -638,7 +653,7 @@ nlu:
     - voy a verficar mis finanzas
     - voy a platicarlo con mi esposa
     - No se, deje checo
-    - deje veo 
+    - deje veo
     - deje veo, por que he traido muchas gastos
     - voy a checar mis finanzas
     - espero que si, pero no estoy seguro
@@ -647,11 +662,13 @@ nlu:
     - No se si voy a continuar, deje checo
     - Yo creo que si
     - Si solo deje checo com ando
-    - Yo creo que si, para mañana 
+    - Yo creo que si, para mañana
     - Si, no debe haber problema
     - Si , espero que si
     - Ando muy gastado pero yo creo que si
     - Si esta semana espero poder pagar la mensualidad
+    - no lo sé
+    - si traigo muchos gastos
 - intent: payment_done
   examples: |
     - Ya page
@@ -662,7 +679,12 @@ nlu:
     - Acabo de pagar hace un rato
 - intent: payment_deny
   examples: |
-    - Oiga, no estoy de acuerdo se me hace mucho el monto de la póliza
+    - Oiga, [no estoy de acuerdo se me hace mucho el monto de la póliza](payment_reason)
+    - está muy fea la situación
+    - [no cuento con el dinero ahora](payment_reason)
+    - eh [no cuento con dinero ahora](payment_reason)
+- intent: handover
+  examples: |
     - Me pude expplicar la cobertura de la póliza
     - Me pude expplicar la cobertura de la póliza, po favor
     - Puedo ir al hospital Santa María que esta qui en la ciudad
@@ -672,8 +694,6 @@ nlu:
     - Me puede explicar como funciona la póliza
     - A que hospitales puedo ir en caso de emergencia
     - A que hospitales puedo ir en caso de un accidente
-- intent: handover
-  examples: |
     - quiero hablar con alguien
     - comunicame con mi agente
     - quiero hablar con mi agente
