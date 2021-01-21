@@ -20,13 +20,11 @@ rules:
 - rule: Say payment ammount
   steps:
   - intent: payment_amount_info
-  - action: action_slot_query
   - action: utter_payment_ammount_info
   - action: utter_payment_date
 - rule: Say payment date
   steps:
   - intent: payment_date_info
-  - action: action_slot_query
   - action: utter_payment_date_info
   - action: utter_payment_ammount
 - rule: Say payment ammount
@@ -35,7 +33,6 @@ rules:
     - accept_payment: true
   steps:
   - intent: payment_amount_info
-  - action: action_slot_query
   - action: utter_payment_ammount_info
 - rule: Say payment date
   condition:
@@ -43,19 +40,15 @@ rules:
     - accept_payment: true
   steps:
   - intent: payment_date_info
-  - action: action_slot_query
   - action: utter_payment_date_info
 - rule: Say payment date
   steps:
   - intent: payment_info
-  - action: action_slot_query
   - action: utter_payment_accept
 - rule: Handover
   steps:
   - intent: handover
   - action: utter_handover_assigned
-
-## Payment Forms Submit
 - rule: Submit form payment accept
   condition:
   - active_loop: payment_form
@@ -74,7 +67,6 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_utter_message
-## Payment Submit
 - rule: Submit form payment accept
   condition:
   - slot_was_set:
