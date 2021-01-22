@@ -573,6 +573,7 @@ nlu:
     - buenas tardes me podría dar el monto a pagar
     - cuánto se debe
     - este cuánto se debe
+    - cuánto es de este mes
 - intent: payment_date_info
   examples: |
     - cuando debo pagar
@@ -703,6 +704,7 @@ nlu:
     - comunicame con mi agente
     - quiero hablar con mi agente
     - donde esta mi agente
+    - oiga y quiero hablar con alguien
 - synonym: torreon
   examples: |
     - la laguna
