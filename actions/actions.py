@@ -142,3 +142,15 @@ class PaymentMessage(Action):
             dispatcher.utter_message(template="utter_payment_accept")
         return []
 
+class NewPolicyMessage(Action):
+    def name(self) -> Text:
+        return "action_new_policy_message"
+
+    def run(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
+    ) -> List[EventType]:
+        if tracker.get_slot("accept_new_policy") == False:
+            dispatcher.utter_message(template="utter_goodbye")
+        if tracker.get_slot("accept_new_policy") == True:
+            dispatcher.utter_message(template="utter_handover")
+        return []
