@@ -13,10 +13,6 @@ rules:
   steps:
   - intent: payment_intent
   - action: utter_payment_intent
-- rule: Payment Done
-  steps:
-  - intent: payment_done
-  - action: utter_payment_done
 - rule: Say payment ammount
   steps:
   - intent: payment_amount_info
@@ -48,7 +44,12 @@ rules:
 - rule: Handover
   steps:
   - intent: handover
-  - action: utter_handover_assigned
+  - action: utter_handover
+##
+##
+## Forms Submit
+##
+##
 - rule: Submit form payment accept
   condition:
   - active_loop: payment_form
@@ -57,7 +58,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
-  - action: action_utter_message
+  - action: action_new_policy_message
 - rule: Submit form payment reject
   condition:
   - active_loop: reject_payment_form
@@ -66,16 +67,32 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
-  - action: action_utter_message
-- rule: Submit form payment accept
+  - action: utter_payment_reject
+##
+##
+## Forms Init
+##
+##
+- rule: Start form payment accept
   condition:
   - slot_was_set:
     - accept_payment: null
   steps:
   - intent: confirm
+  - action: utter_payment_accept
   - action: payment_form
   - active_loop: payment_form
-- rule: Submit form payment reject
+- rule: Start form payment accept
+  condition:
+  - slot_was_set:
+    - accept_payment: null
+  steps:
+  - intent: payment_done
+  - action: utter_payment_accept
+  - action: payment_form
+  - active_loop: payment_form
+
+- rule: Start form payment reject
   condition:
   - slot_was_set:
     - accept_payment: null
@@ -83,7 +100,7 @@ rules:
   - intent: deny
   - action: reject_payment_form
   - active_loop: reject_payment_form
-- rule: Submit form payment reject
+- rule: Start form payment reject
   condition:
   - slot_was_set:
     - accept_payment: null

@@ -80,7 +80,7 @@ class ValidatePaymentForm(Action):
     def run(
         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
     ) -> List[EventType]:
-        required_slots = ["accept_payment"]
+        required_slots = ["accept_payment", "accept_new_policy"]
         for slot_name in required_slots:
             if tracker.slots.get(slot_name) is None:
                 # The slot is not filled yet. Request the user to fill this slot next.
@@ -96,7 +96,7 @@ class ValidateRejPaymentForm(Action):
     def run(
         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
     ) -> List[EventType]:
-        required_slots = ["accept_payment", "reason_rejection"]
+        required_slots = ["accept_payment", "reason_rejection", "talk_with_agent"]
         for slot_name in required_slots:
             if tracker.slots.get(slot_name) is None:
                 # The slot is not filled yet. Request the user to fill this slot next.
@@ -105,17 +105,18 @@ class ValidateRejPaymentForm(Action):
         # All slots are filled.
         return [SlotSet("requested_slot", None)]
 
-class PaymentMessage(Action):
+
+class NewPolicyMessage(Action):
     def name(self) -> Text:
-        return "action_utter_message"
+        return "action_new_policy_message"
 
     def run(
         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
     ) -> List[EventType]:
-        if tracker.get_slot("accept_payment") == False:
-            dispatcher.utter_message(template="utter_payment_reject")
-        if tracker.get_slot("accept_payment") == True:
-            dispatcher.utter_message(template="utter_payment_accept")
+        if tracker.get_slot("accept_new_policy") == False:
+            dispatcher.utter_message(template="utter_goodbye")
+        if tracker.get_slot("accept_new_policy") == True:
+            dispatcher.utter_message(template="utter_handover")
         return []
 
 class ActionSessionStart(Action):
@@ -132,7 +133,8 @@ class ActionSessionStart(Action):
         try: 
             r = requests.get('https://1ntj0abfh0.execute-api.us-east-1.amazonaws.com/PROD/customer?contactId='+ tracker.sender_id)
             print(r.status_code)
-            if r.status_code > 300:
+            if r.status_code > 200:
+                raise Exception("No Data Valid")
             data = r.json()
             for key in data:
                 events.append(SlotSet(key, data[key]))
