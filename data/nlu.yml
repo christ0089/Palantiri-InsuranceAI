@@ -572,6 +572,7 @@ nlu:
     - Señorita, En cuanto sale
     - buenas tardes me podría dar el monto a pagar
     - cuánto se debe
+    - este cuánto se debe
 - intent: payment_date_info
   examples: |
     - cuando debo pagar
@@ -634,6 +635,7 @@ nlu:
     - en qué banco debo realizar el pago
     - dónde puedo hacer el pago
     - me puede dar el saldo a pagar
+    - dónde voy a pagar
 - intent: payment_repeat
   examples: |
     - me puede repetir cuando es la fecha de vencimiento y el monto de la mensualidad, por favor
@@ -683,6 +685,9 @@ nlu:
     - está muy fea la situación
     - [no cuento con el dinero ahora](payment_reason)
     - eh [no cuento con dinero ahora](payment_reason)
+    - no voy a poder hacer el pago
+    - no cuento con dinero
+    - no creo que lo pueda hacer este mes
 - intent: handover
   examples: |
     - Me pude expplicar la cobertura de la póliza
