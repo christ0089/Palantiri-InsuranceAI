@@ -99,8 +99,8 @@ responses:
   utter_start:
   - text: "Estimado Profesor {name}, espero se encuentre bien, le llamo de OZSE Seguros, para recordarle que la fecha de vencimiento de su póliza de seguros de gastos médicos es el {payment_date}, y el saldo de este mes es de {payment_amount}. Para su comodidad, le estoy enviando un mensaje donde, si usted gusta, pueda realizar su pago electrónico o hacer el depósito a la cuenta de OZSE Seguros que le estoy enviando."
   ## Payment Interactions other than Accept or Deny
-  utter_payment_repeat:
-  - text: "Estimado Profesor {name}, espero se encuentre bien, le llamo de OZSE Seguros, para recordarle que la fecha de vencimiento de su póliza de seguros de gastos médicos es el  {payment_date}, y el saldo de este mes es de {payment_amount}. Para su comodidad, le estoy enviando un mensaje donde, si usted gusta, pueda realizar su pago electrónico o hacer el depósito a la cuenta de OZSE Seguros que le estoy enviando."
+  utter_repeat:
+  - text: "Lo siento, no entendi crees que lo puedeas decir de manera distinta?"
   utter_payment_intent:
   - text: Entiendo, ojalá y pueda realizar su pago, por que recuerde, que estar asegurado es estar protegido, muchas gracias por su atención y que tenga un excelente día
 actions:
