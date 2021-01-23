@@ -95,7 +95,7 @@ responses:
   ## Agent Handover
   utter_handover:
   - custom:
-    status: handover
+      status: handover
     text: En unos momentos te comunicaremos con un agente para atenderle.
   ## Agent Start
   utter_start:
