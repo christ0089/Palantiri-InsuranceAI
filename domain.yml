@@ -94,7 +94,9 @@ responses:
     text: En unos momentos te mandara un mesaje de texto con los datos para realizar tu pago.
   ## Agent Handover
   utter_handover:
-  - text: En unos momentos te comunicaremos con un agente para atenderle.
+  - custom:
+    status: handover
+    text: En unos momentos te comunicaremos con un agente para atenderle.
   ## Agent Start
   utter_start:
   - text: "Estimado Profesor {name}, espero se encuentre bien, le llamo de OZSE Seguros, para recordarle que la fecha de vencimiento de su póliza de seguros de gastos médicos es el {payment_date}, y el saldo de este mes es de {payment_amount}. Para su comodidad, le estoy enviando un mensaje donde, si usted gusta, pueda realizar su pago electrónico o hacer el depósito a la cuenta de OZSE Seguros que le estoy enviando."
