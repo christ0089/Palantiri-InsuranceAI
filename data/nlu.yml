@@ -691,8 +691,8 @@ nlu:
     - no creo que lo pueda hacer este mes
 - intent: handover
   examples: |
-    - Me pude expplicar la cobertura de la póliza
-    - Me pude expplicar la cobertura de la póliza, po favor
+    - Me pude explicar la cobertura de la póliza
+    - Me pude explicar la cobertura de la póliza, po favor
     - Puedo ir al hospital Santa María que esta qui en la ciudad
     - Si tengo una emergencia que hago
     - Cual es su celuar por si tengo alguna duda

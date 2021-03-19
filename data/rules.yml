@@ -85,16 +85,10 @@ rules:
   - slot_was_set:
     - accept_payment: null
   steps:
+  - or:
+    - intent: confirm
+    - intent: payment_done
   - intent: confirm
-  - action: utter_payment_accept
-  - action: payment_form
-  - active_loop: payment_form
-- rule: Start form payment accept
-  condition:
-  - slot_was_set:
-    - accept_payment: null
-  steps:
-  - intent: payment_done
   - action: utter_payment_accept
   - action: payment_form
   - active_loop: payment_form
@@ -104,14 +98,9 @@ rules:
   - slot_was_set:
     - accept_payment: null
   steps:
-  - intent: deny
+  - or:
+    - intent: deny
+    - intent: payment_deny
   - action: reject_payment_form
   - active_loop: reject_payment_form
-- rule: Start form payment reject
-  condition:
-  - slot_was_set:
-    - accept_payment: null
-  steps:
-  - intent: payment_deny
-  - action: reject_payment_form
-  - active_loop: reject_payment_form
+
