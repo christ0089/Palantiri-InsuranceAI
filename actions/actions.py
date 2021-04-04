@@ -81,53 +81,24 @@ class ActionSessionStart(Action):
 
 class ValidatePolicyForm(Action):
     def name(self) -> Text:
-        return "policy_form"
+        return "validate_policy_sale"
 
-    def run(
-        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
-    ) -> List[EventType]:
-        required_slots = ["Acity", "Bdbo", "Dappointment"]
-        if tracker.slots.get('sex') == "woman":
-            required_slots = ["Acity", "Bdbo", "Cmaternity","Dappointment"]
-        for slot_name in required_slots:
-            if tracker.slots.get(slot_name) is None:
-                # The slot is not filled yet. Request the user to fill this slot next.
-                return [SlotSet("requested_slot", slot_name)]
+    async def required_slots(
+        self,
+        slots_mapped_in_domain: List[Text],
+        dispatcher: "CollectingDispatcher",
+        tracker: "Tracker",
+        domain: "DomainDict",
+    ) -> Optional[List[Text]]:
+        additional_slots = [""]
+        if tracker.slots.get("A_has_insurance") is False or tracker.slots.get("B_interested") is False:
+            # If the user wants to sit outside, ask
+            # if they want to sit in the shade or in the sun.
+            additional_slots.append("D_reasoning_for_rejection")
 
-        # All slots are filled.
-        return [SlotSet("requested_slot", None)]
+        return additional_slots
 
-class ValidatePaymentForm(Action):
-    def name(self) -> Text:
-        return "payment_form"
 
-    def run(
-        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
-    ) -> List[EventType]:
-        required_slots = ["accept_payment"]
-        for slot_name in required_slots:
-            if tracker.slots.get(slot_name) is None:
-                # The slot is not filled yet. Request the user to fill this slot next.
-                return [SlotSet("requested_slot", slot_name)]
-
-        # All slots are filled.
-        return [SlotSet("requested_slot", None)]
-
-class ValidateRejPaymentForm(Action):
-    def name(self) -> Text:
-        return "reject_payment_form"
-
-    def run(
-        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
-    ) -> List[EventType]:
-        required_slots = ["accept_payment", "reason_rejection"]
-        for slot_name in required_slots:
-            if tracker.slots.get(slot_name) is None:
-                # The slot is not filled yet. Request the user to fill this slot next.
-                return [SlotSet("requested_slot", slot_name)]
-
-        # All slots are filled.
-        return [SlotSet("requested_slot", None)]
 
 class PaymentMessage(Action):
     def name(self) -> Text:

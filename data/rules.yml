@@ -10,7 +10,7 @@ rules:
   - action: utter_costs
 - rule: Repeat las intent answer 
   condition:
-  - active_loop: policy_form
+  - active_loop: policy_sale
   steps:
   - intent: repeat_question
   - action: utter_repeat
@@ -19,40 +19,26 @@ rules:
   - intent: how_it_works
   - action: utter_how_it_works
 
+#
+# Form Handler 
+#
+
+
+- rule: Start Policy
+  condition:
+  - slot_was_set:
+    - name
+  steps:
+  - intent: confirm
+  - action: policy_sale
+  - active_loop: policy_sale
+
 - rule: Submit form
   condition:
-  - active_loop: policy_form
+  - active_loop: policy_sale
   steps:
-  - action: policy_form
+  - action: policy_sale
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
   - action: utter_submit
-
-- rule: Submit form woman
-  condition:
-  - active_loop: policy_form_woman
-  steps:
-  - action: policy_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: utter_submit
-
-- rule: PolicyMan
-  condition:
-  - slot_was_set:
-    - sex: man
-  steps:
-  - intent: confirm
-  - action: policy_form
-  - active_loop: policy_form
-
-- rule: PolicyWoman
-  condition:
-  - slot_was_set:
-    - sex: woman
-  steps:
-  - intent: confirm
-  - action: policy_form
-  - active_loop: policy_form
