@@ -7,4 +7,3 @@ stories:
   - intent: greet
   - action: utter_greet
 
-

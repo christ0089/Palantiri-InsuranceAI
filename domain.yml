@@ -21,10 +21,10 @@ entities:
 - bots
 slots:
   A_has_insurance:
-    type: text
+    type: bool
     influence_conversation: true
   B_interested:
-    type: any
+    type: bool
     influence_conversation: false
   C_city:
     type: text
@@ -39,6 +39,9 @@ slots:
   sex:
     type: text
     influence_conversation: true
+  insurance_type:
+    type: text
+    influence_conversation: true
   payment_date:
     type: text
     influence_conversation: false
@@ -49,9 +52,9 @@ slots:
     type: text
 responses:
   utter_greet:
-  - text: Muy bien {name}, mi nombre es Sari Agente de HDI Seguros, le llamo
-      para facilitarle la póliza de su auto con descuneto quincenal, las coverturas que mas
-      necesite. Usted ya cuenta con segur efectivo para su carro?
+  - text: Muy bien {name}, mi nombre es Sari Agente de HDI Seguros, y si me da cinco minutos podre
+      facilitarle una póliza para su {{insurance_type}} con descuneto quincenal, para proteger tu casa y sus contenidos
+      Usted ya cuenta con seguro efectivo para su casa?
   utter_repeat:
   - text: Claro que sí la pregunta fue.
 
@@ -72,32 +75,31 @@ responses:
   utter_goodbye:
   - custom:
       status: end_conversation
-    text: Profesor {name} muchas gracias por su atención y el nos estaremos comunicando
-      con usted
+    text: Muy bien {{name}}, muchas gracias por su atención que tenga un buen dia
   utter_iamabot:
-  - text: Me llamo Sari; y le marco a nombre del Profesor Juan Manuel Ríos Ortega,
-      soy un Agente de OZCE Seguros.
+  - text: Me llamo Sari; soy un Agente de OZCE Seguros.
 #
 #### Form 
 #
   utter_submit:
   - custom:
-      status: sms
-    text: Pefecto gracias por los datos
-  - custom:
-      status: sms
-    text: Gracias por los datos.
+      status: queue
+      sms_message: Aqui puede empezar el proceo de su poliza https://ozce-seguros.firebaseapp.com/house/0
+    text: Para su comodidad, le enviaré por mensaje para que conozca a detalle los
+      beneficios de las opciones que tenemos para ud. asi como para que pueda darse una idea de sus ahorros.
   utter_how_it_works:
   - text: Claro, al final de contestar la preguntas, un agente se contactar con usted para finalizar los detalles.
   utter_ask_A_has_insurance: 
   - text: Que bien! Es important estar bien protegidos para no perder nuestro patrimonio, le comentamos que podemos mejorar cualquier presupueto que ya tenga. Desea cotizar con nosotos algun plan que se ajusta a su medida?
-  utter_ask_B_intersted:  
+  utter_ask_B_interested:  
   - text: Desea cotizar con nosotos algun plan que se ajusta a su medida?
   utter_ask_C_city:
   - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
       vive usted?
+  utter_ask_D_reasoning_for_rejection:
+  - text: Para complementar esta llamada nos puede decir el motivo para comunicarnos con un asesor? 
   utter_reason_not_intersted:
-  - text: para complementar esta llamada nos puede decir el motivo para comunicarnos con un asesor? 
+  - text: Para complementar esta llamada nos puede decir el motivo para comunicarnos con un asesor? 
 actions:
 - action_slot_reset
 - action_slot_query
@@ -113,19 +115,19 @@ forms:
       value: true
       intent: confirm
     - intent: deny
-      type: from_intent
+      type: from_trigger_intent
       value: false
-    B_interested:
-    - type: from_intent
-      value: true
-      intent: confirm
-    - intent: deny
-      type: from_intent
-      value: false
-    C_city:
-    - entity: city
-      intent: city_of_origin
-      type: from_entity
+    # B_interested:
+    # - type: from_intent
+    #   value: true
+    #   intent: confirm
+    # - intent: deny
+    #   type: from_intent
+    #   value: false
+    # C_city:
+    # - entity: city
+    #   intent: city_of_origin
+    #   type: from_entity
 
 
 

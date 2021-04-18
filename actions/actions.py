@@ -10,6 +10,8 @@
 from typing import Any, Text, Dict, List, Optional
 
 import requests
+import logging
+logger = logging.Logger(__name__)
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet, EventType, SessionStarted, ActionExecuted
@@ -69,7 +71,8 @@ class ActionSessionStart(Action):
             data = {
                 "name": "DemoMan",
                 "payment_amount": "500 pesos",
-                "payment_date": "22 de Enero"
+                "payment_date": "22 de Enero",
+                "insurance_type": "Casa"
             }
 
             for key in data:
@@ -79,7 +82,7 @@ class ActionSessionStart(Action):
         events.append(ActionExecuted("action_listen"))
         return events
 
-class ValidatePolicyForm(Action):
+class ValidatePolicyForm(FormValidationAction):
     def name(self) -> Text:
         return "validate_policy_sale"
 
@@ -90,14 +93,79 @@ class ValidatePolicyForm(Action):
         tracker: "Tracker",
         domain: "DomainDict",
     ) -> Optional[List[Text]]:
-        additional_slots = [""]
-        if tracker.slots.get("A_has_insurance") is False or tracker.slots.get("B_interested") is False:
+        additional_slots = []
+        print(slots_mapped_in_domain)
+        print(tracker.slots.get("A_has_insurance"))
+        print(tracker.slots.get("B_interested"))
+        if tracker.slots.get("A_has_insurance") is False:
+            additional_slots .append("D_reasoning_for_rejection")
+            return slots_mapped_in_domain + additional_slots
+        if tracker.slots.get("B_interested") is False:
             # If the user wants to sit outside, ask
             # if they want to sit in the shade or in the sun.
-            additional_slots.append("D_reasoning_for_rejection")
+            additional_slots .append("B_interested")
+            additional_slots .append("D_reasoning_for_rejection")
+            return slots_mapped_in_domain + additional_slots
+        elif tracker.slots.get("B_interested") == True:
+            additional_slots.append("B_interested")
+            ##additional_slots.append("C_city")
+            print(slots_mapped_in_domain + additional_slots)
+            return slots_mapped_in_domain + additional_slots
+        elif tracker.slots.get("A_has_insurance") == True:
+            additional_slots.append("B_interested")
+            print(slots_mapped_in_domain + additional_slots)
+            return slots_mapped_in_domain + additional_slots
 
-        return additional_slots
 
+        return slots_mapped_in_domain + additional_slots
+    
+    async def extract_B_interested(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
+    ) -> Dict[Text, Any]:
+        intent = tracker.latest_message.get("intent")
+        print(intent["name"])
+
+        last_event = tracker.events[-1]
+        print(last_event)
+
+        if last_event["event"] == "slot" and last_event["name"] == "A_has_insurance" :
+            return  {"B_interested": None}
+        interest =  False if intent["name"] == "deny" else True
+        return {"B_interested": interest}
+    
+    async def extract_C_city(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
+    ) -> Dict[Text, Any]:
+        entities = tracker.latest_message.get("entities")
+        print(entities)
+        last_event = tracker.events[-1]
+        if last_event["event"] == "slot" and last_event["name"] == "B_interested" :
+            return  {"C_city": None}
+
+        for dictionary in entities:
+            if dictionary["entity"] == "city":
+                return {"C_City": dictionary["value"]}
+                
+        return {"C_city": None}
+
+    async def extract_D_reasoning_for_rejection(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
+    ) -> Dict[Text, Any]:
+        text = tracker.latest_message.get("text")
+        intent = tracker.latest_message.get("intent")
+
+   
+        last_event = tracker.events[-1]
+
+        print(text)
+        if last_event["event"] == "slot" and last_event["name"] == "B_interested" :
+            return  {"D_reasoning_for_rejection": None}
+        if last_event["event"] == "slot" and last_event["name"] == "A_has_insurance" :
+            return  {"D_reasoning_for_rejection": None}
+        if intent["name"] == "deny":
+            return {"D_reasoning_for_rejection": text}
+                
+        return {"D_reasoning_for_rejection": text}
 
 
 class PaymentMessage(Action):

@@ -29,9 +29,35 @@ rules:
   - slot_was_set:
     - name
   steps:
-  - intent: confirm
+  - or:
+    - intent: confirm
+    - intent: deny
   - action: policy_sale
   - active_loop: policy_sale
+
+
+- rule: utterResponse
+  condition:
+  - active_loop: policy_sale
+  - slot_was_set:
+    - requested_slot: A_has_insurance
+  steps:
+  - intent: confirm
+  - action: utter_ask_A_has_insurance
+  
+- rule: Submit form deny
+  condition:
+  - active_loop: policy_sale
+  - slot_was_set:
+    - D_reasoning_for_rejection
+  steps:
+  - intent: deny
+  - action: utter_goodbye
+  - action: policy_sale
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+
 
 - rule: Submit form
   condition:
