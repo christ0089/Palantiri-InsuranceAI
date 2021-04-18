@@ -154,7 +154,6 @@ class ValidatePolicyForm(FormValidationAction):
         text = tracker.latest_message.get("text")
         intent = tracker.latest_message.get("intent")
 
-   
         last_event = tracker.events[-1]
 
         print(text)
