@@ -52,12 +52,16 @@ slots:
     type: text
 responses:
   utter_greet:
-  - text: Muy bien {name}, mi nombre es Sari Agente de HDI Seguros, y si me da cinco minutos podre
-      facilitarle una póliza para su {{insurance_type}} con descuneto quincenal, para proteger tu casa y sus contenidos
+  - text: Muy bien {{name}}, mi nombre es Sari Agente de HDI Seguros, y si me da cinco minutos podre
+      facilitarle una póliza para su casa con descuneto quincenal, para proteger tu casa y sus contenidos
       Usted ya cuenta con seguro efectivo para su casa?
   utter_repeat:
   - text: Claro que sí la pregunta fue.
 
+  utter_handover:
+  - custom: 
+      status: handover
+    text: En unos momentos te transferiremos con uns agente.
   utter_city_of_origin:
   - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
       vive usted?
@@ -84,15 +88,21 @@ responses:
   utter_submit:
   - custom:
       status: queue
-      sms_message: Aqui puede empezar el proceo de su poliza https://ozce-seguros.firebaseapp.com/house/0
-    text: Para su comodidad, le enviaré por mensaje para que conozca a detalle los
-      beneficios de las opciones que tenemos para ud. asi como para que pueda darse una idea de sus ahorros.
+      sms_message: Aqui puede empezar el proceo de su poliza 
+      link: https://ozce-seguros.firebaseapp.com/house/0
+    text: Le asignaremos una liga vía mensaje de texto donde podrá consultar los beneficios que tendremos para ti espere un minuto. Estoy aquí para cualquier duda
   utter_how_it_works:
   - text: Claro, al final de contestar la preguntas, un agente se contactar con usted para finalizar los detalles.
   utter_ask_A_has_insurance: 
-  - text: Que bien! Es important estar bien protegidos para no perder nuestro patrimonio, le comentamos que podemos mejorar cualquier presupueto que ya tenga. Desea cotizar con nosotos algun plan que se ajusta a su medida?
-  utter_ask_B_interested:  
-  - text: Desea cotizar con nosotos algun plan que se ajusta a su medida?
+  - text: Que bien! Es importante estar bien protegidos para no perder nuestro patrimonio, le comentamos que podemos mejorar cualquier presupuesto que ya tenga. Desea cotizar con nosotos algun plan que se ajusta a su medida?
+  # utter_ask_B_interested:  
+  # - text: Que bien! Es importante estar bien protegidos para no perder nuestro patrimonio, le comentamos que podemos mejorar cualquier presupuesto que ya tenga. Desea cotizar con nosotos algun plan que se ajusta a su medida?
+  
+  utter_ask_B_interested_true:  
+  - text: Que bien! Es importante estar bien protegidos para no perder nuestro patrimonio, le comentamos que podemos mejorar cualquier presupuesto que ya tenga. Desea cotizar con nosotos algun plan que se ajusta a su medida?
+  
+  utter_ask_B_interested_false:  
+  - text: Es importante estar bien protegidos para no perder nuestro patrimonio, le comentamos que podemos mejorar cualquier presupuesto que ya tenga. Desea cotizar con nosotos algun plan que se ajusta a su medida?
   utter_ask_C_city:
   - text: Disculpe, para ofrecerle una mejor propuesta, podría decirme ¿en qué ciudad
       vive usted?
@@ -104,6 +114,9 @@ actions:
 - action_slot_reset
 - action_slot_query
 - action_session_start
+- action_utter_submit
+
+- action_ask_B_interested
 #
 # Form Validations
 #
@@ -117,17 +130,6 @@ forms:
     - intent: deny
       type: from_trigger_intent
       value: false
-    # B_interested:
-    # - type: from_intent
-    #   value: true
-    #   intent: confirm
-    # - intent: deny
-    #   type: from_intent
-    #   value: false
-    # C_city:
-    # - entity: city
-    #   intent: city_of_origin
-    #   type: from_entity
 
 
 

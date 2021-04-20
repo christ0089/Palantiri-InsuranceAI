@@ -98,7 +98,7 @@ class ValidatePolicyForm(FormValidationAction):
         print(tracker.slots.get("A_has_insurance"))
         print(tracker.slots.get("B_interested"))
         if tracker.slots.get("A_has_insurance") is False:
-            additional_slots .append("D_reasoning_for_rejection")
+            additional_slots .append("B_interested")
             return slots_mapped_in_domain + additional_slots
         if tracker.slots.get("B_interested") is False:
             # If the user wants to sit outside, ask
@@ -159,8 +159,6 @@ class ValidatePolicyForm(FormValidationAction):
         print(text)
         if last_event["event"] == "slot" and last_event["name"] == "B_interested" :
             return  {"D_reasoning_for_rejection": None}
-        if last_event["event"] == "slot" and last_event["name"] == "A_has_insurance" :
-            return  {"D_reasoning_for_rejection": None}
         if intent["name"] == "deny":
             return {"D_reasoning_for_rejection": text}
                 
@@ -180,15 +178,29 @@ class PaymentMessage(Action):
             dispatcher.utter_message(template="utter_payment_accept")
         return []
 
-class NewPolicyMessage(Action):
+class PolicySubmit(Action):
     def name(self) -> Text:
-        return "action_new_policy_message"
+        return "action_utter_submit"
 
     def run(
         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
     ) -> List[EventType]:
-        if tracker.get_slot("accept_new_policy") == False:
-            dispatcher.utter_message(template="utter_goodbye")
-        if tracker.get_slot("accept_new_policy") == True:
+        if tracker.get_slot("B_interested") == True:
+            dispatcher.utter_message(template="utter_submit")
+        if tracker.get_slot("B_interested") == False:
             dispatcher.utter_message(template="utter_handover")
+        return []
+
+class AskForSlotAction(Action):
+    def name(self) -> Text:
+        return "action_ask_B_interested"
+
+    def run(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
+    ) -> List[EventType]:
+
+        if tracker.get_slot("A_has_insurance") == True:
+            dispatcher.utter_message(template="utter_ask_B_interested_true")
+        if tracker.get_slot("A_has_insurance") == False:
+            dispatcher.utter_message(template="utter_ask_B_interested_false")
         return []

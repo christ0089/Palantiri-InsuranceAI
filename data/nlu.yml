@@ -378,12 +378,14 @@ nlu:
     - sí está bien
     - pero sí
     - ok está bien
+    - si estoy interesado
 - intent: deny
   examples: |
     - no
     - no quiero
     - claro que no
     - no me parace
+    - ni me interesa
     - no estoy de acuerdo
     - no me gusta
     - no lo quiero
